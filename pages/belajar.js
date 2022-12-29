@@ -5,6 +5,7 @@ import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
 import { useRouter } from "next/router";
+import styles from "../styles/style.module.css";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
@@ -21,798 +22,385 @@ function Belajar() {
   const router = useRouter();
   return (
     <div>
-      <header
-        style={{
-          backgroundColor: "#043F75",
-          padding: "5px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <header className={styles.header}>
         <img
+          className={styles.logota}
           src="/img/LogoTA.png"
           height="20px"
           width="90px"
-          style={{
-            marginTop: "20px",
-            marginBottom: "10px",
-            marginLeft: "50px",
-          }}
         />
-        <nav
-          style={{
-            marginRight: "100px",
-          }}
+        <nav className={styles.nav}
         >
-          <img
-            src="/img/indonesia.png"
-            style={{
-              width: "30px",
-              marginLeft: "50px",
-              marginBottom: "5px",
-            }}
-          />
-          <img
-            src="/img/fire.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
-          <img
-            src="/img/diamond.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
-          <img
-            src="/img/profile.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
+          <img className={styles.logoindonesia} src="/img/indonesia.png" />
+          <img className={styles.logofire} src="/img/fire.png" />
+          <img className={styles.logodiamond} src="/img/diamond.png" />
+          <img className={styles.logoprofile} src="/img/profile.png" />
         </nav>
       </header>
-      <div
-        style={{
-          display: "flex",
-        }}
+      <div 
+        className={styles.div1}
       >
-        <div
-          style={{
-            width: "20%",
-            textAlign: "center",
-            marginTop: "25px",
-            marginLeft: "50px",
-          }}
+        <div  className={styles.div2}
         >
           <button
             onClick={() => router.push("/belajar")}
-            style={{
-              display: "flex",
-              padding: "5px",
-              width: "80%",
-              backgroundColor: "#B7D8F7",
-              color: "#369DD7",
-              borderColor: "#369DD7",
-              borderRadius: "10px",
-            }}
+            className={styles.buttonbelajar}
           >
             <img
               src="/img/Belajar.png"
               height="50px"
               width="50px"
-              style={{ marginTop: "5px", marginLeft: "10px" }}
+              className={styles.imgbelajar}
             />
-            <p
-              style={{
-                marginLeft: "20px",
-                fontSize: "20px",
-              }}
-            >
+            <p  className={styles.pbelajar}>
               Belajar
             </p>
           </button>
           <button
             onClick={() => router.push("/toko")}
-            style={{
-              display: "flex",
-              padding: "5px",
-              width: "70%",
-              marginTop: "25px",
-              backgroundColor: "white",
-              border: "none",
-            }}
+            className={styles.buttontoko}
           >
             <img
               src="/img/Toko.png"
               height="50px"
               width="50px"
-              style={{ marginTop: "7px", marginLeft: "10px" }}
+              className={styles.imgtoko}
             />
-            <p
-              style={{
-                marginLeft: "20px",
-                fontSize: "20px",
-              }}
-            >
+            <p className={styles.pbelajar}>
               Toko
             </p>
           </button>
         </div>
-        <div
-          style={{
-            width: "60%",
-            marginTop: "25px",
-            position: "relative",
-            left: "5%",
-          }}
+        <div className={styles.div3}
         >
-          <div
-            style={{
-              padding: "25px",
-              paddingBottom: "50px",
-              backgroundColor: "#58CC02",
-              borderRadius: "20px",
-              width: "80%",
-              color: "white",
-            }}
+          <div className={styles.div4}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-              }}
+            <div className={styles.div5}
             >
-              <h2
-                style={{
-                  margin: "0",
-                }}
+              <h2 className={styles.unit}
               >
                 Unit 1
               </h2>
-              <button
-                style={{
-                  color: "white",
-                  backgroundColor: "#58CC02",
-                  borderColor: "white",
-                  borderRadius: "10px",
-                  width: "25%",
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
-                <BookIcon style={{ color: "white", marginTop: "8px" }} />
-                <p
-                  style={{
-                    color: "white",
-                  }}
+              <button className={styles.buttonbukupanduan1}>
+                <BookIcon className={styles.BookIcon} />
+                <p className={styles.bukupanduan} 
                 >
                   Buku Panduan
                 </p>
               </button>
             </div>
-            <h3
-              style={{
-                float: "left",
-                marginTop: "10px",
-              }}
+            <h3 className={styles.memahamifrasadasar} 
             >
               Memahami Frasa Dasar
             </h3>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              marginTop: "40px",
-              position: "relative",
-              left: "5%",
-            }}
+          <div className={styles.div6}
           >
-            <img
+            <img className={styles.img}
               src="/img/star.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/lock.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/Bonus.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
           </div>
           <div
-            style={{
-              display: "flex",
-              marginTop: "40px",
-              position: "relative",
-              left: "5%",
-            }}
+            className={styles.div6}
           >
-            <img
+            <img className={styles.img}
               src="/img/book.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "75px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/piala.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/kunci.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
           </div>
-          <div
-            style={{
-              padding: "25px",
-              paddingBottom: "50px",
-              marginTop: "50px",
-              backgroundColor: "#B94CFF",
-              borderRadius: "20px",
-              width: "80%",
-              color: "white",
-            }}
+          <div className={styles.divunit2} style={{
+            marginTop:"50px"
+          }}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-              }}
+            <div className={styles.div5}
             >
-              <h2
-                style={{
-                  margin: "0",
-                }}
+              <h2 className={styles.unit}
               >
                 Unit 2
               </h2>
-              <button
-                style={{
-                  color: "white",
-                  backgroundColor: "#B94CFF",
-                  borderColor: "white",
-                  borderRadius: "10px",
-                  width: "25%",
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
-                <BookIcon style={{ color: "white", marginTop: "8px" }} />
-                <p
-                  style={{
-                    color: "white",
-                  }}
+              <button className={styles.buttonbukupanduan2}>
+                <BookIcon className={styles.BookIcon} />
+                <p className={styles.bukupanduan} 
                 >
                   Buku Panduan
                 </p>
               </button>
             </div>
-            <h3
-              style={{
-                float: "left",
-                marginTop: "10px",
-              }}
+            <h3 className={styles.memahamifrasadasar} 
             >
               Memahami Frasa Dasar
             </h3>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              marginTop: "40px",
-              position: "relative",
-              left: "5%",
-            }}
+          <div className={styles.div6}
           >
-            <img
+            <img className={styles.img}
               src="/img/starungu.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/lock.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/Bonus.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
           </div>
           <div
-            style={{
-              display: "flex",
-              marginTop: "40px",
-              position: "relative",
-              left: "5%",
-            }}
+            className={styles.div6}
           >
-            <img
+            <img className={styles.img}
               src="/img/book.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "75px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/piala.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/kunci.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
           </div>
-          <div
-            style={{
-              padding: "25px",
-              paddingBottom: "50px",
-              backgroundColor: "#00E0AB",
-              borderRadius: "20px",
-              width: "80%",
-              color: "white",
-              marginTop: "50px",
-            }}
+          <div className={styles.divunit3}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-              }}
+            <div className={styles.div5}
             >
-              <h2
-                style={{
-                  margin: "0",
-                }}
+              <h2 className={styles.unit}
               >
                 Unit 3
               </h2>
-              <button
-                style={{
-                  color: "white",
-                  backgroundColor: "#00E0AB",
-                  borderColor: "white",
-                  borderRadius: "10px",
-                  width: "25%",
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
-                <BookIcon style={{ color: "white", marginTop: "8px" }} />
-                <p
-                  style={{
-                    color: "white",
-                  }}
+              <button className={styles.buttonbukupanduan3}>
+                <BookIcon className={styles.BookIcon} />
+                <p className={styles.bukupanduan} 
                 >
                   Buku Panduan
                 </p>
               </button>
             </div>
-            <h3
-              style={{
-                float: "left",
-                marginTop: "10px",
-              }}
+            <h3 className={styles.memahamifrasadasar} 
             >
               Memahami Frasa Dasar
             </h3>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              marginTop: "40px",
-              position: "relative",
-              left: "5%",
-            }}
+          <div className={styles.div6}
           >
-            <img
-              src="/img/starTosca.png"
+            <img className={styles.img}
+              src="/img/startosca.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/lock.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/Bonus.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
           </div>
           <div
-            style={{
-              display: "flex",
-              marginTop: "40px",
-              position: "relative",
-              left: "5%",
-            }}
+            className={styles.div6}
           >
-            <img
+            <img className={styles.img}
               src="/img/book.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "75px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/piala.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/kunci.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
           </div>
-          <div
-            style={{
-              padding: "25px",
-              paddingBottom: "50px",
-              backgroundColor: "#58CC02",
-              borderRadius: "20px",
-              width: "80%",
-              color: "white",
-              marginTop: "50px",
-            }}
+          <div className={styles.div4} style={{marginTop:"50px"}}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-              }}
+            <div className={styles.div5}
             >
-              <h2
-                style={{
-                  margin: "0",
-                }}
+              <h2 className={styles.unit}
               >
                 Unit 4
               </h2>
-              <button
-                style={{
-                  color: "white",
-                  backgroundColor: "#58CC02",
-                  borderColor: "white",
-                  borderRadius: "10px",
-                  width: "25%",
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
-                <BookIcon style={{ color: "white", marginTop: "8px" }} />
-                <p
-                  style={{
-                    color: "white",
-                  }}
+              <button className={styles.buttonbukupanduan1}>
+                <BookIcon className={styles.BookIcon} />
+                <p className={styles.bukupanduan} 
                 >
                   Buku Panduan
                 </p>
               </button>
             </div>
-            <h3
-              style={{
-                float: "left",
-                marginTop: "10px",
-              }}
+            <h3 className={styles.memahamifrasadasar} 
             >
               Memahami Frasa Dasar
             </h3>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              marginTop: "40px",
-              position: "relative",
-              left: "5%",
-            }}
+          <div className={styles.div6}
           >
-            <img
+            <img className={styles.img}
               src="/img/star.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/lock.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/Bonus.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
           </div>
           <div
-            style={{
-              display: "flex",
-              marginTop: "40px",
-              position: "relative",
-              left: "5%",
-            }}
+            className={styles.div6}
           >
-            <img
+            <img className={styles.img}
               src="/img/book.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "75px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/piala.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
-            <img
+            <img className={styles.img}
               src="/img/kunci.png"
               height="80px"
               width="80px"
-              style={{ marginLeft: "80px" }}
             />
           </div>
         </div>
-        <div
-          style={{
-            width: "30%",
-            marginTop: "25px",
-            marginRight: "50px",
-            marginLeft: "0",
-          }}
+        <div className={styles.div7}
         >
-          <div
-            style={{
-              border: "1px #878787 solid",
-              borderRadius: "20px",
-              width: "90%",
-            }}
+          <div className={styles.div8}
           >
-            <img
+            <img 
+            className={styles.imgmedal}
               src="/img/medal.png"
               height="100px"
               width="200px"
-              style={{
-                display: "block",
-                marginLeft: "auto",
-                marginRight: "auto",
-                marginTop: "20px",
-              }}
             />
-            <h3
-              style={{
-                textAlign: "center",
-                fontWeight: "bold",
-              }}
+            <h3 className={styles.h3bukapapan}
             >
               Buka Papan Peringkat !
             </h3>
-            <p
-              style={{
-                color: "#878787",
-                textAlign: "center",
-                fontSize: "14px",
-              }}
+            <p className={styles.lengkapipelajaran}
             >
               Lengkapi 5 pelajaran lagi untuk memulai kompetisi
             </p>
           </div>
-          <div
-            style={{
-              border: "1px #878787 solid",
-              borderRadius: "20px",
-              width: "90%",
-              marginTop: "25px",
-              paddingBottom: "10px",
-            }}
+          <div className={styles.div9}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginLeft: "20px",
-                marginRight: "20px",
-                fontWeight: "bold",
-              }}
+            <div className={styles.div10}
             >
               <p>Progress XP</p>
-              <p style={{ color: "#369DD7" }}>EDIT TARGET</p>
+              <p className={styles.edittarget}>EDIT TARGET</p>
             </div>
-            <div style={{ display: "flex", marginLeft: "20px" }}>
+            <div className={styles.div11}>
               <img src="/img/Harta Karun.png" height="50px" width="50px" />
-              <p
-                style={{
-                  marginLeft: "20px",
-                  color: "#BCBCBC",
-                  marginTop: "0px",
-                }}
+              <p className={styles.targetharian}
               >
                 Target Harian
               </p>
             </div>
-            <div style={{ display: "flex", marginTop: "-15px" }}>
+            <div className={styles.div12}>
               <BorderLinearProgress variant="determinate" value={100} />
-              <p
-                style={{
-                  marginLeft: "10px",
-                  color: "#BCBCBC",
-                  marginTop: "-5px",
-                  fontSize: "12px",
-                }}
+              <p  className={styles.xp}
               >
                 24 / 10 XP
               </p>
             </div>
           </div>
-          <div
-            style={{
-              border: "1px #878787 solid",
-              borderRadius: "20px",
-              width: "90%",
-              marginTop: "25px",
-              paddingBottom: "10px",
-            }}
+          <div className={styles.div13}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginLeft: "20px",
-                marginRight: "20px",
-                fontWeight: "bold",
-              }}
+            <div className={styles.div14}
             >
               <p>Pencapaian Selanjutnya</p>
-              <p style={{ color: "#369DD7" }}>lihat semua</p>
+              <p className={styles.lihatsemua}>lihat semua</p>
             </div>
-            <div style={{ display: "flex", marginLeft: "20px" }}>
+            <div className={styles.pecapaianselanjutnya}>
               <img
                 src="/img/Pencapaian Selanjutnya.png"
                 height="50px"
                 width="50px"
               />
-              <p
-                style={{
-                  marginLeft: "20px",
-                  color: "#BCBCBC",
-                  marginTop: "0px",
-                }}
-              >
+              <p className={styles.targetharian}>
                 Target Harian
               </p>
             </div>
-            <div style={{ display: "flex", marginTop: "-15px" }}>
+            <div className={styles.div12}>
               <BorderLinearProgress variant="determinate" value={100} />
               <p
-                style={{
-                  marginLeft: "10px",
-                  color: "#BCBCBC",
-                  marginTop: "-5px",
-                  fontSize: "12px",
-                }}
+                className={styles.xp}
               >
                 24 / 10 XP
               </p>
             </div>
           </div>
-          <div
-            style={{
-              border: "1px #878787 solid",
-              borderRadius: "20px",
-              width: "90%",
-              marginTop: "25px",
-              paddingBottom: "10px",
-            }}
+          <div className={styles.div15}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginLeft: "20px",
-                marginRight: "20px",
-                fontWeight: "bold",
-              }}
+            <div className={styles.div16}
             >
               <p>Teman</p>
-              <p style={{ color: "#369DD7" }}>Total XP</p>
+              <p className={styles.totalxp}>Total XP</p>
             </div>
             <hr />
-            <div
-              style={{
-                display: "flex",
-                marginLeft: "20px",
-                paddingTop: "10px",
-              }}
+            <div className={styles.div17}
             >
               <img src="/img/Icon Teman.png" height="50px" width="50px" />
-              <p
-                style={{
-                  marginLeft: "20px",
-                  color: "#878787",
-                  marginTop: "10px",
-                }}
-              >
+              <p className={styles.leosandy}>
                 Leosandy Wahyu Rismono
               </p>
-              <p
-                style={{
-                  marginLeft: "20px",
-                  color: "#878787",
-                  marginTop: "10px",
-                }}
+              <p className={styles.leosandy}
               >
                 0 XP
               </p>
             </div>
             <hr />
-            <button
-              style={{
-                padding: "10px",
-                width: "40%",
-                borderRadius: "10px",
-                fontSize: "15px",
-                borderColor: "#878787",
-                marginLeft: "20px",
-                marginTop: "10px",
-                marginBottom: "10px",
-                fontWeight: "bold",
-                color: "#878787",
-              }}
-            >
-              Undang
-            </button>
-            <button
-              style={{
-                padding: "10px",
-                width: "40%",
-                borderRadius: "10px",
-                fontSize: "15px",
-                borderColor: "#878787",
-                marginLeft: "20px",
-                marginTop: "10px",
-                marginBottom: "10px",
-                fontWeight: "bold",
-                color: "#878787",
-              }}
-            >
-              Seacrh
-            </button>
+            <button className={styles.buttonundang}>Undang</button>
+            <button className={styles.buttonundang}>Seacrh</button>
           </div>
         </div>
       </div>

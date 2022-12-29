@@ -12,6 +12,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Mengikuti from "./komponen/mengikuti";
 import Pengikut from "./komponen/pengikuti";
+import styles from "../styles/style.module.css";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
@@ -29,428 +30,245 @@ function Profile() {
   const router = useRouter();
   return (
     <div>
-      <header
-        style={{
-          backgroundColor: "#043F75",
-          padding: "5px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <header className={styles.header}>
         <img
+          className={styles.logota}
           src="/img/LogoTA.png"
           height="20px"
           width="90px"
-          style={{
-            marginTop: "20px",
-            marginBottom: "10px",
-            marginLeft: "50px",
-          }}
         />
         <nav
-          style={{
-            marginRight: "100px",
-          }}
+          className={styles.nav}
         >
-          <img
-            src="/img/indonesia.png"
-            style={{
-              width: "30px",
-              marginLeft: "50px",
-              marginBottom: "5px",
-            }}
-          />
-          <img
-            src="/img/fire.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
-          <img
-            src="/img/diamond.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
-          <img
-            src="/img/profile.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
+          <img className={styles.logoindonesia} src="/img/indonesia.png" />
+          <img className={styles.logofire} src="/img/fire.png" />
+          <img className={styles.logodiamond} src="/img/diamond.png" />
+          <img className={styles.logoprofile} src="/img/profile.png" />
         </nav>
       </header>
       <div
-        style={{
-          display: "flex",
-        }}
+        className={styles.div1}
       >
         <div
-          style={{
-            width: "20%",
-            textAlign: "center",
-            marginTop: "25px",
-            marginLeft: "50px",
-          }}
+           className={styles.div2}
         >
           <button
+            className={styles.buttonbelajar2}
             onClick={() => router.push("/belajar")}
-            style={{
-              display: "flex",
-              padding: "5px",
-              width: "70%",
-              backgroundColor: "#B7D8F7",
-              color: "#369DD7",
-              borderColor: "#369DD7",
-              borderRadius: "10px",
-            }}
           >
             <img
+              className={styles.imgbelajar}
               src="/img/Belajar.png"
               height="50px"
               width="50px"
-              style={{ marginTop: "5px", marginLeft: "10px" }}
             />
             <p
-              style={{
-                marginLeft: "20px",
-                fontSize: "20px",
-              }}
+               className={styles.pbelajar}
             >
               Belajar
             </p>
           </button>
           <button
+            className={styles.buttontoko2}
             onClick={() => router.push("/toko")}
-            style={{
-              display: "flex",
-              padding: "5px",
-              width: "70%",
-              marginTop: "25px",
-              backgroundColor: "white",
-              border: "none",
-            }}
           >
             <img
+              className={styles.imgbelajar}
               src="/img/Toko.png"
               height="50px"
               width="50px"
-              style={{ marginTop: "7px", marginLeft: "10px" }}
             />
             <p
-              style={{
-                marginLeft: "20px",
-                fontSize: "20px",
-              }}
+               className={styles.pbelajar}
             >
               Toko
             </p>
           </button>
         </div>
         <div
-          style={{
-            width: "80%",
-            marginTop: "25px",
-            marginBottom: "50px",
-          }}
+          className={styles.div29}
         >
-          <div
-            style={{ display: "flex", marginLeft: "30px", marginRight: "30px" }}
+          <div className={styles.div30}
           >
-            <div style={{ width: "20%" }}>
+            <div className={styles.div31}>
               <AccountCircleIcon style={{ width: "180px", height: "180px" }} />
             </div>
-            <div style={{ width: "55%" }}>
+            <div className={styles.div31}>
               <h1>Leosandy Wahyu Rismono</h1>
-              <h3 style={{ color: "#BCBCBC" }}>Leosandy</h3>
-              <div style={{ display: "flex" }}>
-                <AccessTimeIcon style={{ color: "#BCBCBC" }} />
+              <h3 className={styles.color}>Leosandy</h3>
+              <div className={styles.div1}>
+                <AccessTimeIcon className={styles.color} />
                 <p
-                  style={{
-                    color: "#BCBCBC",
-                    marginLeft: "15px",
-                    marginTop: "3px",
-                  }}
+                   className={styles.bergabung}
                 >
                   Bergabung Oktober 2022
                 </p>
               </div>
-              <div style={{ display: "flex" }}>
-                <GroupsIcon style={{ color: "#BCBCBC" }} />
+              <div className={styles.div1}>
+                <GroupsIcon  className={styles.color} />
                 <p
-                  style={{
-                    color: "#BCBCBC",
-                    marginLeft: "15px",
-                    marginTop: "3px",
-                  }}
+                  className={styles.bergabung}
                 >
                   0 Mengikuti / 0 Pengikut
                 </p>
               </div>
             </div>
-            <div style={{ width: "20%", display: "contents" }}>
-              <button
-                style={{
-                  marginTop: "25px",
-                  width: "14%",
-                  height: "25%",
-                  display: "flex",
-                  justifyContent: "center",
-                  borderRadius: "15px",
-                  backgroundColor: "#6BB7FE",
-                  color: "white",
-                  border: "none",
-                  fontWeight: "600",
-                  padding: "7px",
-                }}
-              >
-                <EditIcon style={{ marginTop: "9px" }} />
-                <p style={{ marginLeft: "5px" }}>EDIT PROFILE</p>
+            <div className={styles.div32}>
+              <button className={styles.buttoneditprofile}>
+                <EditIcon className={styles.editicon} />
+                <p className={styles.editprofile}>EDIT PROFILE</p>
               </button>
             </div>
           </div>
-          <hr width="85%" style={{ marginRight: "140px" }} />
-          <div style={{ marginLeft: "40px", display: "flex" }}>
-            <div style={{ width: "60%" }}>
+          <hr width="85%" className={styles.hr2} />
+          <div className={styles.div33}  >
+            <div className={styles.div34} >
               <h2>Statistik</h2>
-              <div style={{ display: "flex" }}>
-                <button
-                  style={{
-                    padding: "10px",
-                    width: "40%",
-                    display: "flex",
-                    borderRadius: "15px",
-                    borderColor: "#878787",
-                    backgroundColor: "white",
-                  }}
-                >
-                  <img
+              <div className={styles.div1} >
+                <button className={styles.buttonfire}>
+                  <img  className={styles.imgfire}
                     src="/img/fire.png"
                     width="30px"
                     height="30px"
-                    style={{ marginTop: "20px", marginLeft: "20px" }}
                   />
                   <div>
                     <p style={{ marginLeft: "-70px" }}>0</p>
-                    <p style={{ color: "#BCBCBC", marginLeft: "20px" }}>
+                    <p className={styles.posisitigabesar}>
                       Runtunan hari ini
                     </p>
                   </div>
                 </button>
                 <button
-                  style={{
-                    padding: "10px",
-                    marginLeft: "70px",
-                    width: "40%",
-                    display: "flex",
-                    borderRadius: "15px",
-                    borderColor: "#878787",
-                    backgroundColor: "white",
-                  }}
+                  className={styles.buttonfire2}
                 >
                   <img
                     src="/img/petir.png"
                     width="30px"
                     height="30px"
-                    style={{ marginTop: "20px", marginLeft: "20px" }}
+                    className={styles.imgfire}
                   />
                   <div>
-                    <p style={{ marginLeft: "-22px" }}>0</p>
-                    <p style={{ color: "#BCBCBC", marginLeft: "20px" }}>
+                    <p className={styles.o}>0</p>
+                    <p className={styles.posisitigabesar}>
                       Total XP
                     </p>
                   </div>
                 </button>
               </div>
               <div style={{ display: "flex", marginTop: "30px" }}>
-                <button
-                  style={{
-                    padding: "10px",
-                    width: "40%",
-                    display: "flex",
-                    borderRadius: "15px",
-                    borderColor: "#878787",
-                    backgroundColor: "white",
-                  }}
-                >
+                <button className={styles.buttonfire}>
                   <img
                     src="/img/perunggu.png"
                     width="30px"
                     height="30px"
-                    style={{ marginTop: "20px", marginLeft: "20px" }}
+                    className={styles.imgfire}
                   />
                   <div>
                     <p style={{ marginLeft: "5px" }}>Perunggu</p>
-                    <p style={{ color: "#BCBCBC", marginLeft: "20px" }}>
+                    <p className={styles.posisitigabesar}>
                       Liga saat ini
                     </p>
                   </div>
                 </button>
                 <button
-                  style={{
-                    padding: "10px",
-                    marginLeft: "70px",
-                    width: "40%",
-                    display: "flex",
-                    borderRadius: "15px",
-                    borderColor: "#878787",
-                    backgroundColor: "white",
-                  }}
+                  className={styles.buttonfire}
+                  style={{ marginLeft: "70px" }}
                 >
                   <img
                     src="/img/medalsatu.png"
                     width="30px"
                     height="30px"
-                    style={{ marginTop: "20px", marginLeft: "20px" }}
+                    className={styles.imgfire}
                   />
                   <div>
                     <p style={{ marginLeft: "-75px" }}>0</p>
-                    <p style={{ color: "#BCBCBC", marginLeft: "20px" }}>
+                    <p className={styles.posisitigabesar}>
                       Posisi Tiga Besar
                     </p>
                   </div>
                 </button>
               </div>
               <h2>Pencapaian</h2>
-              <button
-                style={{
-                  padding: "15px",
-                  width: "90%",
-                  display: "flex",
-                  marginTop: "20px",
-                  borderColor: "#BCBCBC",
-                  backgroundColor: "white",
-                }}
-              >
+              <button className={styles.buttonmembara}>
                 <div>
                   <img src="/img/membara.png" width="100px" heigth="100px" />
-                  <p style={{ marginTop: "-30px", color: "white" }}>Level 1</p>
+                  <p className={styles.level2} >Level 1</p>
                 </div>
                 <div>
-                  <h2 style={{}}>Membara</h2>
+                  <h2>Membara</h2>
                   <div style={{ display: "-webkit-box" }}>
                     <BorderLinearProgress variant="determinate" value={100} />
-                    <span style={{ marginLeft: "20px", fontSize: "15px" }}>
+                    <span className={styles.dua}>
                       2/3
                     </span>
                   </div>
-                  <p style={{ color: "#BCBCBC", marginLeft: "35px" }}>
+                  <p  className={styles.capairuntunan}>
                     Capai Runtuan 3 Hari
                   </p>
                 </div>
               </button>
-              <button
-                style={{
-                  padding: "15px",
-                  width: "90%",
-                  display: "flex",
-                  marginTop: "-10px",
-                  borderColor: "#BCBCBC",
-                  backgroundColor: "white",
-                }}
-              >
+              <button className={styles.buttonsarjana}>
                 <div>
-                  <img
-                    src="/img/orang bijak.png"
-                    width="100px"
-                    heigth="100px"
-                  />
-                  <p style={{ marginTop: "-30px", color: "white" }}>Level 1</p>
+                  <img src="/img/orang bijak.png" width="100px" heigth="100px" />
+                  <p className={styles.level2} >Level 1</p>
                 </div>
                 <div>
-                  <h2 style={{}}>Orang Bijak</h2>
+                  <h2>Orang Bijak</h2>
                   <div style={{ display: "-webkit-box" }}>
                     <BorderLinearProgress variant="determinate" value={100} />
-                    <span style={{ marginLeft: "20px", fontSize: "15px" }}>
+                    <span className={styles.dua}>
                       2/3
                     </span>
                   </div>
-                  <p style={{ color: "#BCBCBC", marginLeft: "35px" }}>
+                  <p  className={styles.capairuntunan}>
                     Capai Runtuan 3 Hari
                   </p>
                 </div>
               </button>
-              <button
-                style={{
-                  padding: "15px",
-                  width: "90%",
-                  display: "flex",
-                  marginTop: "-10px",
-                  borderColor: "#BCBCBC",
-                  backgroundColor: "white",
-                }}
-              >
+              <button className={styles.buttonsarjana}>
                 <div>
                   <img src="/img/sarjana.png" width="100px" heigth="100px" />
-                  <p style={{ marginTop: "-30px", color: "white" }}>Level 1</p>
+                  <p className={styles.level2} >Level 1</p>
                 </div>
                 <div>
-                  <h2 style={{}}>Sarjana</h2>
+                  <h2>Sarjana</h2>
                   <div style={{ display: "-webkit-box" }}>
                     <BorderLinearProgress variant="determinate" value={100} />
-                    <span style={{ marginLeft: "20px", fontSize: "15px" }}>
+                    <span className={styles.dua}>
                       2/3
                     </span>
                   </div>
-                  <p style={{ color: "#BCBCBC", marginLeft: "35px" }}>
+                  <p  className={styles.capairuntunan}>
                     Capai Runtuan 3 Hari
                   </p>
                 </div>
               </button>
               <button
                 onClick={() => router.push("/lihatsemua")}
-                style={{
-                  display: "flex",
-                  width: "90%",
-                  justifyContent: "space-between",
-                  backgroundColor: "white",
-                  marginTop: "-10px",
-                  borderColor: "#BCBCBC",
-                }}
+                className={styles.buttonsarjana}
               >
-                <h3>Lihat Semua</h3>
-                <KeyboardArrowRightIcon style={{ marginTop: "13px" }} />
+                <h3 className={styles.semua}>Lihat Semua</h3>
+                <KeyboardArrowRightIcon className={styles.keyboard} />
               </button>
-              <hr
-                style={{
-                  width: "90%",
-                  marginLeft: "-1px",
-                  color: "black",
-                  marginTop: "50px",
-                }}
+              <hr  className={styles.hr3} 
               />
               <div
-                style={{
-                  display: "flex",
-                  marginLeft: "40px",
-                  marginTop: "30px",
-                }}
+                className={styles.div35} 
               >
-                <p style={{ marginLeft: "30px" }}>Tentang</p>
-                <p style={{ marginLeft: "30px" }}>Sekolah</p>
-                <p style={{ marginLeft: "30px" }}>Aplikasi</p>
-                <p style={{ marginLeft: "30px" }}>Toko</p>
-                <p style={{ marginLeft: "30px" }}>Efikasi</p>
-                <p style={{ marginLeft: "30px" }}>Bantuan</p>
+                <p className={styles.sekolah} >Tentang</p>
+                <p className={styles.sekolah}>Sekolah</p>
+                <p className={styles.sekolah}>Aplikasi</p>
+                <p className={styles.sekolah}>Toko</p>
+                <p className={styles.sekolah}>Efikasi</p>
+                <p className={styles.sekolah}>Bantuan</p>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  marginLeft: "80px",
-                  marginBottom: "80px",
-                }}
+              <div className={styles.div36}
               >
-                <p style={{ marginLeft: "30px" }}>Panduan </p>
-                <p style={{ marginLeft: "30px" }}>Karier</p>
-                <p style={{ marginLeft: "30px" }}>Invertor</p>
-                <p style={{ marginLeft: "30px" }}>Ketentuan</p>
-                <p style={{ marginLeft: "30px" }}>Privasi</p>
+                <p className={styles.sekolah}>Panduan </p>
+                <p className={styles.sekolah}>Karier</p>
+                <p className={styles.sekolah}>Invertor</p>
+                <p className={styles.sekolah}>Ketentuan</p>
+                <p className={styles.sekolah}>Privasi</p>
               </div>
             </div>
             <div style={{ width: "40%" }}>
@@ -494,17 +312,7 @@ function Profile() {
                 {selectedMenu === "pengikut" && <Pengikut />}
               </button>
               <br />
-              <button
-                style={{
-                  borderColor: "#878787",
-                  backgroundColor: "white",
-                  borderRadius: "10px",
-                  marginTop: "20px",
-                  padding: "5px",
-                  display: "flex",
-                  width: "70%",
-                }}
-              >
+              <button className={styles.buttonteman}>
                 <img
                   src="/img/temukan teman.png"
                   width="30px"
@@ -528,16 +336,7 @@ function Profile() {
                   style={{ marginLeft: "50px", marginTop: "30px" }}
                 />
               </button>
-              <button
-                style={{
-                  borderColor: "#878787",
-                  backgroundColor: "white",
-                  borderRadius: "10px",
-                  marginTop: "20px",
-                  display: "flex",
-                  width: "70%",
-                }}
-              >
+              <button className={styles.buttonundangteman}>
                 <img
                   src="/img/undang teman.png"
                   width="30px"
@@ -562,17 +361,7 @@ function Profile() {
                   style={{ marginTop: "30px", marginRight: "25px" }}
                 />
               </button>
-              <button
-                style={{
-                  borderColor: "#878787",
-                  backgroundColor: "white",
-                  borderRadius: "10px",
-                  marginTop: "20px",
-                  padding: "5px",
-                  display: "flex",
-                  width: "70%",
-                }}
-              >
+              <button className={styles.buttonundangteman}>
                 <img
                   src="/img/facebook.png"
                   width="30px"

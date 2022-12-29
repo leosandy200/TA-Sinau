@@ -5,6 +5,7 @@ import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
 import { useRouter } from "next/router";
+import styles from "../styles/style.module.css";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
@@ -21,67 +22,23 @@ function Belajar() {
   const router = useRouter();
   return (
     <div>
-      <header
-        style={{
-          backgroundColor: "#043F75",
-          padding: "5px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <header className={styles.header}>
         <img
+          className={styles.logota}
           src="/img/LogoTA.png"
           height="20px"
           width="90px"
-          style={{
-            marginTop: "20px",
-            marginBottom: "10px",
-            marginLeft: "50px",
-          }}
         />
-        <nav
-          style={{
-            marginRight: "100px",
-          }}
+        <nav  className={styles.nav}
         >
-          <img
-            src="/img/indonesia.png"
-            style={{
-              width: "30px",
-              marginLeft: "50px",
-              marginBottom: "5px",
-            }}
-          />
-          <img
-            src="/img/fire.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
-          <img
-            src="/img/diamond.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
-          <img
-            src="/img/profile.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
+          <img className={styles.logoindonesia} src="/img/indonesia.png" />
+          <img className={styles.logofire} src="/img/fire.png" />
+          <img className={styles.logodiamond} src="/img/diamond.png" />
+          <img className={styles.logoprofile} src="/img/profile.png" />
         </nav>
       </header>
       <div
-        style={{
-          display: "flex",
-        }}
+        className={styles.div1}
       >
         <div
           style={{
@@ -93,13 +50,7 @@ function Belajar() {
         >
           <button
             onClick={() => router.push("/belajar")}
-            style={{
-              display: "flex",
-              padding: "5px",
-              width: "80%",
-              backgroundColor: "white",
-              border: "none",
-            }}
+            className={styles.buttonbelajar2}
           >
             <img
               src="/img/Belajar.png"
@@ -118,14 +69,8 @@ function Belajar() {
           </button>
           <button
             onClick={() => router.push("/toko")}
+            className={styles.buttonbelajar}
             style={{
-              display: "flex",
-              padding: "5px",
-              width: "80%",
-              backgroundColor: "#B7D8F7",
-              color: "#369DD7",
-              borderColor: "#369DD7",
-              borderRadius: "10px",
               marginTop: "25px",
             }}
           >
@@ -164,31 +109,13 @@ function Belajar() {
             <img src="/img/dksl.png" height="100px" width="100px" />
             <div style={{ marginLeft: "20px", marginTop: "-20px" }}>
               <h3>Pembeku Runtunan</h3>
-              <button
-                style={{
-                  borderRadius: "15px",
-                  borderColor: "#EEEEEE",
-                  padding: "10px",
-                }}
-              >
-                0 / 2 DIPAKAI
-              </button>
+              <button className={styles.buttonpakai}>0 / 2 DIPAKAI</button>
               <p>
                 Pembeku Runtunan mencegah runtunanmu hilang <br /> meskipun
                 tidak beraktivitas selama sehari penuh.
               </p>
             </div>
-            <button
-              style={{
-                borderRadius: "15px",
-                borderColor: "#EEEEEE",
-                padding: "10px",
-                height: "20%",
-                backgroundColor: "white",
-                color: "#878787",
-                textAlign: "center",
-              }}
-            >
+            <button className={styles.buttondapat}>
               DAPATKAN SATU : <br />
               10
             </button>
@@ -203,33 +130,13 @@ function Belajar() {
             <img src="/img/dksl.png" height="100px" width="100px" />
             <div style={{ marginLeft: "20px", marginTop: "-20px" }}>
               <h3>Ganda atau Hamba</h3>
-              <button
-                style={{
-                  borderRadius: "15px",
-                  borderColor: "#EEEEEE",
-                  padding: "10px",
-                }}
-              >
-                0 / 2 DIPAKAI
-              </button>
+              <button className={styles.buttonpakai}>0 / 2 DIPAKAI</button>
               <p>
                 Gandakan taruhan lima lingotmu dengan <br /> mempertahanksn
                 runtunan selama tujuh hari.
               </p>
             </div>
-            <button
-              style={{
-                borderRadius: "15px",
-                borderColor: "#EEEEEE",
-                padding: "10px",
-                height: "20%",
-                backgroundColor: "white",
-                color: "#DE513C",
-                textAlign: "center",
-                marginLeft: "50px",
-                width: "15%",
-              }}
-            >
+            <button className={styles.buttontaruhkan}>
               TARUHKAN : <br /> 10
             </button>
           </div>
@@ -262,230 +169,95 @@ function Belajar() {
             <p style={{ marginLeft: "30px" }}>Privasi</p>
           </div>
         </div>
-        <div
-          style={{
-            width: "30%",
-            marginTop: "25px",
-            marginRight: "50px",
-            marginLeft: "0",
-          }}
+        <div className={styles.div7}
         >
-          <div
-            style={{
-              border: "1px #878787 solid",
-              borderRadius: "20px",
-              width: "90%",
-            }}
+          <div className={styles.div8}
           >
-            <img
+            <img 
+            className={styles.imgmedal}
               src="/img/medal.png"
               height="100px"
               width="200px"
-              style={{
-                display: "block",
-                marginLeft: "auto",
-                marginRight: "auto",
-                marginTop: "20px",
-              }}
             />
-            <h3
-              style={{
-                textAlign: "center",
-                fontWeight: "bold",
-              }}
+            <h3 className={styles.h3bukapapan}
             >
               Buka Papan Peringkat !
             </h3>
-            <p
-              style={{
-                color: "#878787",
-                textAlign: "center",
-                fontSize: "14px",
-              }}
+            <p className={styles.lengkapipelajaran}
             >
               Lengkapi 5 pelajaran lagi untuk memulai kompetisi
             </p>
           </div>
-          <div
-            style={{
-              border: "1px #878787 solid",
-              borderRadius: "20px",
-              width: "90%",
-              marginTop: "25px",
-              paddingBottom: "10px",
-            }}
+          <div className={styles.div9}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginLeft: "20px",
-                marginRight: "20px",
-                fontWeight: "bold",
-              }}
+            <div className={styles.div10}
             >
               <p>Progress XP</p>
-              <p style={{ color: "#369DD7" }}>EDIT TARGET</p>
+              <p className={styles.edittarget}>EDIT TARGET</p>
             </div>
-            <div style={{ display: "flex", marginLeft: "20px" }}>
+            <div className={styles.div11}>
               <img src="/img/Harta Karun.png" height="50px" width="50px" />
-              <p
-                style={{
-                  marginLeft: "20px",
-                  color: "#BCBCBC",
-                  marginTop: "0px",
-                }}
+              <p className={styles.targetharian}
               >
                 Target Harian
               </p>
             </div>
-            <div style={{ display: "flex", marginTop: "-15px" }}>
+            <div className={styles.div12}>
               <BorderLinearProgress variant="determinate" value={100} />
-              <p
-                style={{
-                  marginLeft: "10px",
-                  color: "#BCBCBC",
-                  marginTop: "-5px",
-                  fontSize: "12px",
-                }}
+              <p  className={styles.xp}
               >
                 24 / 10 XP
               </p>
             </div>
           </div>
-          <div
-            style={{
-              border: "1px #878787 solid",
-              borderRadius: "20px",
-              width: "90%",
-              marginTop: "25px",
-              paddingBottom: "10px",
-            }}
+          <div className={styles.div13}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginLeft: "20px",
-                marginRight: "20px",
-                fontWeight: "bold",
-              }}
+            <div className={styles.div14}
             >
               <p>Pencapaian Selanjutnya</p>
-              <p style={{ color: "#369DD7" }}>lihat semua</p>
+              <p className={styles.lihatsemua}>lihat semua</p>
             </div>
-            <div style={{ display: "flex", marginLeft: "20px" }}>
+            <div className={styles.pecapaianselanjutnya}>
               <img
                 src="/img/Pencapaian Selanjutnya.png"
                 height="50px"
                 width="50px"
               />
-              <p
-                style={{
-                  marginLeft: "20px",
-                  color: "#BCBCBC",
-                  marginTop: "0px",
-                }}
-              >
+              <p className={styles.targetharian}>
                 Target Harian
               </p>
             </div>
-            <div style={{ display: "flex", marginTop: "-15px" }}>
+            <div className={styles.div12}>
               <BorderLinearProgress variant="determinate" value={100} />
               <p
-                style={{
-                  marginLeft: "10px",
-                  color: "#BCBCBC",
-                  marginTop: "-5px",
-                  fontSize: "12px",
-                }}
+                className={styles.xp}
               >
                 24 / 10 XP
               </p>
             </div>
           </div>
-          <div
-            style={{
-              border: "1px #878787 solid",
-              borderRadius: "20px",
-              width: "90%",
-              marginTop: "25px",
-              paddingBottom: "10px",
-            }}
+          <div className={styles.div15}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                marginLeft: "20px",
-                marginRight: "20px",
-                fontWeight: "bold",
-              }}
+            <div className={styles.div16}
             >
               <p>Teman</p>
-              <p style={{ color: "#369DD7" }}>Total XP</p>
+              <p className={styles.totalxp}>Total XP</p>
             </div>
             <hr />
-            <div
-              style={{
-                display: "flex",
-                marginLeft: "20px",
-                paddingTop: "10px",
-              }}
+            <div className={styles.div17}
             >
               <img src="/img/Icon Teman.png" height="50px" width="50px" />
-              <p
-                style={{
-                  marginLeft: "20px",
-                  color: "#878787",
-                  marginTop: "10px",
-                }}
-              >
+              <p className={styles.leosandy}>
                 Leosandy Wahyu Rismono
               </p>
-              <p
-                style={{
-                  marginLeft: "20px",
-                  color: "#878787",
-                  marginTop: "10px",
-                }}
+              <p className={styles.leosandy}
               >
                 0 XP
               </p>
             </div>
             <hr />
-            <button
-              style={{
-                padding: "10px",
-                width: "40%",
-                borderRadius: "10px",
-                fontSize: "15px",
-                borderColor: "#878787",
-                marginLeft: "20px",
-                marginTop: "10px",
-                marginBottom: "10px",
-                fontWeight: "bold",
-                color: "#878787",
-              }}
-            >
-              Undang
-            </button>
-            <button
-              style={{
-                padding: "10px",
-                width: "40%",
-                borderRadius: "10px",
-                fontSize: "15px",
-                borderColor: "#878787",
-                marginLeft: "20px",
-                marginTop: "10px",
-                marginBottom: "10px",
-                fontWeight: "bold",
-                color: "#878787",
-              }}
-            >
-              Seacrh
-            </button>
+            <button className={styles.buttonundang}>Undang</button>
+            <button className={styles.buttonundang}>Seacrh</button>
           </div>
         </div>
       </div>

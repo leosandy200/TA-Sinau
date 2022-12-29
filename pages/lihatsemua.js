@@ -4,6 +4,7 @@ import LinearProgress, {
   linearProgressClasses,
 } from "@mui/material/LinearProgress";
 import { styled } from "@mui/material/styles";
+import styles from "../styles/style.module.css";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
@@ -19,440 +20,281 @@ function LihatSemua() {
   const router = useRouter();
   return (
     <div>
-      <header
-        style={{
-          backgroundColor: "#043F75",
-          padding: "5px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+      <header className={styles.header}>
         <img
+          className={styles.logota}
           src="/img/LogoTA.png"
           height="20px"
           width="90px"
-          style={{
-            marginTop: "20px",
-            marginBottom: "10px",
-            marginLeft: "50px",
-          }}
         />
         <nav
-          style={{
-            marginRight: "100px",
-          }}
+          className={styles.nav}
         >
-          <img
-            src="/img/indonesia.png"
-            style={{
-              width: "30px",
-              marginLeft: "50px",
-              marginBottom: "5px",
-            }}
-          />
-          <img
-            src="/img/fire.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
-          <img
-            src="/img/diamond.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
-          <img
-            src="/img/profile.png"
-            style={{
-              width: "30px",
-              marginTop: "10px",
-              marginLeft: "50px",
-            }}
-          />
+          <img className={styles.logoindonesia} src="/img/indonesia.png" />
+          <img className={styles.logofire} src="/img/fire.png" />
+          <img className={styles.logodiamond} src="/img/diamond.png" />
+          <img className={styles.logoprofile} src="/img/profile.png" />
         </nav>
       </header>
       <div
-        style={{
-          display: "flex",
-        }}
+         className={styles.div1}
       >
         <div
-          style={{
-            width: "20%",
-            textAlign: "center",
-            marginTop: "25px",
-            marginLeft: "50px",
-          }}
+         className={styles.div2}
         >
           <button
+            className={styles.buttonbelajar2}
             onClick={() => router.push("/belajar")}
-            style={{
-              display: "flex",
-              padding: "5px",
-              width: "70%",
-              backgroundColor: "#B7D8F7",
-              color: "#369DD7",
-              borderColor: "#369DD7",
-              borderRadius: "10px",
-            }}
           >
             <img
+              className={styles.imgbelajar}
               src="/img/Belajar.png"
               height="50px"
               width="50px"
-              style={{ marginTop: "5px", marginLeft: "10px" }}
             />
             <p
-              style={{
-                marginLeft: "20px",
-                fontSize: "20px",
-              }}
+              className={styles.pbelajar}
             >
               Belajar
             </p>
           </button>
           <button
+            className={styles.buttontoko2}
             onClick={() => router.push("/toko")}
-            style={{
-              display: "flex",
-              padding: "5px",
-              width: "70%",
-              marginTop: "25px",
-              backgroundColor: "white",
-              border: "none",
-            }}
           >
             <img
+              className={styles.imgbelajar}
               src="/img/Toko.png"
               height="50px"
               width="50px"
-              style={{ marginTop: "7px", marginLeft: "10px" }}
             />
             <p
-              style={{
-                marginLeft: "20px",
-                fontSize: "20px",
-              }}
+              className={styles.pbelajar}
             >
               Toko
             </p>
           </button>
         </div>
         <div
-          style={{
-            width: "80%",
-            marginTop: "25px",
-            marginBottom: "50px",
-          }}
+           className={styles.div18}
         >
           <h1>Semua Pencapaian</h1>
-          <button
-            style={{
-              width: "80%",
-              padding: "5px",
-              marginTop: "30px",
-              borderColor: "#BCBCBC",
-              backgroundColor: "white",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "15%" }}>
-                <img
+          <button className={styles.button1}>
+            <div className={styles.div19} >
+              <div  className={styles.div20}>
+                <img className={styles.icon}
                   src="/img/membara.png"
                   width="80px"
                   heigth="80px"
-                  style={{ marginTop: "15px" }}
                 />
-                <p style={{ marginTop: "-25px", color: "white" }}>Level 1</p>
+                <p className={styles.level1}>Level 1</p>
               </div>
-              <div style={{ width: "85%", display: "grid" }}>
-                <h2 style={{ textAlign: "left" }}>Membara</h2>
-                <div style={{ display: "flex" }}>
+              <div className={styles.div21}>
+                <h2 className={styles.text}>Membara</h2>
+                <div className={styles.div19}>
                   <BorderLinearProgress variant="determinate" value={100} />
-                  <span style={{ marginLeft: "20px" }}>2 / 3</span>
+                  <span className={styles.span}>2 / 3</span>
                 </div>
-                <p style={{ textAlign: "left", color: "#BCBCBC" }}>
+                <p className={styles.capai}>
                   Capai Runtuan 3 Hari
                 </p>
               </div>
             </div>
           </button>
-          <button
-            style={{
-              width: "80%",
-              padding: "5px",
-              borderColor: "#BCBCBC",
-              backgroundColor: "white",
-              marginTop: "-10px",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "15%" }}>
-                <img
+          <button className={styles.button}>
+            <div className={styles.div19} >
+              <div  className={styles.div20}>
+                <img className={styles.icon}
                   src="/img/orang bijak.png"
                   width="80px"
                   heigth="80px"
-                  style={{ marginTop: "15px" }}
                 />
-                <p style={{ marginTop: "-25px", color: "white" }}>Level 1</p>
+                <p className={styles.level1}>Level 1</p>
               </div>
-              <div style={{ width: "85%", display: "grid" }}>
-                <h2 style={{ textAlign: "left" }}>Orang Bijak</h2>
-                <div style={{ display: "flex" }}>
+              <div className={styles.div21}>
+                <h2 className={styles.text}>Orang Bijak</h2>
+                <div className={styles.div19}>
                   <BorderLinearProgress variant="determinate" value={100} />
-                  <span style={{ marginLeft: "20px" }}>2 / 3</span>
+                  <span className={styles.span}>2 / 3</span>
                 </div>
-                <p style={{ textAlign: "left", color: "#BCBCBC" }}>
-                  Dapatkan 500 kata dalam satu khursus
+                <p className={styles.capai}>
+                  Capai Runtuan 3 Hari
                 </p>
               </div>
             </div>
           </button>
-          <button
-            style={{
-              width: "80%",
-              padding: "5px",
-              borderColor: "#BCBCBC",
-              backgroundColor: "white",
-              marginTop: "-10px",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "15%" }}>
-                <img
+          <button className={styles.button}>
+            <div className={styles.div19} >
+              <div  className={styles.div20}>
+                <img className={styles.icon}
                   src="/img/sarjana.png"
                   width="80px"
                   heigth="80px"
-                  style={{ marginTop: "15px" }}
                 />
-                <p style={{ marginTop: "-25px", color: "white" }}>Level 1</p>
+                <p className={styles.level1}>Level 1</p>
               </div>
-              <div style={{ width: "85%", display: "grid" }}>
-                <h2 style={{ textAlign: "left" }}>Sarjana</h2>
-                <div style={{ display: "flex" }}>
+              <div className={styles.div21}>
+                <h2 className={styles.text}>Sarjana</h2>
+                <div className={styles.div19}>
                   <BorderLinearProgress variant="determinate" value={100} />
-                  <span style={{ marginLeft: "20px" }}>2 / 3</span>
+                  <span className={styles.span}>2 / 3</span>
                 </div>
-                <p style={{ textAlign: "left", color: "#BCBCBC" }}>
-                  Pelajari 500 kata dalam satu khursus
+                <p className={styles.capai}>
+                  Capai Runtuan 3 Hari
                 </p>
               </div>
             </div>
           </button>
-          <button
-            style={{
-              width: "80%",
-              padding: "5px",
-              borderColor: "#BCBCBC",
-              backgroundColor: "white",
-              marginTop: "-10px",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "15%" }}>
-                <img
+          <button className={styles.button}>
+            <div className={styles.div19} >
+              <div  className={styles.div20}>
+                <img className={styles.icon}
                   src="/img/juara.png"
                   width="80px"
                   heigth="80px"
-                  style={{ marginTop: "15px" }}
                 />
-                <p style={{ marginTop: "-25px", color: "white" }}>Level 1</p>
+                <p className={styles.level1}>Level 1</p>
               </div>
-              <div style={{ width: "85%", display: "grid" }}>
-                <h2 style={{ textAlign: "left" }}>Juara</h2>
-                <div style={{ display: "flex" }}>
+              <div className={styles.div21}>
+                <h2 className={styles.text}>Juara</h2>
+                <div className={styles.div19}>
                   <BorderLinearProgress variant="determinate" value={100} />
-                  <span style={{ marginLeft: "20px" }}>2 / 3</span>
+                  <span className={styles.span}>2 / 3</span>
                 </div>
-                <p style={{ textAlign: "left", color: "#BCBCBC" }}>
-                  Buka Papan Skor dengan menyelesaikan 10 pelajaran
+                <p className={styles.capai}>
+                  Capai Runtuan 3 Hari
                 </p>
               </div>
             </div>
           </button>
-          <button
-            style={{
-              width: "80%",
-              padding: "5px",
-              borderColor: "#BCBCBC",
-              backgroundColor: "white",
-              marginTop: "-10px",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "15%" }}>
-                <img
-                  src="/img/MenembakJitu.png"
+          <button className={styles.button}>
+            <div className={styles.div19} >
+              <div  className={styles.div20}>
+                <img className={styles.icon}
+                  src="/img/menembakjitu.png"
                   width="80px"
                   heigth="80px"
-                  style={{ marginTop: "15px" }}
                 />
-                <p style={{ marginTop: "-25px", color: "white" }}>Level 1</p>
+                <p className={styles.level1}>Level 1</p>
               </div>
-              <div style={{ width: "85%", display: "grid" }}>
-                <h2 style={{ textAlign: "left" }}>Menembak Jitu</h2>
-                <div style={{ display: "flex" }}>
+              <div className={styles.div21}>
+                <h2 className={styles.text}>Menembak Jitu</h2>
+                <div className={styles.div19}>
                   <BorderLinearProgress variant="determinate" value={100} />
-                  <span style={{ marginLeft: "20px" }}>2 / 3</span>
+                  <span className={styles.span}>2 / 3</span>
                 </div>
-                <p style={{ textAlign: "left", color: "#BCBCBC" }}>
-                  Selesaikan 1 pelajaran tanpa kesalahan
+                <p className={styles.capai}>
+                  Capai Runtuan 3 Hari
                 </p>
               </div>
             </div>
           </button>
-          <button
-            style={{
-              width: "80%",
-              padding: "5px",
-              borderColor: "#BCBCBC",
-              backgroundColor: "white",
-              marginTop: "-10px",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "15%" }}>
-                <img
-                  src="/img/orang bijak.png"
+          <button className={styles.button}>
+            <div className={styles.div19} >
+              <div  className={styles.div20}>
+                <img className={styles.icon}
+                  src="/img/pemenang.png"
                   width="80px"
                   heigth="80px"
-                  style={{ marginTop: "15px" }}
                 />
-                <p style={{ marginTop: "-25px", color: "white" }}>Level 1</p>
+                <p className={styles.level1}>Level 1</p>
               </div>
-              <div style={{ width: "85%", display: "grid" }}>
-                <h2 style={{ textAlign: "left" }}>Pemenang</h2>
-                <div style={{ display: "flex" }}>
+              <div className={styles.div21}>
+                <h2 className={styles.text}>Pemenang</h2>
+                <div className={styles.div19}>
                   <BorderLinearProgress variant="determinate" value={100} />
-                  <span style={{ marginLeft: "20px" }}>2 / 3</span>
+                  <span className={styles.span}>2 / 3</span>
                 </div>
-                <p style={{ textAlign: "left", color: "#BCBCBC" }}>
-                  Raih peringkat #1 di papan skormu
+                <p className={styles.capai}>
+                  Capai Runtuan 3 Hari
                 </p>
               </div>
             </div>
           </button>
-          <button
-            style={{
-              width: "80%",
-              padding: "5px",
-              borderColor: "#BCBCBC",
-              backgroundColor: "white",
-              marginTop: "-10px",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "15%" }}>
-                <img
+          <button className={styles.button}>
+            <div className={styles.div19} >
+              <div  className={styles.div20}>
+                <img className={styles.icon}
                   src="/img/legendaris.png"
                   width="80px"
                   heigth="80px"
-                  style={{ marginTop: "15px" }}
                 />
-                <p style={{ marginTop: "-25px", color: "white" }}>Level 1</p>
+                <p className={styles.level1}>Level 1</p>
               </div>
-              <div style={{ width: "85%", display: "grid" }}>
-                <h2 style={{ textAlign: "left" }}>Legendaris</h2>
-                <div style={{ display: "flex" }}>
+              <div className={styles.div21}>
+                <h2 className={styles.text}>Legendaris</h2>
+                <div className={styles.div19}>
                   <BorderLinearProgress variant="determinate" value={100} />
-                  <span style={{ marginLeft: "20px" }}>2 / 3</span>
+                  <span className={styles.span}>2 / 3</span>
                 </div>
-                <p style={{ textAlign: "left", color: "#BCBCBC" }}>
-                  Raih peringkat #1 di Liga Berlian
+                <p className={styles.capai}>
+                  Capai Runtuan 3 Hari
                 </p>
               </div>
             </div>
           </button>
-          <button
-            style={{
-              width: "80%",
-              padding: "5px",
-              borderColor: "#BCBCBC",
-              backgroundColor: "white",
-              marginTop: "-10px",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "15%" }}>
-                <img
+          <button className={styles.button}>
+            <div className={styles.div19} >
+              <div  className={styles.div20}>
+                <img className={styles.icon}
                   src="/img/supel.png"
                   width="80px"
                   heigth="80px"
-                  style={{ marginTop: "15px" }}
                 />
-                <p style={{ marginTop: "-25px", color: "white" }}>Level 1</p>
+                <p className={styles.level1}>Level 1</p>
               </div>
-              <div style={{ width: "85%", display: "grid" }}>
-                <h2 style={{ textAlign: "left" }}>Supel</h2>
-                <div style={{ display: "flex" }}>
+              <div className={styles.div21}>
+                <h2 className={styles.text}>Supel</h2>
+                <div className={styles.div19}>
                   <BorderLinearProgress variant="determinate" value={100} />
-                  <span style={{ marginLeft: "20px" }}>2 / 3</span>
+                  <span className={styles.span}>2 / 3</span>
                 </div>
-                <p style={{ textAlign: "left", color: "#BCBCBC" }}>
-                  Ikuti 3 teman
+                <p className={styles.capai}>
+                  Capai Runtuan 3 Hari
                 </p>
               </div>
             </div>
           </button>
-          <button
-            style={{
-              width: "80%",
-              padding: "5px",
-              borderColor: "#BCBCBC",
-              backgroundColor: "white",
-              marginTop: "-10px",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "15%" }}>
-                <img
+          <button className={styles.button}>
+            <div className={styles.div19} >
+              <div  className={styles.div20}>
+                <img className={styles.icon}
                   src="/img/kesatria akhir minggu.png"
                   width="80px"
                   heigth="80px"
-                  style={{ marginTop: "15px" }}
                 />
-                <p style={{ marginTop: "-25px", color: "white" }}>Level 1</p>
+                <p className={styles.level1}>Level 1</p>
               </div>
-              <div style={{ width: "85%", display: "grid" }}>
-                <h2 style={{ textAlign: "left" }}>Kesatria Akhir Minggu</h2>
-                <div style={{ display: "flex" }}>
+              <div className={styles.div21}>
+                <h2 className={styles.text}>Kesatria Akhir Minggu</h2>
+                <div className={styles.div19}>
                   <BorderLinearProgress variant="determinate" value={100} />
-                  <span style={{ marginLeft: "20px" }}>2 / 3</span>
+                  <span className={styles.span}>2 / 3</span>
                 </div>
-                <p style={{ textAlign: "left", color: "#BCBCBC" }}>
-                  Selesaikan satu pelajaran di hari Sabtu dan Minggu
+                <p className={styles.capai}>
+                  Capai Runtuan 3 Hari
                 </p>
               </div>
             </div>
           </button>
-          <button
-            style={{
-              width: "80%",
-              padding: "5px",
-              borderColor: "#BCBCBC",
-              backgroundColor: "white",
-              marginTop: "-10px",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <div style={{ width: "15%" }}>
-                <img
-                  src="/img/foto genik.png"
+          <button className={styles.button}>
+            <div className={styles.div19} >
+              <div  className={styles.div20}>
+                <img className={styles.icon}
+                  src="/img/Foto genik.png"
                   width="80px"
                   heigth="80px"
-                  style={{ marginTop: "8px" }}
                 />
-                <p style={{ marginTop: "-25px", color: "white" }}>Level 1</p>
+                <p className={styles.level1}>Level 1</p>
               </div>
-              <div style={{ width: "85%", display: "grid" }}>
-                <h2 style={{ textAlign: "left" }}>Foto Genik</h2>
-                <p style={{ textAlign: "left", color: "#BCBCBC" }}>
-                  Kamu telah menambahkan foto profil
+              <div className={styles.div21}>
+                <h2 className={styles.text}>Foto Genik</h2>
+                <div className={styles.div19}>
+                  <BorderLinearProgress variant="determinate" value={100} />
+                  <span className={styles.span}>2 / 3</span>
+                </div>
+                <p className={styles.capai}>
+                  Capai Runtuan 3 Hari
                 </p>
               </div>
             </div>

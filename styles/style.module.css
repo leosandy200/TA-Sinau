@@ -1,0 +1,863 @@
+/* homepage */
+.background {
+  background-color: #043f75;
+}
+.logonavbar {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.div1hp {
+  display: flex;
+  justify-content: center;
+}
+.logohome {
+  margin-top: 80px;
+  margin-bottom: 120px;
+}
+.h2 {
+  color: white;
+  margin-left: 100px;
+  margin-top: 220px;
+}
+.buttonlogin {
+  width: 60%;
+  margin-left: 150px;
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #5594f3;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 18px;
+}
+.buttonregister {
+  background-color: #043f75;
+  width: 60%;
+  margin-left: 150px;
+  margin-top: 20px;
+  padding: 12px;
+  color: white;
+  border-radius: 20px;
+  border-color: white;
+  font-size: 18px;
+}
+/* regitser */
+.divakun{
+  text-align: center;
+}
+.h1buatakun{
+  text-align: center; 
+  margin-top: 100px
+}
+/* login */
+.header {
+  background-color: #043f75;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.logota {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 50px;
+}
+.buttondaftar {
+  border-color: #a4a4a4;
+  padding: 12px;
+  width: 10%;
+  border-radius: 20px;
+  color: #3689d7;
+  float: right;
+  background-color: white;
+  margin-top: 20px;
+  margin-right: 20px;
+  font-weight: 700;
+}
+.buttonemail {
+  background-color: #f3f3f3;
+  border-color: #a4a4a4;
+  color: #7d7d7d;
+  padding: 15px;
+  width: 25%;
+  border-radius: 20px;
+  text-align: left;
+  font-size: 15px;
+  margin-top: 20px;
+}
+.buttonmasuk {
+  background-color: #3689d7;
+  border-color: #3689d7;
+  color: white;
+  padding: 15px;
+  width: 25%;
+  border-radius: 20px;
+  font-size: 15px;
+  margin-top: 20px;
+}
+.buttonsosmed {
+  display: flex;
+  width: 12%;
+  border-color: #7d7d7d;
+  background-color: white;
+  border-radius: 20px;
+  justify-content: center;
+  height: 50px;
+}
+.hrlogin{
+  width: 9%;
+  height: 0px;
+  background-color:#7D7D7D;
+  margin-top: 30px;
+  margin-right: 30px
+}
+.hrlogin2{
+  width: 9%;
+  height: 0px;
+  background-color: #7D7D7D;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.divloginsosmed{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.ploginsosmed{
+  font-size: 15px;
+  color: #3B5998;
+  font-weight: 700;
+  margin-left: 5px
+}
+.bysigning{
+  margin-top: 20px; 
+  color: #7D7D7D
+}
+.divatau{
+  display: flex; 
+  margin-top: 20px
+}
+.patau{
+  font-size: 18px; font-weight: 700
+}
+/* navbar */
+.logoindonesia {
+  width: 30px;
+  margin-left: 50px;
+  margin-bottom: 5px;
+}
+.logofire {
+  width: 30px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+.logodiamond {
+  width: 30px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+.logoprofile {
+  width: 30px;
+  margin-top: 10px;
+  margin-left: 50px;
+}
+/* sitebar */
+.buttonbelajar {
+  display: flex;
+  padding: 5px;
+  width: 70%;
+  background-color: #b7d8f7;
+  color: #369dd7;
+  border-color: #369dd7;
+  border-radius: 10px;
+}
+.imgbelajar {
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.buttontoko {
+  display: flex;
+  padding: 5px;
+  width: 70%;
+  margin-top: 25px;
+  background-color: white;
+  border: none;
+  margin-left: 15px;
+}
+/* lihat semua*/
+.button1 {
+  width: 80%;
+  padding: 5px;
+  border-color: #bcbcbc;
+  background-color: white;
+  margin-top: 30px
+}
+.button {
+  width: 80%;
+  padding: 5px;
+  border-color: #bcbcbc;
+  background-color: white;
+  margin-top: -10px;
+}
+.div18{
+  width: 80%;
+  margin-top: 25px;
+  margin-bottom:50px
+}
+.div19{
+  display: flex;
+}
+.div20{
+  width: 15%;
+}
+.icon{
+  margin-top: 15px;
+}
+.level1{
+  margin-top:-25px; 
+  color: white
+}
+.div21{
+  width: 85%; 
+  display: grid
+}
+.text{
+  text-align: left;
+}
+.span{
+  margin-left: 20px
+}
+.capai{
+   text-align:left; color: #BCBCBC
+}
+/* setting */
+.buttonpilihberkas {
+  color: #6bb7fe;
+  background-color: white;
+  border-radius: 10px;
+  border-color: #bcbcbc;
+  padding: 2px;
+  width: 20%;
+  font-weight: 600;
+  font-size: 15px;
+  margin-left: 20px;
+}
+.input {
+  margin-left: 20px;
+  background-color: #ededed;
+  border-radius: 10px;
+  width: 120%;
+  padding: 15px;
+  margin-top: 10px;
+  border: none;
+}
+.buttonsimpanperubahan {
+  width: 40%;
+  border-radius: 15px;
+  background-color: #6bb7fe;
+  color: white;
+  border: none;
+  font-weight: 600;
+  margin-left: 190px;
+}
+.buttonprofile {
+  border-color: #878787;
+  background-color: white;
+  margin-top: 50px;
+  border-radius: 10px;
+  width: 85%;
+}
+.akun {
+  width: 85%;
+  border-radius: 20px;
+  border: none;
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+  font-size: 14px;
+  margin-left: 20px;
+}
+.buttonkeluar {
+  background-color: #6bb7fe;
+  color: white;
+  width: 85%;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  text-align: left;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.buttonexpordata {
+  background-color: #f6f2f2;
+  color: #878787;
+  width: 85%;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  text-align: left;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.buttonhapusakun {
+  background-color: #f6f2f2;
+  color: #de513c;
+  width: 85%;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  text-align: left;
+  margin-top: 20px;
+  font-weight: 600;
+}
+.div22{
+  display: flex; margin-left: 50px
+}
+.fotoprofile{
+  color: #878787; font-weight: 600
+}
+.tidakadaberkas{
+  color:#BCBCBC; 
+  font-size: 14px; 
+  margin-left: 155px
+}
+.nama{
+  color: #878787;
+  font-weight: 600;
+  margin-left: 45px;
+  margin-top: 18px
+}
+.namapengguna{
+  color: #878787;
+  font-weight: 600;
+  margin-top: 18px
+}
+.div23{
+  display: flex; margin-left: 12px; margin-top: 20px
+}
+.email{
+  color: #878787;
+  font-weight: 600;
+  margin-left: 80px;
+  margin-top: 18px
+}
+.blomverifiakasi{
+  color: #DE513C;
+  font-size: 13px;
+  margin-left: 160px;
+  font-weight: 600
+}
+.div24{
+  display: flex; margin-top: 20px
+}
+.masukfacebook{
+  color: #878787;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-left: 5px
+}
+.efeksuara{
+  color: #878787;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-left: 115px
+}
+.div24{
+  margin-top: 5px;
+}
+.latihanmendengar{
+  color: #878787;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-left: 55px
+}
+.hr{
+  width: 60%;
+  color: black;
+  margin-top: 50px;
+  margin-left: 0px
+}
+.div25{
+  display: flex;
+  margin-top: 30px;
+}
+.tentang{
+  margin-left: 30px;
+  color: #878787;
+}
+.div26{
+  display: flex;
+  margin-left: 35px;
+  margin-bottom: 80px
+}
+.div27{
+  width: 30%;
+  margin-top: 25px;
+  margin-right: 50px;
+  margin-left: 0
+}
+.imgprofile{
+  margin-top: 15px; margin-left: 20px
+}
+.div28{
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 600
+}
+.namaprofile{
+  margin-left: -15px;
+}
+.lihatprofile{
+  color:#6bb7fe;
+  margin-left: 15px;
+}
+/* belajar */
+.nav{
+  margin-right: 100px
+}
+.div1{
+  display: flex
+}
+.div2{
+  width: 20%;
+  text-align: center;
+  margin-top: 25px;
+  margin-left: 50px
+}
+.div3{
+  width: 60%;
+  margin-top: 25px;
+  position: relative;
+  left: 5%
+}
+.div4{
+  padding: 25px;
+  padding-bottom: 50px;
+  background-color: #58CC02;
+  border-radius: 20px;
+  width: 80%;
+  color: white
+}
+.divunit2{
+  padding: 25px;
+  padding-bottom: 50px;
+  background-color: #B94CFF;
+  border-radius: 20px;
+  width: 80%;
+  color: white;
+  margin-top: 50px;
+
+}
+.divunit3{
+  padding: 25px;
+  padding-bottom: 50px;
+  background-color: #00E0AB;
+  border-radius: 20px;
+  width: 80%;
+  color: white;
+  margin-top: 50px;
+}
+.div5{
+  display: flex;
+  justify-content: space-between
+}
+.unit{
+  margin: 0;
+}
+.BookIcon{
+  color: white; 
+  margin-top: 8px
+}
+.bukupanduan{
+  color: white;
+
+}
+.memahamifrasadasar{
+  float: left;
+  margin-top: 10px
+}
+.div6{
+  display: flex;
+  margin-top:40px;
+  position: relative;
+  left: 5%
+}
+.img{
+  margin-left: 80px
+}
+.pbelajar{
+  margin-left: 20px;
+  font-size: 20px
+}
+.buttonbukupanduan1 {
+  color: white;
+  background-color: #58cc02;
+  border-color: white;
+  border-radius: 10px;
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttonbukupanduan2 {
+  color: white;
+  background-color: #b94cff;
+  border-color: white;
+  border-radius: 10px;
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttonbukupanduan3 {
+  color: white;
+  background-color: #00e0ab;
+  border-color: white;
+  border-radius: 10px;
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttonbukupanduan4 {
+  color: white;
+  background-color: #58cc02;
+  border-color: white;
+  border-radius: 10px;
+  width: 25%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.buttonundang {
+  padding: 10px;
+  width: 40%;
+  border-radius: 10px;
+  font-size: 15px;
+  border-color: #878787;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #878787;
+}
+.div7{
+  width: 30%;
+  margin-top: 25px;
+  margin-right: 50px;
+  margin-left: 0
+}
+.div8{
+  border: 1px #878787 solid;
+  border-radius: 20px;
+  width: 90%
+}
+.imgmedal{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px
+}
+.h3bukapapan{
+  text-align: center;
+  font-weight: bold
+}
+.lengkapipelajaran{
+  color: "#878787";
+  text-align: center;
+  font-size: 14px
+}
+.div9{
+  border: 1px #878787 solid; 
+  border-radius: 20px;
+  width: 90%;
+  margin-top: 25px;
+  padding-bottom: 10px
+}
+.div10{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+}
+.edittarget{
+  color: #369DD7
+}
+.div11{
+  display: flex;
+  margin-left: 20px
+}
+.tagetharian{
+  margin-left: 20px;
+  color: #BCBCBC;
+  margin-top: 0px
+}
+.div12{
+  display: flex;
+  margin-top: -15px
+}
+.xp{
+  margin-left: 10px;
+  color: #BCBCBC;
+  margin-top: -5px;
+  font-size: 12px
+}
+.div13{
+  border: 1px #878787 solid;
+  border-radius: 20px;
+  width: 90%;
+  margin-top: 25px;
+  padding-bottom: 10px
+}
+.div14{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold
+}
+.lihatsemua{
+  color: #369DD7
+}
+.pecapaianselanjutnya{
+  display: flex; 
+  margin-left: 20px
+}
+.targetharian{
+  margin-left: 20px;
+  color: #BCBCBC;
+  margin-top: 0px
+}
+.div15{
+  border: 1px #878787 solid;
+  border-radius: 20px;
+  width: 90%;
+  margin-top: 25px;
+  padding-bottom: 10px
+}
+.div16{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold
+}
+.totalxp{
+ color: #369DD7
+}
+.div17{
+  display: flex;
+  margin-left: 20px;
+  padding-top: 10px
+}
+.leosandy{
+  margin-left: 20px;
+  color: #878787;
+  margin-top: 10px
+}
+/* toko */
+.buttontaruhkan {
+  border-radius: 15px;
+  border-color: #eeeeee;
+  padding: 10px;
+  height: 20%;
+  background-color: white;
+  color: #de513c;
+  text-align: center;
+  margin-left: 50px;
+  width: 15%;
+}
+.buttonpakai {
+  border-radius: 15px;
+  border-color: #eeeeee;
+  padding: 10px;
+}
+.buttondapat {
+  border-radius: 15px;
+  border-color: #eeeeee;
+  padding: 10px;
+  height: 20%;
+  background-color: white;
+  color: #878787;
+  text-align: center;
+}
+
+/* profile */
+.buttoneditprofile {
+  margin-top: 25px;
+  width: 14%;
+  height: 25%;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  background-color: #6bb7fe;
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 7px;
+  margin-left: 500px;
+}
+.buttonfire {
+  padding: 10px;
+  width: 40%;
+  display: flex;
+  border-radius: 15px;
+  border-color: #878787;
+  background-color: white;
+}
+.buttonmembara {
+  padding: 15px;
+  width: 90%;
+  display: flex;
+  margin-top: 20px;
+  border-color: #bcbcbc;
+  background-color: white;
+}
+.buttonsarjana {
+  padding: 15px;
+  width: 90%;
+  display: flex;
+  margin-top: -10px;
+  border-color: #bcbcbc;
+  background-color: white;
+}
+.buttonteman {
+  border-color: #878787;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 5px;
+  display: flex;
+  width: 70%;
+}
+.buttonundangteman {
+  border-color: #878787;
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: flex;
+  width: 70%;
+}
+.div29{
+  width: 80%;
+  margin-top: 25px;
+  margin-bottom: 50px
+}
+.div30{
+  display: flex; 
+  margin-left: 30px; 
+  margin-right: 30px
+}
+.div31{
+  width:20%
+}
+.div{
+  width: 55%;
+}
+.color{
+  color:#BCBCBC
+}
+.bergabung{
+  color: #BCBCBC;
+  margin-left: 15px;
+  margin-top: 3px
+}
+.div32{
+  width: 20%; display: contents
+}
+.editicon{
+  margin-top: 9px;
+}
+.editprofile{
+  margin-left: 5px;
+}
+.hr2{
+  margin-right: 140px;
+}
+.div33{
+  margin-left:40px; display: flex
+}
+.div34{
+  width: 60%;
+}
+.imgfire{
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.posisitigabesar{
+  color:#bcbcbc;
+  margin-left: 20px;
+}
+.buttonfire2{
+  margin-left: 70px;
+  padding: 10px;
+  width: 40%;
+  display: flex;
+  border-radius: 15px;
+  border-color: #878787;
+  background-color: white;
+}
+.o{
+  margin-left: -22px;
+
+}
+.level2{
+  margin-top: -30px; 
+  color: white
+}
+.dua{
+  margin-left: 20px; font-size: 15px
+}
+.capairuntunan{
+  color: #BCBCBC; margin-left: 35px
+}
+.semua{
+  margin-left: 5px;
+}
+.keyboard{
+  margin-top: 13px;
+}
+.hr3{
+  width: 90%;
+  margin-left: -1px;
+  color: black;
+  margin-top: 50px
+}
+.div35{
+  display: flex;
+  margin-left: 40px;
+  margin-top: 30px
+}
+.sekolah{
+  margin-left: 30px
+}
+.div36{
+  display: flex;
+  margin-left: 80px;
+  margin-bottom: 80px
+}
+/* sitebar2  */
+.buttonbelajar2 {
+  display: flex;
+  padding: 5px;
+  width: 70%;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+}
+.buttonbelajar3 {
+  display: flex;
+  padding: 5px;
+  width: 70%;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  margin-top: 25px;
+}
+.buttontoko2 {
+  display: flex;
+  padding: 5px;
+  width: 70%;
+  background-color: white;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+}
