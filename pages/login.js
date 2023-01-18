@@ -31,7 +31,6 @@ const Login = () => {
           const dataUser = response;
           setEmailOrUser("");
           setPassword("");
-          // setSuccess(true);
           console.log(dataUser);
   } catch (err) {
     if (!err?.response) {
