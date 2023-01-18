@@ -1,9 +1,55 @@
-import React from "react";
-import { useRouter } from "next/router";
+import { React, useState, useEffect, useContext, useRef } from "react";
 import styles from "../styles/style.module.css";
+import axios from "axios";
 
-function Login() {
-  const router = useRouter();
+const Login = () => {
+  const [emailOrUser, setEmailOrUser] = useState('');
+  const [password, setPassword] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+  const [success, setSuccess] = useState(false);
+
+  useEffect(() => {
+		setErrMsg('');
+	}, [emailOrUser, password]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+      try {
+            const response = await axios.post(
+              'https://testresfulapi.000webhostapp.com/api/login',
+              ({ emailOrUser, password}),
+              {
+                headers: {
+                  'Accept':'application/json',
+                  'Content-Type':'application/x-www-form-urlencoded'},
+                withCredentials: false,
+              }
+
+          );
+
+          const dataUser = response;
+          setEmailOrUser("");
+          setPassword("");
+          // setSuccess(true);
+          console.log(dataUser);
+  } catch (err) {
+    if (!err?.response) {
+          setErrMsg('No Server Response');
+    } else if (err.response?.status === 400) {
+          setErrMsg('Missing Username, Email Or Password'); 
+    } else if (err.response?.status === 401 ) {
+      setErrMsg ('Unauthorized'); 
+    } else {
+      setErrMsg('Login Failed');
+    }
+    
+  }
+
+};
+
+
+
   return (
     <div>
       <header className={styles.header}>
@@ -23,25 +69,34 @@ function Login() {
       <br />
       <div style={{ textAlign: "center" }}>
         <h1 style={{ textAlign: "center", marginTop: "100px" }}>MASUK</h1>
-        <form action="" method="post">
+        <form onSubmit={handleSubmit} >
           <input
-            type="text"
+            type="text" 
+            id="emailOrUser"
+            onChange={(e) => setEmailOrUser(e.target.value)}
             className={styles.buttonemail}
             placeholder="Email or Username"
+            value={emailOrUser}
+            
           />
           <br></br>
           <input
-            type="Password"
+            type="password" 
+            id="password"
+            onChange={(e) => setPassword(e.target.value)}
             className={styles.buttonemail}
-            placeholder="Password "
+            placeholder="Password"
+            value={password}
+           
           />
+          <br></br>
+          <button
+            type="submit"
+            className={styles.buttonmasuk}>
+            Masuk
+          </button>
         </form>
-        <button
-          className={styles.buttonmasuk}
-          onClick={() => router.push("/belajar")}
-        >
-          Masuk
-        </button>
+
         <br />
         <div className={styles.divatau}>
           <hr className={styles.hrlogin}
@@ -77,5 +132,7 @@ function Login() {
       </div>
     </div>
   );
-}
+};
+
 export default Login;
+
