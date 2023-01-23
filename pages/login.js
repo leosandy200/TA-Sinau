@@ -1,15 +1,17 @@
 import { React, useState, useEffect, useContext, useRef } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import styles from "../styles/style.module.css";
 import axios from "axios";
+import Belajar from "./belajar";
+
+
 
 const Login = () => {
   const [emailOrUser, setEmailOrUser] = useState('');
   const [password, setPassword] = useState('');
   const [errMsg, setErrMsg] = useState('');
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-		setErrMsg('');
 	}, [emailOrUser, password]);
 
   const handleSubmit = async (e) => {
@@ -25,30 +27,38 @@ const Login = () => {
                   'Content-Type':'application/x-www-form-urlencoded'},
                 withCredentials: false,
               }
-
           );
+          // const token = response?.data?.auth?.token;
+          // localStorage.setItem('tokenFromStorage', token);
+          // const tokenStorage = localStorage.getItem('tokenFromStorage')
+          if ('token' in response?.data?.auth) {
+            const tokenUser = response?.data?.auth?.token;
+            localStorage.setItem('UserToken', tokenUser);
+            window.location.href ="/belajar";
+          } else {
+            console.log("Login Failed")
+          }
 
-          const dataUser = response;
-          setEmailOrUser("");
-          setPassword("");
-          console.log(dataUser);
-  } catch (err) {
-    if (!err?.response) {
-          setErrMsg('No Server Response');
-    } else if (err.response?.status === 400) {
-          setErrMsg('Missing Username, Email Or Password'); 
-    } else if (err.response?.status === 401 ) {
-      setErrMsg ('Unauthorized'); 
+            // if(!tokenStorage) {
+            //   return <Login/>
+            // }
+                    
+          // const tokenStorage = localStorage.getItem('tokenFromStorage')
+          // console.log(tokenStorage)    
+
+  } catch (response) {
+    if (!response) {
+        console.log('No Server Response');
+    } else if (response?.data?.status === 400) {
+        console.log('Missing Username, Email Or Password'); 
+    } else if (response?.data?.status === 401 ) {
+        console.log('Unauthorized'); 
     } else {
-      setErrMsg('Login Failed');
+       console.log('Login Failed');
     }
-    
-  }
+  };
 
 };
-
-
-
   return (
     <div>
       <header className={styles.header}>
@@ -125,8 +135,7 @@ const Login = () => {
           </button>
         </div>
         <p className={styles.bysigning}>
-          By signing in to Duolingo, you agree to our <b>Terms</b> <br /> and
-          <b>Privacy Policy.</b>
+          By signing in to Sinau, you agree to our <b>Terms</b> <br/> and<b> Privacy Policy.</b>
         </p>
       </div>
     </div>
