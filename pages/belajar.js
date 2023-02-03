@@ -91,7 +91,7 @@ function Belajar() {
             <img
               onClick={handleClickOpen}
               className={styles.img}
-              src="/img/star.png"
+              src="/img/lockgreen.png"
               height="80px"
               width="80px"
             />
@@ -119,7 +119,7 @@ function Belajar() {
             />
             <img
               className={styles.img}
-              src="/img/Bonus.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -127,19 +127,19 @@ function Belajar() {
           <div className={styles.div6}>
             <img
               className={styles.img}
-              src="/img/book.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
             <img
               className={styles.img}
-              src="/img/piala.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
             <img
               className={styles.img}
-              src="/img/kunci.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -163,7 +163,7 @@ function Belajar() {
           <div className={styles.div6}>
             <img
               className={styles.img}
-              src="/img/starungu.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -175,7 +175,7 @@ function Belajar() {
             />
             <img
               className={styles.img}
-              src="/img/Bonus.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -183,19 +183,19 @@ function Belajar() {
           <div className={styles.div6}>
             <img
               className={styles.img}
-              src="/img/book.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
             <img
               className={styles.img}
-              src="/img/piala.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
             <img
               className={styles.img}
-              src="/img/kunci.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -214,7 +214,7 @@ function Belajar() {
           <div className={styles.div6}>
             <img
               className={styles.img}
-              src="/img/startosca.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -226,7 +226,7 @@ function Belajar() {
             />
             <img
               className={styles.img}
-              src="/img/Bonus.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -234,19 +234,19 @@ function Belajar() {
           <div className={styles.div6}>
             <img
               className={styles.img}
-              src="/img/book.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
             <img
               className={styles.img}
-              src="/img/piala.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
             <img
               className={styles.img}
-              src="/img/kunci.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -265,7 +265,7 @@ function Belajar() {
           <div className={styles.div6}>
             <img
               className={styles.img}
-              src="/img/star.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -277,7 +277,7 @@ function Belajar() {
             />
             <img
               className={styles.img}
-              src="/img/Bonus.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -285,19 +285,19 @@ function Belajar() {
           <div className={styles.div6}>
             <img
               className={styles.img}
-              src="/img/book.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
             <img
               className={styles.img}
-              src="/img/piala.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
             <img
               className={styles.img}
-              src="/img/kunci.png"
+              src="/img/lock.png"
               height="80px"
               width="80px"
             />
@@ -333,7 +333,8 @@ function Belajar() {
           <div className={styles.div13}>
             <div className={styles.div14}>
               <p>Pencapaian Selanjutnya</p>
-              <p   onClick={() => router.push("/lihatsemua")} className={styles.lihatsemua}>lihat semua</p>
+              <p   onClick={() => router.push("/lihatsemua")} 
+              className={styles.lihatsemua}>lihat semua</p>
             </div>
             <div className={styles.pecapaianselanjutnya}>
               <img

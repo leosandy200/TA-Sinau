@@ -116,7 +116,8 @@ function Profile() {
             <div className={styles.div32}>
               <button className={styles.buttoneditprofile}>
                 <EditIcon className={styles.editicon} />
-                <p className={styles.editprofile}>EDIT PROFILE</p>
+                <p onClick={() => router.push("/setting")} 
+                className={styles.editprofile}>EDIT PROFILE </p>
               </button>
             </div>
           </div>
