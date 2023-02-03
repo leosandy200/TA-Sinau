@@ -333,7 +333,7 @@ function Belajar() {
           <div className={styles.div13}>
             <div className={styles.div14}>
               <p>Pencapaian Selanjutnya</p>
-              <p className={styles.lihatsemua}>lihat semua</p>
+              <p   onClick={() => router.push("/lihatsemua")} className={styles.lihatsemua}>lihat semua</p>
             </div>
             <div className={styles.pecapaianselanjutnya}>
               <img

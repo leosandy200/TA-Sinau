@@ -9,6 +9,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [password_confirmation, setPasswordConfirmation] = useState("");
+  const router = useRouter();
 
   useEffect(() => { }, [namaUser, email, password, password_confirmation]);
 
@@ -87,7 +88,8 @@ const Register = () => {
             onChange={(e) => setPasswordConfirmation(e.target.value)}
           />
           <br />
-          <button
+          <button   
+            onClick={() => router.push("/login")}
             className={styles.buttonmasuk}
             type="submit">
             Masuk
