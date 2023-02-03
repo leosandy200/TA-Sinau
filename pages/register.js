@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import { useRouter } from "next/router";
 import styles from "../styles/style.module.css";
+import axios from "axios";
 
-function Register() {
-  const router = useRouter();
+const Register = () => {
+  const [namaUser, setNamaUser] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [password_confirmation, setPasswordConfirmation] = useState("");
+
+  useEffect(() => { }, [namaUser, email, password, password_confirmation]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        'http://192.168.43.157:8000/api/register',
+        ({ namaUser, email, password, password_confirmation }),
+        {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+          },
+        }
+      );
+      console.log(response)
+
+
+    } catch (response) {
+
+    }
+  };
   return (
     <div>
       <header className={styles.header}>
@@ -22,41 +49,50 @@ function Register() {
         MASUK
       </button>
       <br />
-      <div  className={styles.divakun}>
-        <h1  className={styles.h1buatakun}>BUAT AKUN</h1>
-        <form action="" method="post">
+      <div className={styles.divakun}>
+        <h1 className={styles.h1buatakun}>BUAT AKUN</h1>
+        <form onSubmit={handleSubmit}>
+          <br></br>
           <input
-            type="text"
             className={styles.buttonemail}
-            placeholder="Umur"
+            type="text"
+            id="Nama"
+            placeholder="Nama"
+            onChange={(e) => setNamaUser(e.target.value)}
+            value={namaUser}
           />
           <br></br>
           <input
-            type="text"
             className={styles.buttonemail}
-            placeholder="Nama (Opsional)"
-          />
-          <br></br>
-          <input
             type="text"
-            className={styles.buttonemail}
+            id="Email"
             placeholder="Email"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
           <br></br>
           <input
-            type="password"
             className={styles.buttonemail}
+            type="password"
+            id="Password"
             placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
           />
+          <br></br>
+          <input
+            className={styles.buttonemail}
+            type="password"
+            id="Konfirmasi Password"
+            placeholder="Konfirmasi Password"
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
+          />
+          <br />
+          <button
+            className={styles.buttonmasuk}
+            type="submit">
+            Masuk
+          </button>
         </form>
-        <br />
-        <button
-          className={styles.buttonmasuk}
-          onClick={() => router.push("/login")}
-        >
-          Masuk
-        </button>
-        <br />
         <div className={styles.divatau}>
           <hr className={styles.hrlogin}
           />
@@ -85,11 +121,11 @@ function Register() {
           </button>
         </div>
         <p className={styles.bysigning}>
-          By signing in to Duolingo, you agree to our <b>Terms</b> <br /> and
-          <b>Privacy Policy.</b>
+          By registering to Sinau, you agree to our <b>Terms</b> <br /> and
+          <b> Privacy Policy.</b>
         </p>
       </div>
     </div>
   );
-}
+};
 export default Register;
