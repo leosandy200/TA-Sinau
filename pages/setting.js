@@ -244,7 +244,8 @@ function Setting() {
               <div className={styles.div28}
               >
                 <p className={styles.namaprofile}>LeoSandy</p>
-                <p className={styles.lihatprofile}>
+                <p onClick={() => router.push("/profile")}
+                  className={styles.lihatprofile}>
                   Lihat Profilmu
                 </p>
               </div>
