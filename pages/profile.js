@@ -302,7 +302,7 @@ function Profile() {
                   <p
                     onClick={() => setSelectedMenu("pengikut")}
                     style={{
-                      color: selectedMenu === "pe" ? "black" : "#878787",
+                      color: selectedMenu === "pengikut" ? "black" : "#878787",
                     }}
                   >
                     Pengikut

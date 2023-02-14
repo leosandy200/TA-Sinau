@@ -2,20 +2,6 @@ import { Fragment } from "react";
 import styles from "../../styles/style.module.css";
 
 function AnswerMethod({ answers, type, handleAnswer, selectedAnswer }) {
-  /*  if (type === 2) {
-    return (
-      <Fragment>
-        <button className={styles.buttonkonten2}>I</button>
-        <button className={styles.btnkonten2}>you</button>
-        <br />
-        <button className={styles.buttonkonten2}>I</button>
-        <button className={styles.btnkonten2}>you</button>
-        <br />
-        <button className={styles.buttonkonten2}>I</button>
-        <button className={styles.btnkonten2}>you</button>
-      </Fragment>
-    );
-  } */
   if (type === 3) {
     console.log(selectedAnswer);
     return (

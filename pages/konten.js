@@ -234,10 +234,6 @@ function Konten() {
           </button>
           <button
             onClick={() => {
-              if (content.type === 2) {
-                setStep(step + 1);
-                return;
-              }
               setIsCheckAnswer(true);
             }}
             className={styles.buttonperiksa}
