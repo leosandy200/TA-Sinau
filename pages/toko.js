@@ -34,7 +34,8 @@ function Belajar() {
           <img className={styles.logoindonesia} src="/img/indonesia.png" />
           <img className={styles.logofire} src="/img/fire.png" />
           <img className={styles.logodiamond} src="/img/diamond.png" />
-          <img className={styles.logoprofile} src="/img/profile.png" />
+          <img onClick={() => router.push("/profile")} 
+          className={styles.logoprofile} src="/img/profile.png" />
         </nav>
       </header>
       <div
@@ -132,7 +133,7 @@ function Belajar() {
               <h3>Ganda atau Hamba</h3>
               <button className={styles.buttonpakai}>0 / 2 DIPAKAI</button>
               <p>
-                Gandakan taruhan lima lingotmu dengan <br /> mempertahanksn
+                Gandakan taruhan lima lingotmu dengan <br /> mempertahankan
                 runtunan selama tujuh hari.
               </p>
             </div>
@@ -215,7 +216,8 @@ function Belajar() {
             <div className={styles.div14}
             >
               <p>Pencapaian Selanjutnya</p>
-              <p className={styles.lihatsemua}>lihat semua</p>
+              <p  onClick={() => router.push("/lihatsemua")} 
+              className={styles.lihatsemua}>lihat semua</p>
             </div>
             <div className={styles.pecapaianselanjutnya}>
               <img

@@ -42,12 +42,12 @@
   font-size: 18px;
 }
 /* regitser */
-.divakun{
+.divakun {
   text-align: center;
 }
-.h1buatakun{
-  text-align: center; 
-  margin-top: 100px
+.h1buatakun {
+  text-align: center;
+  margin-top: 100px;
 }
 /* login */
 .header {
@@ -103,41 +103,42 @@
   justify-content: center;
   height: 50px;
 }
-.hrlogin{
+.hrlogin {
   width: 9%;
   height: 0px;
-  background-color:#7D7D7D;
+  background-color: #7d7d7d;
   margin-top: 30px;
-  margin-right: 30px
+  margin-right: 30px;
 }
-.hrlogin2{
+.hrlogin2 {
   width: 9%;
   height: 0px;
-  background-color: #7D7D7D;
+  background-color: #7d7d7d;
   margin-top: 30px;
   margin-left: 30px;
 }
-.divloginsosmed{
+.divloginsosmed {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
-.ploginsosmed{
+.ploginsosmed {
   font-size: 15px;
-  color: #3B5998;
+  color: #3b5998;
   font-weight: 700;
-  margin-left: 5px
+  margin-left: 5px;
 }
-.bysigning{
-  margin-top: 20px; 
-  color: #7D7D7D
+.bysigning {
+  margin-top: 20px;
+  color: #7d7d7d;
 }
-.divatau{
-  display: flex; 
-  margin-top: 20px
+.divatau {
+  display: flex;
+  margin-top: 20px;
 }
-.patau{
-  font-size: 18px; font-weight: 700
+.patau {
+  font-size: 18px;
+  font-weight: 700;
 }
 /* navbar */
 .logoindonesia {
@@ -189,7 +190,7 @@
   padding: 5px;
   border-color: #bcbcbc;
   background-color: white;
-  margin-top: 30px
+  margin-top: 30px;
 }
 .button {
   width: 80%;
@@ -198,36 +199,37 @@
   background-color: white;
   margin-top: -10px;
 }
-.div18{
+.div18 {
   width: 80%;
   margin-top: 25px;
-  margin-bottom:50px
+  margin-bottom: 50px;
 }
-.div19{
+.div19 {
   display: flex;
 }
-.div20{
+.div20 {
   width: 15%;
 }
-.icon{
+.icon {
   margin-top: 15px;
 }
-.level1{
-  margin-top:-25px; 
-  color: white
+.level1 {
+  margin-top: -25px;
+  color: white;
 }
-.div21{
-  width: 85%; 
-  display: grid
+.div21 {
+  width: 85%;
+  display: grid;
 }
-.text{
+.text {
   text-align: left;
 }
-.span{
-  margin-left: 20px
+.span {
+  margin-left: 20px;
 }
-.capai{
-   text-align:left; color: #BCBCBC
+.capai {
+  text-align: left;
+  color: #bcbcbc;
 }
 /* setting */
 .buttonpilihberkas {
@@ -258,6 +260,15 @@
   border: none;
   font-weight: 600;
   margin-left: 190px;
+}
+.buttonsimpanperubahan2 {
+  width: 20%;
+  border-radius: 15px;
+  background-color: #6bb7fe;
+  color: white;
+  border: none;
+  font-weight: 600;
+  margin-left: 155px;
 }
 .buttonprofile {
   border-color: #878787;
@@ -310,185 +321,189 @@
   margin-top: 20px;
   font-weight: 600;
 }
-.div22{
-  display: flex; margin-left: 50px
+.div22 {
+  display: flex;
+  margin-left: 50px;
 }
-.fotoprofile{
-  color: #878787; font-weight: 600
+.fotoprofile {
+  color: #878787;
+  font-weight: 600;
 }
-.tidakadaberkas{
-  color:#BCBCBC; 
-  font-size: 14px; 
-  margin-left: 155px
+.tidakadaberkas {
+  color: #bcbcbc;
+  font-size: 14px;
+  margin-left: 155px;
 }
-.nama{
+.nama {
   color: #878787;
   font-weight: 600;
   margin-left: 45px;
-  margin-top: 18px
+  margin-top: 18px;
 }
-.namapengguna{
+.namapengguna {
   color: #878787;
   font-weight: 600;
-  margin-top: 18px
+  margin-top: 18px;
 }
-.div23{
-  display: flex; margin-left: 12px; margin-top: 20px
+.div23 {
+  display: flex;
+  margin-left: 12px;
+  margin-top: 20px;
 }
-.email{
+.email {
   color: #878787;
   font-weight: 600;
   margin-left: 80px;
-  margin-top: 18px
+  margin-top: 18px;
 }
-.blomverifiakasi{
-  color: #DE513C;
+.blomverifiakasi {
+  color: #de513c;
   font-size: 13px;
   margin-left: 160px;
-  font-weight: 600
+  font-weight: 600;
 }
-.div24{
-  display: flex; margin-top: 20px
+.div24 {
+  display: flex;
+  margin-top: 20px;
 }
-.masukfacebook{
+.masukfacebook {
   color: #878787;
   font-weight: 600;
   margin-top: 15px;
-  margin-left: 5px
+  margin-left: 5px;
 }
-.efeksuara{
+.efeksuara {
   color: #878787;
   font-weight: 600;
   margin-top: 15px;
-  margin-left: 115px
+  margin-left: 115px;
 }
-.div24{
+.div24 {
   margin-top: 5px;
 }
-.latihanmendengar{
+.latihanmendengar {
   color: #878787;
   font-weight: 600;
   margin-top: 15px;
-  margin-left: 55px
+  margin-left: 55px;
 }
-.hr{
+.hr {
   width: 60%;
   color: black;
   margin-top: 50px;
-  margin-left: 0px
+  margin-left: 0px;
 }
-.div25{
+.div25 {
   display: flex;
   margin-top: 30px;
 }
-.tentang{
+.tentang {
   margin-left: 30px;
   color: #878787;
 }
-.div26{
+.div26 {
   display: flex;
   margin-left: 35px;
-  margin-bottom: 80px
+  margin-bottom: 80px;
 }
-.div27{
+.div27 {
   width: 30%;
   margin-top: 25px;
   margin-right: 50px;
-  margin-left: 0
+  margin-left: 0;
 }
-.imgprofile{
-  margin-top: 15px; margin-left: 20px
+.imgprofile {
+  margin-top: 15px;
+  margin-left: 20px;
 }
-.div28{
+.div28 {
   margin-top: 10px;
   margin-left: 10px;
   font-size: 16px;
-  font-weight: 600
+  font-weight: 600;
 }
-.namaprofile{
+.namaprofile {
   margin-left: -15px;
 }
-.lihatprofile{
-  color:#6bb7fe;
+.lihatprofile {
+  color: #6bb7fe;
   margin-left: 15px;
 }
 /* belajar */
-.nav{
-  margin-right: 100px
+.nav {
+  margin-right: 100px;
 }
-.div1{
-  display: flex
+.div1 {
+  display: flex;
 }
-.div2{
+.div2 {
   width: 20%;
   text-align: center;
   margin-top: 25px;
-  margin-left: 50px
+  margin-left: 50px;
 }
-.div3{
+.div3 {
   width: 60%;
   margin-top: 25px;
   position: relative;
-  left: 5%
+  left: 5%;
 }
-.div4{
+.div4 {
   padding: 25px;
   padding-bottom: 50px;
-  background-color: #58CC02;
-  border-radius: 20px;
-  width: 80%;
-  color: white
-}
-.divunit2{
-  padding: 25px;
-  padding-bottom: 50px;
-  background-color: #B94CFF;
+  background-color: #58cc02;
   border-radius: 20px;
   width: 80%;
   color: white;
-  margin-top: 50px;
-
 }
-.divunit3{
+.divunit2 {
   padding: 25px;
   padding-bottom: 50px;
-  background-color: #00E0AB;
+  background-color: #b94cff;
   border-radius: 20px;
   width: 80%;
   color: white;
   margin-top: 50px;
 }
-.div5{
+.divunit3 {
+  padding: 25px;
+  padding-bottom: 50px;
+  background-color: #00e0ab;
+  border-radius: 20px;
+  width: 80%;
+  color: white;
+  margin-top: 50px;
+}
+.div5 {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
 }
-.unit{
+.unit {
   margin: 0;
 }
-.BookIcon{
-  color: white; 
-  margin-top: 8px
-}
-.bukupanduan{
+.BookIcon {
   color: white;
-
+  margin-top: 8px;
 }
-.memahamifrasadasar{
+.bukupanduan {
+  color: white;
+}
+.memahamifrasadasar {
   float: left;
-  margin-top: 10px
+  margin-top: 10px;
 }
-.div6{
+.div6 {
   display: flex;
-  margin-top:40px;
+  margin-top: 40px;
   position: relative;
-  left: 5%
+  left: 5%;
 }
-.img{
-  margin-left: 80px
+.img {
+  margin-left: 80px;
 }
-.pbelajar{
+.pbelajar {
   margin-left: 20px;
-  font-size: 20px
+  font-size: 20px;
 }
 .buttonbukupanduan1 {
   color: white;
@@ -538,120 +553,120 @@
   font-weight: bold;
   color: #878787;
 }
-.div7{
+.div7 {
   width: 30%;
   margin-top: 25px;
   margin-right: 50px;
-  margin-left: 0
+  margin-left: 0;
 }
-.div8{
+.div8 {
   border: 1px #878787 solid;
   border-radius: 20px;
-  width: 90%
+  width: 90%;
 }
-.imgmedal{
+.imgmedal {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px
+  margin-top: 20px;
 }
-.h3bukapapan{
+.h3bukapapan {
   text-align: center;
-  font-weight: bold
+  font-weight: bold;
 }
-.lengkapipelajaran{
+.lengkapipelajaran {
   color: "#878787";
   text-align: center;
-  font-size: 14px
+  font-size: 14px;
 }
-.div9{
-  border: 1px #878787 solid; 
+.div9 {
+  border: 1px #878787 solid;
   border-radius: 20px;
   width: 90%;
   margin-top: 25px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
 }
-.div10{
+.div10 {
   display: flex;
   justify-content: space-between;
   margin-left: 20px;
   margin-right: 20px;
   font-weight: bold;
 }
-.edittarget{
-  color: #369DD7
+.edittarget {
+  color: #369dd7;
 }
-.div11{
+.div11 {
   display: flex;
-  margin-left: 20px
-}
-.tagetharian{
   margin-left: 20px;
-  color: #BCBCBC;
-  margin-top: 0px
 }
-.div12{
+.tagetharian {
+  margin-left: 20px;
+  color: #bcbcbc;
+  margin-top: 0px;
+}
+.div12 {
   display: flex;
-  margin-top: -15px
+  margin-top: -15px;
 }
-.xp{
+.xp {
   margin-left: 10px;
-  color: #BCBCBC;
+  color: #bcbcbc;
   margin-top: -5px;
-  font-size: 12px
+  font-size: 12px;
 }
-.div13{
+.div13 {
   border: 1px #878787 solid;
   border-radius: 20px;
   width: 90%;
   margin-top: 25px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
 }
-.div14{
+.div14 {
   display: flex;
   justify-content: space-between;
   margin-left: 20px;
   margin-right: 20px;
-  font-weight: bold
+  font-weight: bold;
 }
-.lihatsemua{
-  color: #369DD7
+.lihatsemua {
+  color: #369dd7;
 }
-.pecapaianselanjutnya{
-  display: flex; 
-  margin-left: 20px
-}
-.targetharian{
+.pecapaianselanjutnya {
+  display: flex;
   margin-left: 20px;
-  color: #BCBCBC;
-  margin-top: 0px
 }
-.div15{
+.targetharian {
+  margin-left: 20px;
+  color: #bcbcbc;
+  margin-top: 0px;
+}
+.div15 {
   border: 1px #878787 solid;
   border-radius: 20px;
   width: 90%;
   margin-top: 25px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
 }
-.div16{
+.div16 {
   display: flex;
   justify-content: space-between;
   margin-left: 20px;
   margin-right: 20px;
-  font-weight: bold
+  font-weight: bold;
 }
-.totalxp{
- color: #369DD7
+.totalxp {
+  color: #369dd7;
 }
-.div17{
+.div17 {
   display: flex;
   margin-left: 20px;
-  padding-top: 10px
+  padding-top: 10px;
 }
-.leosandy{
+.leosandy {
   margin-left: 20px;
   color: #878787;
-  margin-top: 10px
+  margin-top: 10px;
 }
 /* toko */
 .buttontaruhkan {
@@ -736,57 +751,59 @@
   display: flex;
   width: 70%;
 }
-.div29{
+.div29 {
   width: 80%;
   margin-top: 25px;
-  margin-bottom: 50px
+  margin-bottom: 50px;
 }
-.div30{
-  display: flex; 
-  margin-left: 30px; 
-  margin-right: 30px
+.div30 {
+  display: flex;
+  margin-left: 30px;
+  margin-right: 30px;
 }
-.div31{
-  width:20%
+.div31 {
+  width: 20%;
 }
-.div{
+.div {
   width: 55%;
 }
-.color{
-  color:#BCBCBC
+.color {
+  color: #bcbcbc;
 }
-.bergabung{
-  color: #BCBCBC;
+.bergabung {
+  color: #bcbcbc;
   margin-left: 15px;
-  margin-top: 3px
+  margin-top: 3px;
 }
-.div32{
-  width: 20%; display: contents
+.div32 {
+  width: 20%;
+  display: contents;
 }
-.editicon{
+.editicon {
   margin-top: 9px;
 }
-.editprofile{
+.editprofile {
   margin-left: 5px;
 }
-.hr2{
+.hr2 {
   margin-right: 140px;
 }
-.div33{
-  margin-left:40px; display: flex
+.div33 {
+  margin-left: 40px;
+  display: flex;
 }
-.div34{
+.div34 {
   width: 60%;
 }
-.imgfire{
+.imgfire {
   margin-top: 20px;
   margin-left: 20px;
 }
-.posisitigabesar{
-  color:#bcbcbc;
+.posisitigabesar {
+  color: #bcbcbc;
   margin-left: 20px;
 }
-.buttonfire2{
+.buttonfire2 {
   margin-left: 70px;
   padding: 10px;
   width: 40%;
@@ -795,44 +812,45 @@
   border-color: #878787;
   background-color: white;
 }
-.o{
+.o {
   margin-left: -22px;
-
 }
-.level2{
-  margin-top: -30px; 
-  color: white
+.level2 {
+  margin-top: -30px;
+  color: white;
 }
-.dua{
-  margin-left: 20px; font-size: 15px
+.dua {
+  margin-left: 20px;
+  font-size: 15px;
 }
-.capairuntunan{
-  color: #BCBCBC; margin-left: 35px
+.capairuntunan {
+  color: #bcbcbc;
+  margin-left: 35px;
 }
-.semua{
+.semua {
   margin-left: 5px;
 }
-.keyboard{
+.keyboard {
   margin-top: 13px;
 }
-.hr3{
+.hr3 {
   width: 90%;
   margin-left: -1px;
   color: black;
-  margin-top: 50px
+  margin-top: 50px;
 }
-.div35{
+.div35 {
   display: flex;
   margin-left: 40px;
-  margin-top: 30px
+  margin-top: 30px;
 }
-.sekolah{
-  margin-left: 30px
+.sekolah {
+  margin-left: 30px;
 }
-.div36{
+.div36 {
   display: flex;
   margin-left: 80px;
-  margin-bottom: 80px
+  margin-bottom: 80px;
 }
 /* sitebar2  */
 .buttonbelajar2 {
@@ -902,6 +920,7 @@
 .CloseIcon {
   margin-top: 20px;
   color: #bababa;
+  cursor: pointer;
 }
 .BorderLinearProgress {
   width: 60%;
@@ -973,6 +992,7 @@
   width: 38%;
   padding: 18px;
   margin-top: 20px;
+  cursor: pointer;
 }
 /* keren */
 .divkeren1 {
@@ -1101,12 +1121,14 @@
   display: flex;
   justify-content: center;
   margin-top: 41px;
+  gap: 10px;
 }
 .div44 {
   display: flex;
   justify-content: center;
   margin-top: -85px;
   margin-bottom: 26px;
+  gap: 10px;
 }
 .buttonkonten3 {
   padding: 8px;
@@ -1114,6 +1136,7 @@
   background-color: white;
   border-radius: 8px;
   width: 5%;
+  cursor: pointer;
 }
 .btnkonten3 {
   padding: 8px;
@@ -1306,6 +1329,7 @@
   width: 200px;
   height: 200px;
   display: flex;
+  margin-left: 50px;
 }
 .buttoncekkartuu {
   background-color: #d7ffb8;
@@ -1342,13 +1366,68 @@
   margin-right: 15px;
 }
 .divcekkartu {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
   margin-top: 40px;
+  gap: 20px;
+  justify-content: center;
 }
 .divcekkartuu {
   display: flex;
   justify-content: center;
   margin-top: 40px;
   padding-bottom: 40px;
+}
+
+/* salah */
+.divsalah1 {
+  background-color: #ffdfe0;
+}
+.hrsalah {
+  width: 100%;
+  margin-top: 0px;
+}
+.divsalah2 {
+  margin-left: 200px;
+}
+.divsalah3 {
+  display: flex;
+}
+.imgsalah {
+  margin-top: 15px;
+}
+.h1salah {
+  color: #ea2b2b;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.divsalah4 {
+  display: flex;
+  margin-left: 110px;
+}
+.divsalah5 {
+  display: flex;
+  color: #f06161;
+}
+.OutlinedFlagIcon {
+  margin-top: 12px;
+}
+.divsalah6 {
+  display: flex;
+  color: #f06161;
+  margin-left: 15px;
+}
+.ChatBubbleOutlineOutlinedIcon {
+  margin-top: 12px;
+}
+.buttonlanjutansalah {
+  width: 8%;
+  border-radius: 5px;
+  background-color: #ff4b4b;
+  color: white;
+  border: none;
+  padding: 15px;
+  float: right;
+  margin-right: 60px;
+  margin-top: -122px;
 }

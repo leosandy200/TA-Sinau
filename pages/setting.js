@@ -199,6 +199,9 @@ function Setting() {
           >
             Email belum diverifikasi. Verifikasi Sekarang
           </p>
+          <button className={styles.buttonsimpanperubahan2}>
+            <p>Simpan Perubahan</p>
+          </button>
           <div className={styles.div24}>
             <div className={styles.div1}>
               <p className={styles.masukfacebook}
@@ -302,7 +305,8 @@ function Setting() {
               <div className={styles.div28}
               >
                 <p className={styles.namaprofile}>LeoSandy</p>
-                <p className={styles.lihatprofile}>
+                <p onClick={() => router.push("/profile")}
+                  className={styles.lihatprofile}>
                   Lihat Profilmu
                 </p>
               </div>
