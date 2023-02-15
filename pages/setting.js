@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import FormControl, { useFormControl } from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Switch from "@mui/material/Switch";
 import styles from "../styles/style.module.css";
+import axios from "axios";
 
 function MyFormHelperText() {
   const { focused } = useFormControl() || {};
@@ -11,8 +12,68 @@ function MyFormHelperText() {
 
 function Setting() {
   const router = useRouter();
+
+  const [token, setUserToken] = useState([]);
+
+  const [id, setId] = useState([]);
+
+
+
+  useEffect(() => {
+    const tokenUser = localStorage.getItem('token');
+    const idUser = localStorage.getItem('data');
+
+    setId(idUser)
+    setUserToken(tokenUser)
+    // console.log("asu")
+  }, []);
+
+
   const label = { inputProps: { "aria-label": "Switch demo" } };
   const [selectedMenu, setSelectedMenu] = useState("akun");
+
+  // console.log(userId)
+
+  // const handleLogout = async () => {
+  //   try {
+  //     const response = await axios.post(
+  //       'https://api.sinau-bahasa.my.id/api/logout',
+  //       ({userId}),
+  //       {
+  //         headers: {
+  //           'Accept': 'application/json',
+  //           'Authorization': userId
+  //         }
+  //       }
+  //     );
+
+  //   // localStorage.removeItem('data');
+  //   // localStorage.removeItem('token');
+  //   // router.push("/")
+
+  //   } catch (error) {
+
+  //   }
+  // }
+
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post('https://api.sinau-bahasa.my.id/api/logout', undefined,
+        {
+          headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`,
+          }
+        },
+      );
+      localStorage.removeItem("token");
+      localStorage.removeItem("data");
+      router.push("/");
+
+    } catch (error) {
+      console.log(error)
+    }
+  };
 
   return (
     <div>
@@ -29,14 +90,14 @@ function Setting() {
           <img className={styles.logoindonesia} src="/img/indonesia.png" />
           <img className={styles.logofire} src="/img/fire.png" />
           <img className={styles.logodiamond} src="/img/diamond.png" />
-          <img className={styles.logoprofile} src="/img/profile.png" />
+          <img className={styles.logoprofile} src="/img/profile.png" onClick={() => router.push("/profile")} />
         </nav>
       </header>
       <div
-       className={styles.div1}
+        className={styles.div1}
       >
         <div
-           className={styles.div2}
+          className={styles.div2}
         >
           <button
             className={styles.buttonbelajar2}
@@ -49,7 +110,7 @@ function Setting() {
               width="50px"
             />
             <p
-               className={styles.pbelajar}
+              className={styles.pbelajar}
             >
               Belajar
             </p>
@@ -65,7 +126,7 @@ function Setting() {
               width="50px"
             />
             <p
-               className={styles.pbelajar}
+              className={styles.pbelajar}
             >
               Toko
             </p>
@@ -76,22 +137,22 @@ function Setting() {
         >
           <h1>Akun</h1>
           <div className={styles.div22}>
-            <p  className={styles.fotoprofile}>Foto Profile</p>
+            <p className={styles.fotoprofile}>Foto Profile</p>
             <button className={styles.buttonpilihberkas}>Pilih Berkas</button>
           </div>
           <p
-           className={styles.tidakadaberkas}
+            className={styles.tidakadaberkas}
           >
             Tidak ada berkas dipilih
           </p>
           <p
-             className={styles.tidakadaberkas}
+            className={styles.tidakadaberkas}
           >
             Ukuran gambar maksimum adalah 1 MB
           </p>
           <div className={styles.div22}>
             <p
-             className={styles.nama}
+              className={styles.nama}
             >
               Nama
             </p>
@@ -119,10 +180,10 @@ function Setting() {
             </form>
           </div>
           <div
-           className={styles.div23}
+            className={styles.div23}
           >
             <p
-             className={styles.email}
+              className={styles.email}
             >
               Email
             </p>
@@ -134,7 +195,7 @@ function Setting() {
               />
             </form>
           </div>
-          <p  className={styles.blomverifiakasi}
+          <p className={styles.blomverifiakasi}
           >
             Email belum diverifikasi. Verifikasi Sekarang
           </p>
@@ -153,7 +214,7 @@ function Setting() {
                 <Switch {...label} defaultChecked />
               </div>
               <p
-               className={styles.masukfacebook}
+                className={styles.masukfacebook}
               >
                 hubungkan ke Google +
               </p>
@@ -174,17 +235,17 @@ function Setting() {
                 <Switch {...label} defaultChecked />
               </div>
               <p
-               className={styles.masukfacebook}
+                className={styles.masukfacebook}
               >
-              Animasi
+                Animasi
               </p>
             </div>
           </div>
-           <div className={styles.div24}>
+          <div className={styles.div24}>
             <div className={styles.div1}>
               <p className={styles.latihanmendengar}
               >
-               Latihan Mendengar
+                Latihan Mendengar
               </p>
               <div className={styles.div24}>
                 <Switch {...label} defaultChecked />
@@ -195,7 +256,7 @@ function Setting() {
                 <Switch {...label} defaultChecked />
               </div>
               <p
-               className={styles.masukfacebook}
+                className={styles.masukfacebook}
               >
                 Pesan Notifikasi
               </p>
@@ -204,7 +265,7 @@ function Setting() {
           <hr className={styles.hr}
           />
           <div
-             className={styles.div25}
+            className={styles.div25}
           >
             <p className={styles.tentang}>Tentang</p>
             <p className={styles.tentang}>Sekolah</p>
@@ -214,7 +275,7 @@ function Setting() {
             <p className={styles.tentang}>Bantuan</p>
           </div>
           <div
-             className={styles.div26}
+            className={styles.div26}
           >
             <p className={styles.tentang}>Panduan </p>
             <p className={styles.tentang}>Karier</p>
@@ -307,7 +368,7 @@ function Setting() {
               Privasi
             </div>
           </button>
-          <button className={styles.buttonkeluar}>KELUAR</button>
+          <button className={styles.buttonkeluar} onClick={handleLogout}>KELUAR</button>
           <button className={styles.buttonexpordata}>EXPOR DATA</button>
           <button className={styles.buttonkeluar}>NONAKTIFKAN AKUN</button>
           <button className={styles.buttonhapusakun}>HAPUS AKUN</button>

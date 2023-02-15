@@ -861,3 +861,494 @@
   border: none;
   margin-top: 20px;
 }
+/* belajar  */
+.Dialog {
+  margin-top: 120px;
+  margin-right: 450px;
+}
+.DialogContent {
+  background-color: #3689d7;
+}
+.DialogContentText {
+  background-color: #3689d7;
+  border: none;
+}
+.h2belajar {
+  color: white;
+}
+.btnbljr {
+  height: 40px;
+  width: 250px;
+  color: #3689d7;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+/* Mulailevel */
+.imggapaham {
+  display: block;
+  margin: auto;
+  padding-top: 200px;
+}
+.h3mulailevel {
+  text-align: center;
+}
+.h5mulailevel {
+  text-align: center;
+  color: #848484;
+  margin-bottom: 136px;
+}
+.CloseIcon {
+  margin-top: 20px;
+  color: #bababa;
+}
+.BorderLinearProgress {
+  width: 60%;
+  margin-top: 25px;
+  margin-left: 20px;
+}
+/* isi */
+.lanjutan {
+  width: 8%;
+  border-radius: 5px;
+  background-color: #61e002;
+  color: white;
+  border: none;
+  padding: 15px;
+  float: right;
+  margin-right: 60px;
+  margin-top: 20px;
+}
+.mulai {
+  width: 14%;
+  border-radius: 5px;
+  background-color: #61e002;
+  color: white;
+  border: none;
+  padding: 15px;
+  float: right;
+  margin-right: 60px;
+  margin-top: 20px;
+}
+.div37 {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+.div38 {
+  display: flex;
+  padding-top: 425px;
+  padding-bottom: 0px;
+  justify-content: center;
+}
+.pisi {
+  color: #848484;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+/* konten */
+.div39 {
+  display: flex;
+  margin-left: 400px;
+  margin-top: 20px;
+}
+.latihansulit {
+  margin-top: 10px;
+}
+.platihansulit {
+  color: #de513c;
+  margin-left: 20px;
+}
+.div40 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 135px;
+}
+.buttonjawab2 {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  border-radius: 10px;
+  width: 38%;
+  padding: 18px;
+  margin-top: 20px;
+}
+/* keren */
+.divkeren1 {
+  background-color: #d7ffb8;
+}
+.hrkeren {
+  width: 100%;
+  margin-top: 225px;
+}
+.divkeren2 {
+  margin-left: 200px;
+}
+.divkeren3 {
+  display: flex;
+}
+.imgkeren {
+  margin-top: 15px;
+}
+.h1keren {
+  color: #58a700;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.divkeren4 {
+  display: flex;
+  margin-left: 110px;
+}
+.divkeren5 {
+  display: flex;
+  color: #8dbc00;
+}
+.OutlinedFlagIcon {
+  margin-top: 12px;
+}
+.divkeren6 {
+  display: flex;
+  color: #8dbc00;
+  margin-left: 15px;
+}
+.ChatBubbleOutlineOutlinedIcon {
+  margin-top: 12px;
+}
+.buttonlanjutan {
+  width: 8%;
+  border-radius: 5px;
+  background-color: #61e002;
+  color: white;
+  border: none;
+  padding: 15px;
+  float: right;
+  margin-right: 60px;
+  margin-top: -122px;
+}
+/* Periksa */
+.hrperiksa {
+  width: 100%;
+  margin-top: 225px;
+}
+.divperiksa {
+  justify-content: space-around;
+  display: flex;
+}
+.buttonlompati {
+  width: 8%;
+  border-radius: 5px;
+  background-color: white;
+  color: #848484;
+  border: none;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.buttonperiksa {
+  width: 8%;
+  border-radius: 5px;
+  background-color: #848484;
+  color: white;
+  border: none;
+  padding: 15px;
+  margin-top: 20px;
+  margin-right: 60px;
+}
+/* Konten2 */
+.div41 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 135px;
+}
+.h1konten2 {
+  margin-top: 92px;
+}
+.buttonkonten2 {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  border-radius: 10px;
+  width: 16%;
+  padding: 18px;
+  margin-top: 20px;
+}
+.btnkonten2 {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: none;
+  border-radius: 10px;
+  width: 16%;
+  padding: 18px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+/* konten3 */
+.div43 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+.imgkonten3 {
+  margin-top: 20px;
+}
+.imgknten3 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.div42 {
+  display: flex;
+  justify-content: center;
+  margin-top: 41px;
+}
+.div44 {
+  display: flex;
+  justify-content: center;
+  margin-top: -85px;
+  margin-bottom: 26px;
+}
+.buttonkonten3 {
+  padding: 8px;
+  border-color: #e5e5e5;
+  background-color: white;
+  border-radius: 8px;
+  width: 5%;
+}
+.btnkonten3 {
+  padding: 8px;
+  border-color: #e5e5e5;
+  background-color: white;
+  border-radius: 8px;
+  width: 5%;
+  margin-left: 20px;
+}
+.div45 {
+  border-color: #828282;
+  padding: 50px 50px;
+}
+.div46 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+/* konten4 */
+.buttonkonten4 {
+  margin-left: 20px;
+}
+/* konten5 */
+.div47 {
+  display: flex;
+  margin-left: 400px;
+  margin-top: 20px;
+}
+.imglatihansulit {
+  margin-top: 10px;
+}
+.platihansulit {
+  color: #de513c;
+  margin-left: 20px;
+}
+.div48 {
+  text-align: center;
+  margin-top: 20px;
+}
+.div49 {
+  display: flex;
+  justify-content: center;
+}
+.buttonkonten5 {
+  width: 25%;
+  height: 20%;
+  margin-top: 10px;
+  margin-left: 20px;
+  border-radius: 5px;
+  background-color: white;
+  border-color: #e5e5e5;
+  display: flex;
+}
+.imgkonten5 {
+  float: left;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+.pkonten1 {
+  margin-left: -80px;
+  margin-bottom: 0px;
+}
+.pkonten2 {
+  margin-left: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+.hrkonten1 {
+  width: 33%;
+  margin-top: 0px;
+}
+.hrkonten2 {
+  width: 33%;
+  margin-top: 50px;
+}
+.hrkonten4 {
+  margin-top: 92px;
+}
+.div50 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 35px;
+}
+/* Berturut 5 */
+.divberturut {
+  justify-content: center;
+  display: flex;
+  margin-top: 186px;
+}
+.divberturut1 {
+  margin-top: 65px;
+}
+.pberturut {
+  color: #848484;
+}
+.imgberturut {
+  margin-top: 11px;
+}
+.hrberturut {
+  margin-top: 80px;
+}
+.btnberturut {
+  width: 8%;
+  border-radius: 5px;
+  background-color: #61e002;
+  color: white;
+  border: none;
+  padding: 15px;
+  float: right;
+  margin-right: 60px;
+  margin-top: 20px;
+}
+/* menang1 */
+.h4menang1 {
+  text-align: center;
+  color: #848484;
+}
+.spanmenang1 {
+  color: #ffca07;
+}
+.h4baguskombo {
+  text-align: center;
+  color: #848484;
+  margin-bottom: 93px;
+}
+.hrmennag1 {
+  width: 100%;
+}
+.buttonmenang1 {
+  width: 14%;
+  border-radius: 5px;
+  background-color: #61e002;
+  color: white;
+  border: none;
+  padding: 15px;
+  float: right;
+  margin-right: 60px;
+  margin-top: 20px;
+}
+/* menang2 */
+.BorderLinearProgressmenang2 {
+  width: 10%;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+.h4mennag2 {
+  text-align: center;
+  color: #848484;
+  margin-bottom: 76px;
+}
+/* Ulas Pelajaran*/
+.lanjutanmenang {
+  width: 8%;
+  border-radius: 5px;
+  background-color: #61e002;
+  color: white;
+  border: none;
+  padding: 8px;
+  margin-top: 20px;
+  margin-right: 60px;
+}
+.ulasanmenang {
+  width: 10%;
+  border-radius: 5px;
+  background-color: white;
+  color: #848484;
+  border: none;
+  padding: 15px;
+  margin-top: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+/* cekkartu  */
+.h1cekkartu {
+  text-align: center;
+  margin-top: 50px;
+  color: "#404A51";
+}
+.h2cekkartu {
+  text-align: center;
+  color: "#CECECE";
+}
+.buttoncekkartu {
+  background-color: #d7ffb8;
+  border: none;
+  border-radius: 8px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+}
+.buttoncekkartuu {
+  background-color: #d7ffb8;
+  border: none;
+  border-radius: 8px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  margin-left: 50px;
+}
+.buttonsalah {
+  background-color: #ffdfe0;
+  border: none;
+  border-radius: 8px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  margin-left: 50px;
+}
+.h3cekkartu {
+  color: #58a700;
+  text-align: left;
+  line-height: 25px;
+  margin-left: 5px;
+}
+.h3salah {
+  color: #f06d6d;
+  text-align: left;
+  line-height: 25px;
+  margin-left: 5px;
+}
+.imgcekkartu {
+  margin-top: 20px;
+  margin-right: 15px;
+}
+.divcekkartu {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.divcekkartuu {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding-bottom: 40px;
+}
