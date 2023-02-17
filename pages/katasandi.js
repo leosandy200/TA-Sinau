@@ -9,10 +9,10 @@ function MyFormHelperText() {
   const { focused } = useFormControl() || {};
 }
 
-function Setting() {
+function Katasandi() {
   const router = useRouter();
   const label = { inputProps: { "aria-label": "Switch demo" } };
-  const [selectedMenu, setSelectedMenu] = useState("akun");
+  const [selectedMenu, setSelectedMenu] = useState("katasandi");
 
   return (
     <div>
@@ -23,21 +23,15 @@ function Setting() {
           height="20px"
           width="90px"
         />
-        <nav
-          className={styles.nav}
-        >
+        <nav className={styles.nav}>
           <img className={styles.logoindonesia} src="/img/indonesia.png" />
           <img className={styles.logofire} src="/img/fire.png" />
           <img className={styles.logodiamond} src="/img/diamond.png" />
           <img className={styles.logoprofile} src="/img/profile.png" />
         </nav>
       </header>
-      <div
-       className={styles.div1}
-      >
-        <div
-           className={styles.div2}
-        >
+      <div className={styles.div1}>
+        <div className={styles.div2}>
           <button
             className={styles.buttonbelajar2}
             onClick={() => router.push("/belajar")}
@@ -48,11 +42,7 @@ function Setting() {
               height="50px"
               width="50px"
             />
-            <p
-               className={styles.pbelajar}
-            >
-              Belajar
-            </p>
+            <p className={styles.pbelajar}>Belajar</p>
           </button>
           <button
             className={styles.buttontoko2}
@@ -64,151 +54,28 @@ function Setting() {
               height="50px"
               width="50px"
             />
-            <p
-               className={styles.pbelajar}
-            >
-              Toko
-            </p>
+            <p className={styles.pbelajar}>Toko</p>
           </button>
         </div>
-        <div
-          className={styles.div3}
-        >
-          <h1>Akun</h1>
-          <div className={styles.div22}>
-            <p  className={styles.fotoprofile}>Foto Profile</p>
-            <button className={styles.buttonpilihberkas}>Pilih Berkas</button>
+        <div className={styles.div3}>
+          <h1>Kata Sandi</h1>
+          <div className={styles.div23}>
+            <p className={styles.namapengguna}>Kata Sandi Saat Ini :</p>
+            <form action="" method="post">
+              <input className={styles.input} type="text" />
+            </form>
           </div>
-          <p
-           className={styles.tidakadaberkas}
-          >
-            Tidak ada berkas dipilih
-          </p>
-          <p
-             className={styles.tidakadaberkas}
-          >
-            Ukuran gambar maksimum adalah 1 MB
-          </p>
-          <div className={styles.div22}>
-            <p
-             className={styles.nama}
-            >
-              Nama
-            </p>
+          <div className={styles.div23}>
+            <p className={styles.namapengguna}>Kata Sandi Baru :</p>
             <form action="" method="post">
               <input
                 className={styles.input}
+                style={{ marginLeft: "40px" }}
                 type="text"
-                placeholder="Leosandy Wahyu"
               />
             </form>
           </div>
-          <div className={styles.div23}
-          >
-            <p
-              className={styles.namapengguna}
-            >
-              Nama Pengguna
-            </p>
-            <form action="" method="post">
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Leosandy"
-              />
-            </form>
-          </div>
-          <div
-           className={styles.div23}
-          >
-            <p
-             className={styles.email}
-            >
-              Email
-            </p>
-            <form action="" method="post">
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Leosandy@gmail.com"
-              />
-            </form>
-          </div>
-          <p  className={styles.blomverifiakasi}
-          >
-            Email belum diverifikasi. Verifikasi Sekarang
-          </p>
-          <button className={styles.buttonsimpanperubahan2}>
-            <p>Simpan Perubahan</p>
-          </button>
-          <div className={styles.div24}>
-            <div className={styles.div1}>
-              <p className={styles.masukfacebook}
-              >
-                Hubungkan Ke Facebook
-              </p>
-              <div className={styles.div24}>
-                <Switch {...label} defaultChecked />
-              </div>
-            </div>
-            <div className={styles.div1}>
-              <div className={styles.div24}>
-                <Switch {...label} defaultChecked />
-              </div>
-              <p
-               className={styles.masukfacebook}
-              >
-                hubungkan ke Google +
-              </p>
-            </div>
-          </div>
-          <div className={styles.div24}>
-            <div className={styles.div1}>
-              <p className={styles.efeksuara}
-              >
-                Efek Suara
-              </p>
-              <div className={styles.div24}>
-                <Switch {...label} defaultChecked />
-              </div>
-            </div>
-            <div className={styles.div1}>
-              <div className={styles.div24}>
-                <Switch {...label} defaultChecked />
-              </div>
-              <p
-               className={styles.masukfacebook}
-              >
-              Animasi
-              </p>
-            </div>
-          </div>
-           <div className={styles.div24}>
-            <div className={styles.div1}>
-              <p className={styles.latihanmendengar}
-              >
-               Latihan Mendengar
-              </p>
-              <div className={styles.div24}>
-                <Switch {...label} defaultChecked />
-              </div>
-            </div>
-            <div className={styles.div1}>
-              <div className={styles.div24}>
-                <Switch {...label} defaultChecked />
-              </div>
-              <p
-               className={styles.masukfacebook}
-              >
-                Pesan Notifikasi
-              </p>
-            </div>
-          </div>
-          <hr className={styles.hr}
-          />
-          <div
-             className={styles.div25}
-          >
+          <div className={styles.div52}>
             <p className={styles.tentang}>Tentang</p>
             <p className={styles.tentang}>Sekolah</p>
             <p className={styles.tentang}>Aplikasi</p>
@@ -216,9 +83,7 @@ function Setting() {
             <p className={styles.tentang}>Efikasi</p>
             <p className={styles.tentang}>Bantuan</p>
           </div>
-          <div
-             className={styles.div26}
-          >
+          <div className={styles.div53}>
             <p className={styles.tentang}>Panduan </p>
             <p className={styles.tentang}>Karier</p>
             <p className={styles.tentang}>Invertor</p>
@@ -226,9 +91,7 @@ function Setting() {
             <p className={styles.tentang}>Privasi</p>
           </div>
         </div>
-        <div
-          className={styles.div27}
-        >
+        <div className={styles.div27}>
           <button className={styles.buttonsimpanperubahan}>
             <p>Simpan Perubahan</p>
           </button>
@@ -241,13 +104,9 @@ function Setting() {
                 height="50px"
                 className={styles.imgprofile}
               />
-              <div className={styles.div28}
-              >
+              <div className={styles.div28}>
                 <p className={styles.namaprofile}>LeoSandy</p>
-                <p onClick={() => router.push("/profile")}
-                  className={styles.lihatprofile}>
-                  Lihat Profilmu
-                </p>
+                <p className={styles.lihatprofile}>Lihat Profilmu</p>
               </div>
             </div>
             <div onClick={() => router.push("/setting")}>
@@ -322,16 +181,11 @@ function Setting() {
               >
                 Privasi
               </div>
-              </div>
-
+            </div>
           </button>
-          <button className={styles.buttonkeluar}>KELUAR</button>
-          <button className={styles.buttonexpordata}>EXPOR DATA</button>
-          <button className={styles.buttonkeluar}>NONAKTIFKAN AKUN</button>
-          <button className={styles.buttonhapusakun}>HAPUS AKUN</button>
         </div>
       </div>
     </div>
   );
 }
-export default Setting;
+export default Katasandi;
