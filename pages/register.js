@@ -13,11 +13,11 @@ const Register = () => {
 
   useEffect(() => { }, [namaUser, email, password, password_confirmation]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmitRegister = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        'http://192.168.43.157:8000/api/register',
+      const responseRegister = await axios.post(
+        'https://api.sinau-bahasa.my.id/api/register',
         ({ namaUser, email, password, password_confirmation }),
         {
           headers: {
@@ -26,13 +26,23 @@ const Register = () => {
           },
         }
       );
-      console.log(response)
+      
+      window.location.href = "/login"
 
 
-    } catch (response) {
-
+    } catch (responseRegister) {
+      if (!responseRegister) {
+        console.log('No Server Response');
+      } else if (responseRegister?.data?.status === 400) {
+        console.log('Missing Username, Email Or Password');
+      } else if (responseRegister?.data?.status === 401) {
+        console.log('Unauthorized');
+      } else {
+        console.log('Login Failed');
+      }
     }
   };
+
   return (
     <div>
       <header className={styles.header}>
@@ -52,7 +62,7 @@ const Register = () => {
       <br />
       <div className={styles.divakun}>
         <h1 className={styles.h1buatakun}>BUAT AKUN</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmitRegister}>
           <br></br>
           <input
             className={styles.buttonemail}
@@ -88,7 +98,7 @@ const Register = () => {
             onChange={(e) => setPasswordConfirmation(e.target.value)}
           />
           <br />
-          <button   
+          <button
             onClick={() => router.push("/login")}
             className={styles.buttonmasuk}
             type="submit">

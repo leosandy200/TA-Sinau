@@ -1,58 +1,64 @@
 import { React, useState, useEffect} from "react";
-import styles from "../styles/style.module.css";
 import { useRouter } from "next/router";
+import styles from "../styles/style.module.css";
 import axios from "axios";
-import Belajar from "./belajar";
-
-
 
 const Login = () => {
+  const router = useRouter();
+  
   const [emailOrUser, setEmailOrUser] = useState('');
   const [password, setPassword] = useState('');
 
   useEffect(() => {
-  }, [emailOrUser, password]);
+	}, [emailOrUser, password]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmitLogin = async (e) => {
     e.preventDefault();
+      
+    try {   
+        const responseLogin = await axios.post(
+            'https://api.sinau-bahasa.my.id/api/login',
+            ({ emailOrUser, password }),
+            {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                withCredentials: false,
+            }
+        );
+        // console.log(responseLogin)
+        // const token = response?.data?.auth?.token;
+        // localStorage.setItem('tokenFromStorage', token);
+        // const tokenStorage = localStorage.getItem('tokenFromStorage')
+        if ('token' in responseLogin?.data?.access) {
+            const tokenUser = responseLogin?.data?.access?.token;
+            const idUser = responseLogin?.data?.data?.id; 
 
-    try {
-      const response = await axios.post(
-        'http://192.168.43.157:8000/api/login',
-        ({ emailOrUser, password }),
-        {
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/x-www-form-urlencoded'
-          },
+            localStorage.setItem('token',tokenUser);
+            localStorage.setItem('data', idUser);
+
+            router.push("/belajar");
+
+        } else {
+            console.log("Login Failed")
         }
-      );
-      console.log(response)
-      // const token = response?.data?.auth?.token;
-      // localStorage.setItem('tokenFromStorage', token);
-      // const tokenStorage = localStorage.getItem('tokenFromStorage')
-      if ('token' in response?.data?.access) {
-        const tokenUser = response?.data?.auth?.token;
-        localStorage.setItem('UserToken', tokenUser);
-        console.log(tokenUser);
-        window.location.href = "/belajar";
-      } else {
-        console.log("Login Failed")
-      }
-      setEmailOrUser("");
-      setPassword("");
-    } catch (response) {
-      if (!response) {
-        console.log('No Server Response');
-      } else if (response?.data?.status === 400) {
-        console.log('Missing Username, Email Or Password');
-      } else if (response?.data?.status === 401) {
-        console.log('Unauthorized');
-      } else {
-        console.log('Login Failed');
-      }
+
+    } catch (responseLogin) {
+
+        if (!responseLogin) {
+            console.log('No Server Response');
+        } else if (responseLogin?.data?.status === 400) {
+            console.log('Missing Username, Email Or Password');
+        } else if (responseLogin?.data?.status === 401) {
+            console.log('Unauthorized');
+        } else {
+            console.log('Login Failed');
+        }
     };
-  };
+
+};
+
   return (
     <div>
       <header className={styles.header}>
@@ -65,26 +71,26 @@ const Login = () => {
       </header>
       <button
         className={styles.buttondaftar}
-        onClick={() => window.location.href = "/register"}
+        onClick={() => router.push("/register") }
       >
         DAFTAR
       </button>
       <br />
       <div style={{ textAlign: "center" }}>
         <h1 style={{ textAlign: "center", marginTop: "100px" }}>MASUK</h1>
-        <form onSubmit={handleSubmit}>
+
+        <form onSubmit={handleSubmitLogin}>
           <input
-          className={styles.buttonemail}
-            type="text"
+            type="text" 
             id="emailOrUser"
             onChange={(e) => setEmailOrUser(e.target.value)}
+            className={styles.buttonemail}
             placeholder="Email or Username"
-            value={emailOrUser}
           />
           <br></br>
           <input
+            type="Password"
             className={styles.buttonemail}
-            type="password"
             id="password"
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
@@ -125,7 +131,8 @@ const Login = () => {
           </button>
         </div>
         <p className={styles.bysigning}>
-          By signing in to Sinau, you agree to our <b>Terms</b> <br /> and<b> Privacy Policy.</b>
+          By signing in to Sinau, you agree to our <b>Terms</b> <br /> and
+          <b>Privacy Policy.</b>
         </p>
       </div>
     </div>

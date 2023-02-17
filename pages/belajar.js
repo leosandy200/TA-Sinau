@@ -10,6 +10,8 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 
+export  
+
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
   borderRadius: 5,
@@ -51,7 +53,7 @@ function Belajar() {
           <img className={styles.logoindonesia} src="/img/indonesia.png" />
           <img className={styles.logofire} src="/img/fire.png" />
           <img className={styles.logodiamond} src="/img/diamond.png" />
-          <img className={styles.logoprofile} src="/img/profile.png" />
+          <img className={styles.logoprofile} src="/img/profile.png" onClick={() => router.push("/profile ")} />
         </nav>
       </header>
       <div className={styles.div1}>

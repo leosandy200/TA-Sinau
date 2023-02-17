@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import EditIcon from "@mui/icons-material/Edit";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import GroupsIcon from "@mui/icons-material/Groups";
-import LinearProgress, {
-  linearProgressClasses,
-} from "@mui/material/LinearProgress";
+import LinearProgress, { linearProgressClasses } from "@mui/material/LinearProgress";
 import { styled } from "@mui/material/styles";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Mengikuti from "./komponen/mengikuti";
 import Pengikut from "./komponen/pengikuti";
 import styles from "../styles/style.module.css";
+import axios from "axios";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
@@ -25,9 +24,46 @@ const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   },
 }));
 
-function Profile() {
+function Profile() {  
   const [selectedMenu, setSelectedMenu] = useState("mengikuti");
   const router = useRouter();
+
+
+  // buat ngedisplay data di setting nanti
+  // const [data, setData] = useState('');
+
+  // useEffect(() => {
+  //   const dataUser = JSON.parse(localStorage.getItem('data'))
+  //   setData(dataUser) 
+  // }, [])
+
+  const [user, setUser] = useState([]);
+  const [xpUser, setXpUser] = useState ([]);
+
+  useEffect(() => {
+
+    const infoUser = localStorage.getItem('data')
+
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://api.sinau-bahasa.my.id/api/public-user/' + infoUser);
+
+        const dataUser = response.data?.data;
+        const Xp = response.data?.data?.xp;
+
+        setUser(dataUser)
+        setXpUser(Xp)
+            
+      }
+      catch (error) {
+        console.log(error)
+      }
+    };
+    fetchData();
+  }, [])
+
+
   return (
     <div>
       <header className={styles.header}>
@@ -50,7 +86,7 @@ function Profile() {
         className={styles.div1}
       >
         <div
-           className={styles.div2}
+          className={styles.div2}
         >
           <button
             className={styles.buttonbelajar2}
@@ -63,7 +99,7 @@ function Profile() {
               width="50px"
             />
             <p
-               className={styles.pbelajar}
+              className={styles.pbelajar}
             >
               Belajar
             </p>
@@ -79,7 +115,7 @@ function Profile() {
               width="50px"
             />
             <p
-               className={styles.pbelajar}
+              className={styles.pbelajar}
             >
               Toko
             </p>
@@ -94,18 +130,18 @@ function Profile() {
               <AccountCircleIcon style={{ width: "180px", height: "180px" }} />
             </div>
             <div className={styles.div31}>
-              <h1>Leosandy Wahyu Rismono</h1>
-              <h3 className={styles.color}>Leosandy</h3>
+              <h1>{user.nama}</h1>
+              <h3 className={styles.color}>{user.namaUser}</h3>
               <div className={styles.div1}>
                 <AccessTimeIcon className={styles.color} />
                 <p
-                   className={styles.bergabung}
+                  className={styles.bergabung}
                 >
-                  Bergabung Oktober 2022
+                  Bergabung {user.joined_at}
                 </p>
               </div>
               <div className={styles.div1}>
-                <GroupsIcon  className={styles.color} />
+                <GroupsIcon className={styles.color} />
                 <p
                   className={styles.bergabung}
                 >
@@ -116,8 +152,8 @@ function Profile() {
             <div className={styles.div32}>
               <button className={styles.buttoneditprofile}>
                 <EditIcon className={styles.editicon} />
-                <p onClick={() => router.push("/setting")} 
-                className={styles.editprofile}>EDIT PROFILE </p>
+                <p onClick={() => router.push("/setting")}
+                  className={styles.editprofile}>EDIT PROFILE </p>
               </button>
             </div>
           </div>
@@ -127,7 +163,7 @@ function Profile() {
               <h2>Statistik</h2>
               <div className={styles.div1} >
                 <button className={styles.buttonfire}>
-                  <img  className={styles.imgfire}
+                  <img className={styles.imgfire}
                     src="/img/fire.png"
                     width="30px"
                     height="30px"
@@ -149,7 +185,7 @@ function Profile() {
                     className={styles.imgfire}
                   />
                   <div>
-                    <p className={styles.o}>0</p>
+                    <p className={styles.o}>{xpUser.totalXp}</p>
                     <p className={styles.posisitigabesar}>
                       Total XP
                     </p>
@@ -203,7 +239,7 @@ function Profile() {
                       2/3
                     </span>
                   </div>
-                  <p  className={styles.capairuntunan}>
+                  <p className={styles.capairuntunan}>
                     Capai Runtuan 3 Hari
                   </p>
                 </div>
@@ -221,7 +257,7 @@ function Profile() {
                       2/3
                     </span>
                   </div>
-                  <p  className={styles.capairuntunan}>
+                  <p className={styles.capairuntunan}>
                     Capai Runtuan 3 Hari
                   </p>
                 </div>
@@ -239,7 +275,7 @@ function Profile() {
                       2/3
                     </span>
                   </div>
-                  <p  className={styles.capairuntunan}>
+                  <p className={styles.capairuntunan}>
                     Capai Runtuan 3 Hari
                   </p>
                 </div>
@@ -251,10 +287,10 @@ function Profile() {
                 <h3 className={styles.semua}>Lihat Semua</h3>
                 <KeyboardArrowRightIcon className={styles.keyboard} />
               </button>
-              <hr  className={styles.hr3} 
+              <hr className={styles.hr3}
               />
               <div
-                className={styles.div35} 
+                className={styles.div35}
               >
                 <p className={styles.sekolah} >Tentang</p>
                 <p className={styles.sekolah}>Sekolah</p>
