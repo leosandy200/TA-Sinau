@@ -66,7 +66,7 @@ function Profile() {
 
   return (
     <div>
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         <img
           className={styles.logota}
           src="/img/LogoTA.png"
@@ -81,7 +81,7 @@ function Profile() {
           <img className={styles.logodiamond} src="/img/diamond.png" />
           <img className={styles.logoprofile} src="/img/profile.png" />
         </nav>
-      </header>
+      </header> */}
       <div
         className={styles.div1}
       >
@@ -185,7 +185,7 @@ function Profile() {
                     className={styles.imgfire}
                   />
                   <div>
-                    <p className={styles.o}>{xpUser.totalXp}</p>
+                    <p className={styles}>{xpUser.totalXp}</p>
                     <p className={styles.posisitigabesar}>
                       Total XP
                     </p>

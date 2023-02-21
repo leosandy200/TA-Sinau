@@ -1,41 +1,22 @@
 import React from "react";
 import { useRouter } from "next/router";
-import styles from "../styles/style.module.css";
+import styles from "../styles/homepage.module.css";
 
 function Homepage() {
   const router = useRouter();
   return (
     <div className={styles.background}>
-      <img
-        className={styles.logonavbar}
-        src="/img/LogoTA.png"
-        height="40px"
-        width="150px"
-      />
-      <br />
-
+      <img className={styles.logonavbar} src="/img/LogoTA.png" height="40px" width="10%"/>
       <div className={styles.div1hp}>
-        <img
-          className={styles.logohome}
-          src="/img/LogoHome.png"
-          width="350px"
-        />
+        <img className={styles.logohome} src="/img/LogoHome.png"/>
         <div>
-          <h2 className={styles.h2}>
-            Cara Belajar Bahasa Gratis & Menyenangkan
-          </h2>
-          <button
-            className={styles.buttonlogin}
-            onClick={() => router.push("/login")}
-          >
+          <h2 className={styles.h2}>Cara Belajar Bahasa Gratis & Menyenangkan</h2>
+          <a className={styles.buttonlogin} onClick={() => router.push("/login")}>
             Mulai
-          </button>
-          <button
-            className={styles.buttonregister}
-            onClick={() => router.push("/register")}
-          >
+          </a>
+          <a className={styles.buttonregister} onClick={() => router.push("/register")}>
             Buat Akun
-          </button>
+          </a>
         </div>
       </div>
     </div>

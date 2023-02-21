@@ -1,0 +1,58 @@
+.background {
+    background-color: #043f75;
+    min-height: 100vh;
+}
+
+.logonavbar {
+    margin-top: 50px;
+    margin-left: 75px;
+}
+
+.div1hp {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logohome {
+    object-fit: scale-down;
+    width: 27.5%;
+    margin-top: 80px;
+}
+
+.h2 {
+    text-align: center;
+    color: white;
+}
+
+.buttonlogin {
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    width: 60%;
+    margin-left: 150px;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #5594f3;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-size: 18px;
+}
+
+.buttonregister {
+    border: 1px solid white;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    background-color: #043f75;
+    width: 60%;
+    margin-left: 150px;
+    margin-top: 20px;
+    padding: 12px;
+    color: white;
+    border-radius: 20px;
+    font-size: 18px;
+}

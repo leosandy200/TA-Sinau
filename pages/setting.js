@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, createRef } from "react";
 import { useRouter } from "next/router";
 import FormControl, { useFormControl } from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Switch from "@mui/material/Switch";
 import styles from "../styles/style.module.css";
 import axios from "axios";
+import { userHeader, clearToken } from "../utils/config";
 
 function MyFormHelperText() {
   const { focused } = useFormControl() || {};
@@ -13,48 +14,46 @@ function MyFormHelperText() {
 function Setting() {
   const router = useRouter();
 
-  const [token, setUserToken] = useState([]);
-
+  //data dri login
   const [id, setId] = useState([]);
 
+  const form = createRef();
 
+  const hiddenFileInput = useRef(null);
 
   useEffect(() => {
-    const tokenUser = localStorage.getItem('token');
     const idUser = localStorage.getItem('data');
 
     setId(idUser)
-    setUserToken(tokenUser)
-    // console.log("asu")
-  }, []);
-
+  });
 
   const label = { inputProps: { "aria-label": "Switch demo" } };
   const [selectedMenu, setSelectedMenu] = useState("akun");
 
-  // console.log(userId)
+  const handleClick = e => {
+    e.preventDefault();
+    hiddenFileInput.current.click();
+  }
 
-  // const handleLogout = async () => {
-  //   try {
-  //     const response = await axios.post(
-  //       'https://api.sinau-bahasa.my.id/api/logout',
-  //       ({userId}),
-  //       {
-  //         headers: {
-  //           'Accept': 'application/json',
-  //           'Authorization': userId
-  //         }
-  //       }
-  //     );
+  const handleSubmitUpdate = async (e) => {
+    e.preventDefault();
+    console.log(form.current);
+    const formData = new FormData(form.current);
+    console.log('ASUUUU')
+    try {
+      const res = await axios.post('https://api.sinau-bahasa.my.id/api/users/' + id,
+        formData,
+        {
+          
+        }
+      );
+      console.log(res)
+      console.log('P asu')
+    } catch (error) {
+        console.log(error)
+      }
 
-  //   // localStorage.removeItem('data');
-  //   // localStorage.removeItem('token');
-  //   // router.push("/")
-
-  //   } catch (error) {
-
-  //   }
-  // }
+  }
 
   const handleLogout = async () => {
     try {
@@ -62,12 +61,10 @@ function Setting() {
         {
           headers: {
             'Accept': 'application/json',
-            'Authorization': `Bearer ${token}`,
           }
         },
       );
-      localStorage.removeItem("token");
-      localStorage.removeItem("data");
+      axios.defaults.headers["Authorization"] = undefined
       router.push("/");
 
     } catch (error) {
@@ -77,7 +74,7 @@ function Setting() {
 
   return (
     <div>
-      <header className={styles.header}>
+      {/* <header className={styles.header}>
         <img
           className={styles.logota}
           src="/img/LogoTA.png"
@@ -92,7 +89,7 @@ function Setting() {
           <img className={styles.logodiamond} src="/img/diamond.png" />
           <img className={styles.logoprofile} src="/img/profile.png" onClick={() => router.push("/profile")} />
         </nav>
-      </header>
+      </header> */}
       <div
         className={styles.div1}
       >
@@ -136,74 +133,75 @@ function Setting() {
           className={styles.div3}
         >
           <h1>Akun</h1>
-          <div className={styles.div22}>
-            <p className={styles.fotoprofile}>Foto Profile</p>
-            <button className={styles.buttonpilihberkas}>Pilih Berkas</button>
-          </div>
-          <p
-            className={styles.tidakadaberkas}
-          >
-            Tidak ada berkas dipilih
-          </p>
-          <p
-            className={styles.tidakadaberkas}
-          >
-            Ukuran gambar maksimum adalah 1 MB
-          </p>
-          <div className={styles.div22}>
-            <p
-              className={styles.nama}
-            >
-              Nama
-            </p>
-            <form action="" method="post">
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Leosandy Wahyu"
-              />
+          <div className={styles.div23}>
+
+            <form onSubmit={handleSubmitUpdate} ref={form}>
+              <div className={styles.div22}>
+                <p className={styles.fotoprofile}>Foto Profile</p>
+                <button className={styles.labelpilihberkas} onClick={handleClick}>Pilih Berkas</button>
+                <input className={styles.buttonpilihberkas}
+                  name="avatar"
+                  type="file" accept="image/png, image/jpg, image/jpeg"
+                  ref={hiddenFileInput}
+                />
+              </div>
+              <p
+                className={styles.tidakadaberkas}
+              >
+                Tidak ada berkas dipilih
+              </p>
+              <p
+                className={styles.tidakadaberkas}
+              >
+                Ukuran gambar maksimum adalah 1 MB
+              </p>
+              <div className={styles.div22}>
+                <p className={styles.nama}>
+                  <label id="">Nama</label>
+                </p>
+                <input
+                  type="text"
+                  id="nama"
+                  name="nama"
+                  className={styles.input}
+                // placeholder="Leosandy Wahyu"
+                />
+              </div>
+              <div className={styles.div23}>
+                <p className={styles.namapengguna}>
+                  <label>Nama Pengguna</label>
+                </p>
+                <input
+                  className={styles.input}
+                  type="text"
+                  id="namaUser"
+                  name="namaUser"
+                // placeholder="Leosandy"
+                />
+              </div>
+              <div className={styles.div23}>
+                <p className={styles.email}>
+                  <label>Email</label>
+                </p>
+                <input
+                  type="text"
+                  name="email"
+                  className={styles.input}
+                // placeholder="Leosandy@gmail.com"
+                />
+              </div>
+              <br></br>
+              {/* <p className={styles.blomverifiakasi}
+              >
+                Email belum diverifikasi. Verifikasi Sekarang
+              </p> */}
+              <button className={styles.buttonsimpanperubahan2} type="submit">
+                <p>Simpan Perubahan</p>
+              </button>
             </form>
           </div>
-          <div className={styles.div23}
-          >
-            <p
-              className={styles.namapengguna}
-            >
-              Nama Pengguna
-            </p>
-            <form action="" method="post">
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Leosandy"
-              />
-            </form>
-          </div>
-          <div
-            className={styles.div23}
-          >
-            <p
-              className={styles.email}
-            >
-              Email
-            </p>
-            <form action="" method="post">
-              <input
-                className={styles.input}
-                type="text"
-                placeholder="Leosandy@gmail.com"
-              />
-            </form>
-          </div>
-          <p className={styles.blomverifiakasi}
-          >
-            Email belum diverifikasi. Verifikasi Sekarang
-          </p>
-          <button className={styles.buttonsimpanperubahan2}>
-            <p>Simpan Perubahan</p>
-          </button>
           <div className={styles.div24}>
-            <div className={styles.div1}>
+            {/* <div className={styles.div1}>
               <p className={styles.masukfacebook}
               >
                 Hubungkan Ke Facebook
@@ -221,7 +219,7 @@ function Setting() {
               >
                 hubungkan ke Google +
               </p>
-            </div>
+            </div> */}
           </div>
           <div className={styles.div24}>
             <div className={styles.div1}>
