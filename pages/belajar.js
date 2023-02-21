@@ -1,33 +1,47 @@
-import React, { useEffect } from 'react';
-import BookIcon from '@mui/icons-material/Book';
-import { styled } from '@mui/material/styles';
+import React, { useEffect } from "react";
+import BookIcon from "@mui/icons-material/Book";
+import { styled } from "@mui/material/styles";
 import LinearProgress, {
   linearProgressClasses,
-} from '@mui/material/LinearProgress';
-import { useRouter } from 'next/router';
-import styles from '../styles/style.module.css';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-
-export  
+} from "@mui/material/LinearProgress";
+import { useRouter } from "next/router";
+import styles from "../styles/style.module.css";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
   height: 10,
   borderRadius: 5,
-  width: '50%',
-  marginLeft: '90px',
+  width: "50%",
+  marginLeft: "90px",
   [`& .${linearProgressClasses.bar}`]: {
     borderRadius: 5,
-    backgroundColor: theme.palette.mode === 'light' ? '#FFD333' : '#BCBCBC',
+    backgroundColor: theme.palette.mode === "light" ? "#FFD333" : "#BCBCBC",
   },
 }));
 
 function Belajar() {
   const router = useRouter();
   const [open, setOpen] = React.useState(false);
+  const [bukak, setBukak] = React.useState(false);
   const [isOpenKonten, setIsOpenKonten] = React.useState(false);
+  const [dropdown, setDropdown] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
+  const buka = Boolean(anchorEl);
+  const buka2 = Boolean(dropdown);
+
+  // profile
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleTutup = () => {
+    setAnchorEl(null);
+  };
+  // gembok
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -35,10 +49,16 @@ function Belajar() {
   const handleClose = () => {
     setOpen(false);
   };
-
+  // lingot
+  const handleClick2 = (event) => {
+    setDropdown(event.currentTarget);
+  };
+  const handleTutup2 = () => {
+    setDropdown(null);
+  };
   useEffect(() => {
-    const localOpenKonten = localStorage.getItem('isOpenKonten');
-    setIsOpenKonten(localOpenKonten === 'true' ? true : false);
+    const localOpenKonten = localStorage.getItem("isOpenKonten");
+    setIsOpenKonten(localOpenKonten === "true" ? true : false);
   }, []);
   return (
     <div>
@@ -52,14 +72,58 @@ function Belajar() {
         <nav className={styles.nav}>
           <img className={styles.logoindonesia} src="/img/indonesia.png" />
           <img className={styles.logofire} src="/img/fire.png" />
-          <img className={styles.logodiamond} src="/img/diamond.png" />
-          <img className={styles.logoprofile} src="/img/profile.png" onClick={() => router.push("/profile ")} />
+          <img
+            className={styles.logodiamond}
+            src="/img/diamond.png"
+            onClick={handleClick2}
+          />
+          <Menu
+            anchorEl={dropdown}
+            open={buka2}
+            onClose={handleTutup2}
+            style={{ marginTop: "15px" }}
+          >
+            <MenuItem onClick={handleTutup2}>
+              <img
+                src="/img/Harta karun.png"
+                width="80px"
+                height="80px"
+                style={{ marginTop: "5px" }}
+              />
+              <div className={styles.divlingot}>
+                <h3 className={styles.lingot}>Lingot</h3>
+                <p className={styles.lingot2}>Kamu Punya 10 Lingot</p>
+                <p className={styles.lingot3}>KE TOKO</p>
+              </div>
+            </MenuItem>
+          </Menu>
+          <img
+            className={styles.logoprofile}
+            src="/img/profile.png"
+            onClick={handleClick}
+          />
+          <Menu
+            anchorEl={anchorEl}
+            open={buka}
+            onClose={handleTutup}
+            style={{ marginTop: "15px" }}
+          >
+            <MenuItem onClick={handleTutup} className={styles.colorteks}>
+              Profile Anda
+            </MenuItem>
+            <MenuItem onClick={handleTutup} className={styles.colorteks}>
+              Pengaturan
+            </MenuItem>
+            <MenuItem onClick={handleTutup} className={styles.colorteks}>
+              Keluar
+            </MenuItem>
+          </Menu>
         </nav>
       </header>
       <div className={styles.div1}>
         <div className={styles.div2}>
           <button
-            onClick={() => router.push('/belajar')}
+            onClick={() => router.push("/belajar")}
             className={styles.buttonbelajar}
           >
             <img
@@ -71,7 +135,7 @@ function Belajar() {
             <p className={styles.pbelajar}>Belajar</p>
           </button>
           <button
-            onClick={() => router.push('/toko')}
+            onClick={() => router.push("/toko")}
             className={styles.buttontoko}
           >
             <img
@@ -100,7 +164,7 @@ function Belajar() {
               onClick={handleClickOpen}
               className={styles.img}
               src={
-                isOpenKonten ? '/img/gembokterbuka.png' : '/img/lockgreen.png'
+                isOpenKonten ? "/img/gembokterbuka.png" : "/img/lockgreen.png"
               }
               height="80px"
               width="80px"
@@ -114,8 +178,8 @@ function Belajar() {
                     <button
                       className={styles.btnbljr}
                       onClick={() => {
-                        localStorage.setItem('isOpenKonten', 'true');
-                        router.push('/isi');
+                        localStorage.setItem("isOpenKonten", "true");
+                        router.push("/isi");
                       }}
                     >
                       MULAI +10 XP
@@ -160,7 +224,7 @@ function Belajar() {
           <div
             className={styles.divunit2}
             style={{
-              marginTop: '50px',
+              marginTop: "50px",
             }}
           >
             <div className={styles.div5}>
@@ -264,7 +328,7 @@ function Belajar() {
               width="80px"
             />
           </div>
-          <div className={styles.div4} style={{ marginTop: '50px' }}>
+          <div className={styles.div4} style={{ marginTop: "50px" }}>
             <div className={styles.div5}>
               <h2 className={styles.unit}>Unit 4</h2>
               <button className={styles.buttonbukupanduan1}>
@@ -347,7 +411,7 @@ function Belajar() {
             <div className={styles.div14}>
               <p>Pencapaian Selanjutnya</p>
               <p
-                onClick={() => router.push('/lihatsemua')}
+                onClick={() => router.push("/lihatsemua")}
                 className={styles.lihatsemua}
               >
                 lihat semua
