@@ -5,16 +5,24 @@
     gap: 1rem;
     padding: 1rem 1rem;
     align-items: center;
+    justify-items: stretch;
+    text-decoration: none ;
 }
 
 .container:hover {
     background-color: rgba(183, 216, 247, 0.5);
     border: 2px solid #369DD7;
-    
 }
 
 .text {
+    flex: 1;
     margin: 0;
     font-weight: bold;
+}
+
+.img-size {
+    width: 40%;
+    object-fit: fill;
+    aspect-ratio: 1 / 1;
 }
 

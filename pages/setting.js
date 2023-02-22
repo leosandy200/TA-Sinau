@@ -41,10 +41,10 @@ function Setting() {
     const formData = new FormData(form.current);
     console.log('ASUUUU')
     try {
-      const res = await axios.post('https://api.sinau-bahasa.my.id/api/users/' + id,
+      const res = await axios.post('https://api.sinau-bahasa.my.id/users/' + id,
         formData,
         {
-          
+           
         }
       );
       console.log(res)
@@ -57,7 +57,7 @@ function Setting() {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post('https://api.sinau-bahasa.my.id/api/logout', undefined,
+      const response = await axios.post('https://api.sinau-bahasa.my.id/logout', undefined,
         {
           headers: {
             'Accept': 'application/json',
@@ -74,22 +74,6 @@ function Setting() {
 
   return (
     <div>
-      {/* <header className={styles.header}>
-        <img
-          className={styles.logota}
-          src="/img/LogoTA.png"
-          height="20px"
-          width="90px"
-        />
-        <nav
-          className={styles.nav}
-        >
-          <img className={styles.logoindonesia} src="/img/indonesia.png" />
-          <img className={styles.logofire} src="/img/fire.png" />
-          <img className={styles.logodiamond} src="/img/diamond.png" />
-          <img className={styles.logoprofile} src="/img/profile.png" onClick={() => router.push("/profile")} />
-        </nav>
-      </header> */}
       <div
         className={styles.div1}
       >
