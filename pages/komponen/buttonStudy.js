@@ -1,11 +1,11 @@
-import React from "react";
+    import React from "react";
 import styles from '../../styles/button-study.module.css'
 
-export function ButtonStudy ({imgsrc, text}) {
+export function ButtonStudy ({imgsrc, text, href}) {
     return (
-        <div className={styles.container}>
-            <img draggable={false} src={imgsrc}/>
+        <a href={href} className={styles.container}>
+            <img draggable={false} src={imgsrc} className={styles["img-size"]}/>
             <p className={styles.text}>{text}</p>
-        </div>
+        </a>
     )
 }

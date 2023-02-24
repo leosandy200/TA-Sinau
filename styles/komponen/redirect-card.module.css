@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.container-image {
+    aspect-ratio: 1 / 1;
+    object-fit: scale-down;
+    min-width: 1rem;
+    width: 15%;
+}
+
+.container-texts {
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.container-texts-highlight {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.container-texts-description {
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0;
+    color: #BCBCBC;
+}
+
+.container-redirect {width: 10%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}

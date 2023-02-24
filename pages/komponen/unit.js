@@ -1,9 +1,10 @@
-import React from "react";
+    import React from "react";
 import styles from "../../styles/unit.module.css";
 const defaultUnitItems = [
     {
         imgSrc: "/icons/belajar-locked.svg", 
-        backgroundColor: "#878787"
+        backgroundColor: "#878787",
+        link: "/"
     }
 ]
 const defaultUnitColor = "#58CC02"
@@ -12,12 +13,13 @@ const defaultUnitDescription = "Lorem tipsum"
 
 export function Unit ({unitColor = defaultUnitColor, unitItems = defaultUnitItems, unitTitle = defaultUnitTitle, unitDesc = defaultUnitDescription}) {
     const chapterGrids = unitItems.map((v, i) => 
-        <img 
+        <a href={v.link}
         className={styles.chapter} 
-        src={v.imgSrc} 
         style={
             {backgroundColor: v.backgroundColor}
-        }/>
+        }>
+            <img src={v.imgSrc} className={styles["chapter-img"]} /> 
+        </a>
     )
     return (
         <div className={styles.basecontent}>

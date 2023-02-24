@@ -1,6 +1,7 @@
-import { useRouter } from "next/router";
+import { useRouter, useEffect, useState } from "next/router";
 import React from "react";
 import styles from "../../styles/navbar.module.css";
+import axios from "axios";
 
 const enabled = {
   "/login": true,
@@ -13,6 +14,7 @@ const enabled = {
   "/notifikasi": true,
   "/edittargetharian": true,
   "/privasi": true,
+  "/setting": true,
 };
 
 const showRightIcon = {
@@ -25,6 +27,8 @@ const showRightIcon = {
   "/notifikasi": "PROFILE",
   "/edittargetharian": "PROFILE",
   "/privasi": "PROFILE",
+  "/setting": "PROFILE",
+
 };
 
 function Navbar() {
@@ -32,19 +36,15 @@ function Navbar() {
 
   if (!enabled[useRouter().pathname]) return null;
 
-  function rightElement() {
+  function rightElement() { 
     switch (showRightIcon[useRouter().pathname]) {
       case "PROFILE":
-        return (
-          <div className={styles.icons}>
-            <img src="/img/fire.png" />
-            <img src="/img/diamond.png" />
-            <img
-              src="/img/profile.png"
-              onClick={() => router.push("/profile ")}
-            />
-          </div>
-        );
+        return (<div className={styles.icons}>
+          <img src="/img/fire.png" />
+          <p></p>
+          <img src="/img/diamond.png" />
+          <img src="/img/profile.png" onClick={() => router.push("/profile ")} />
+        </div>);
       default:
         return null;
     }

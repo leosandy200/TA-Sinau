@@ -1,22 +1,51 @@
 .container {
     display: flex;
-
 }
 
 .containerLeft {
     display: flex;
     flex-flow: column;
     gap: 1.5rem;
-    padding: 0px 40px;
+    padding: 0px 30px;
     padding-top: 30px;
     padding-right: 30px;
 }
 
+.containerCenter::-webkit-scrollbar {
+    display: none;
+}
+
 .containerCenter {
+    scrollbar-width: none;
+    overflow-y: scroll;
     flex: 2;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
 }
 
 .container-right {
    flex: 1;
    padding: 1.5rem
+}
+
+.container-loading {
+    padding: 25%;
+}
+
+.container-loading::before {
+    padding: 10%;
+    border-width: 10px!important;
+    /* border-right: none !important; */
+    border-radius: 100%!important;
+    aspect-ratio: 1/1;
+    width: 10%!important;
+    height: 10%!important;
+    align-self: center;
+}
+
+.error-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }

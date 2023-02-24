@@ -12,12 +12,16 @@
 .container:hover {
     background-color: rgba(183, 216, 247, 0.5);
     border: 2px solid #369DD7;
+    -webkit-text-fill-color: #369DD7 ;
+
+    
 }
 
 .text {
     flex: 1;
     margin: 0;
     font-weight: bold;
+    color: black;
 }
 
 .img-size {

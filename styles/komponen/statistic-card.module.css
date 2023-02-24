@@ -1,0 +1,32 @@
+.container {
+    border: 1px solid gray;
+    border-radius: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.container-image {
+    object-fit: scale-down;
+    object-position: center;
+    aspect-ratio: 1 / 1;
+    width: 60px;
+    height: 60px;
+}
+
+.container-detail {
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.container-detail-title {
+    font-size: 1.15rem;
+    font-weight: bold;
+}
+
+.container-detail-description {
+    font-size: 0.8rem;
+    color: #BCBCBC;
+}

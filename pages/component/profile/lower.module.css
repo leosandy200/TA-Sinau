@@ -1,0 +1,50 @@
+.lower-container {
+    display: flex;
+    gap: 40px;
+}
+
+.lower-container-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.lower-container-left {
+    flex: 1
+}
+
+.lower-container-right {
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    gap: 1rem;
+}
+
+.statistik-text-positioning {
+    display: flex;
+    justify-content: space-between;
+}
+
+.statistik-text {
+    margin: 20px 0 20px 0;
+    font-size: 30px;
+}
+
+.statistik-wrapper {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(15rem, 1fr));
+} 
+
+.pencapaian-wrapper {
+    justify-content: space-between;
+}
+
+.pencapaian-text {
+    margin: 0 0 20px 0;
+    font-size: 30px;
+    line-height: 1;
+}
+
+.pencapaian-ul {
+    padding: 0;
+}

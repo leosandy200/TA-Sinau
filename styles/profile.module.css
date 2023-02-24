@@ -1,0 +1,67 @@
+
+
+.container-left {
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+    padding: 0px 30px;
+    padding-top: 30px;
+    padding-right: 30px;
+}
+
+.container-right {
+    width: 100%;
+}
+
+.container-right-dataUser {
+    flex-direction: row;
+    margin: 24px;
+    padding: 0 0 24px;
+    display: flex;
+}
+
+.container-data-user {
+    display: flex;
+    flex-direction: row-reverse;
+    flex: 1 1 auto;
+}
+
+.data-user-text {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.username {
+   
+}
+
+.avatar-div {
+    margin: 1rem;
+}
+
+.avatar-position {
+    display: inline-block;
+    position: relative;
+}
+
+.container-edit-button {
+    flex: 0 1 auto;
+    align-items: flex-start;
+    display: flex;
+}
+
+.edit-button {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.button {
+    cursor: pointer;
+    flex: 1 1 auto;
+    justify-content: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-flex;
+    position: relative;
+}
