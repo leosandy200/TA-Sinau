@@ -13,21 +13,21 @@ const Register = () => {
   const handleSubmitRegister = async (e) => {
     e.preventDefault();
     const formData = new FormData(form.current);
+
     try {
       const responseRegister = await axios.post(
-        'https://api.sinau-bahasa.my.id/api/register',
+        'https://api.sinau-bahasa.my.id/register',
         formData,
         {
           headers: {
+            'Accept': 'application/json',
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Accept': 'application/json'
+            
           },
         }
       );
-
-      router.push = ("/login");
-
-
+      console.log(responseRegister)
+      router.push("/login");
     } catch (error) {
       if (!error) return;
       switch (error.data?.status) {
@@ -50,11 +50,11 @@ const Register = () => {
       <div className={styles.container}>
         <h1 className={styles.h1}>DAFTAR</h1>
         <form className={styles.form} onSubmit={handleSubmitRegister} ref={form}>
-          <input className={styles.input} placeholder="Nama" type="text" name="namaUser" />
+          <input className={styles.input} placeholder="Nama" type="text" name="namaUser" /> 
           <input className={styles.input} placeholder="Email" type="text" name="email" />
           <input className={styles.input}placeholder="Password" type="password" name="password" />
-          <input className={styles.input} placeholder="Nama" type="password" name="password_confirmation" />
-          <input className={styles.inputsubmit} type="submit" value="Daftar" />
+          <input className={styles.input} placeholder="Konfirmasi Password" type="password" name="password_confirmation"/>
+          <input className={styles.inputsubmit} type="submit" value="Daftar"/>
         </form>
         <p className={styles.lowertext}>By signing up to Sinau, you agree to our <b>Terms</b> and <b>Privacy Policy.</b></p>
       </div>

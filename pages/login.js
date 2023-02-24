@@ -1,4 +1,4 @@
-import { React, useState, useEffect, createRef} from "react";
+import { React, createRef} from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/login.module.css";
 import axios from "axios";
@@ -13,16 +13,17 @@ const Login = () => {
       
     try {   
         const responseLogin = await axios.post(
-            'https://api.sinau-bahasa.my.id/api/login',
+            'https://api.sinau-bahasa.my.id/login',
               formData,
             {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                withCredentials: false,
+                // withCredentials: false,
             }
         );
+
         if ('token' in responseLogin?.data?.access) {
             const tokenUser = responseLogin?.data?.access?.token;
             const idUser = responseLogin?.data?.data?.id; 
@@ -58,7 +59,7 @@ const Login = () => {
       <a className={styles.daftar} href="/register">DAFTAR</a>
       <div className={styles.container}>
         <h1 className={styles.h1}>MASUK</h1>
-        <form onSubmit={handleSubmitLogin} ref={form}className={styles.form}>
+        <form onSubmit={handleSubmitLogin} ref={form} className={styles.form}>
           <input className={styles.input} placeholder="Email or username" type="text" name="emailOrUser"/>
           <input className={styles.input} placeholder="Password" type="password" name="password"/>
           <input className={styles.inputsubmit} type="submit" value="Masuk"/>
