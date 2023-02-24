@@ -3,19 +3,32 @@ import React from "react";
 import styles from "../../styles/navbar.module.css";
 import axios from "axios";
 
-
 const enabled = {
   "/login": true,
   "/register": true,
   "/belajar": true,
   "/profile": true,
+  "/akun": true,
+  "/aturkursus": true,
+  "/katasandi": true,
+  "/notifikasi": true,
+  "/edittargetharian": true,
+  "/privasi": true,
   "/setting": true,
-}
+};
 
 const showRightIcon = {
   "/belajar": "PROFILE",
   "/profile": "PROFILE",
+  "/login": "PROFILE",
+  "/akun": "PROFILE",
+  "/aturkursus": "PROFILE",
+  "/katasandi": "PROFILE",
+  "/notifikasi": "PROFILE",
+  "/edittargetharian": "PROFILE",
+  "/privasi": "PROFILE",
   "/setting": "PROFILE",
+
 };
 
 function Navbar() {
