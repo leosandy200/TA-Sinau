@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../../styles/komponen/redirect-card.module.css'
+import styles from '../profile/redirect-card.module.css'
 
 export function RedirectCard({img, title, description}) {
     return (

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { ButtonStudy } from './komponen/buttonStudy';
-import { Unit } from './komponen/unit';
-import { CardXp } from './komponen/cardProgressXp';
+import { ButtonStudy } from './component/buttonStudy';
+import { Unit } from './component/belajar/unit';
+import { CardXp } from './component/belajar/cardProgressXp';
 import styles from '../styles/belajar.module.css';
+import { NavbarButtonStudy } from './component/navbar-button-study';
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
@@ -47,10 +48,7 @@ function Belajar() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.containerLeft}>
-        <ButtonStudy imgsrc="/img/Belajar.png" text="Belajar" href="/belajar"/>
-        <ButtonStudy imgsrc="/img/Toko.png" text="Toko" href="/toko"/>
-      </div>
+      <NavbarButtonStudy/>
       <div className={styles.containerCenter}>
         {middleKomponen}
       </div>

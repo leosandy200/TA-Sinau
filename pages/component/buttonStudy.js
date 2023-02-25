@@ -1,5 +1,5 @@
-    import React from "react";
-import styles from '../../styles/button-study.module.css'
+import React from "react";
+import styles from '../component/button-study.module.css'
 
 export function ButtonStudy ({imgsrc, text, href}) {
     return (

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../styles/komponen/statistic-card.module.css"
+import styles from "../profile/statistic-card.module.css"
 
 export function StatisticCard({title, description, imgSource}) {
     return (

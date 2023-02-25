@@ -1,7 +1,7 @@
 import React from "react";
-import { StatisticCard } from "../statistic-card";
-import { RedirectCard } from "../redirect-card";
-import { AchievementCard } from "../achievement-card";
+import { StatisticCard } from "../profile/statistic-card";
+import { RedirectCard } from "./redirect-card";
+import { AchievementCard } from "./achievement-card";
 import profile from './lower.module.css'
 
 const styles = {
@@ -25,13 +25,15 @@ export function LowerProfile({ XP }) {
                     <div id="achievement" className={styles.profile["pencapaian-wrapper"]}>
                         <h2 className={styles.profile["statistik-text"]}>Pencapaian</h2>
                         <ul className={styles.profile["pencapaian-ul"]}>
-                            <AchievementCard title="ngocokers" description="Ngocok 3x setiap hari" imgSource="/img/Membara.svg" />
+                            <AchievementCard title="Membara" description="Capai Streak 30 Hari " imgSource="/img/Membara.svg" />
+                            <AchievementCard title="Rajin" description="Selesaikan 50 Pelajaran " imgSource="/img/Membara.svg" />
+                            <a className={styles.profile["pencapaian-viewall"]}>Lihat Semua</a>
                         </ul>
                     </div>
                 </div>
             </div>
             <div className={styles.profile["lower-container-right"]}>
-                <h2 style={{ marginBottom: 0 }}>Teman</h2>
+                <h2 className={styles.profile["teman-text-positioning"]}>Teman</h2>
                 <RedirectCard img="/icons/profile-search.svg" description="Cari Pelajar Lainnya" title="Temukan Teman" />
                 <RedirectCard img="/icons/profile-search.svg" description="Cari Pelajar Lainnya" title="Temukan Teman" />
             </div>

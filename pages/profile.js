@@ -6,11 +6,12 @@ import stylesBelajar from "../styles/belajar.module.css";
 import stylesProfile from "../styles/profile-fix.module.css";
 // import styles from "../styles/style.module.css";
 import axios from "axios";
-import { ButtonStudy } from './komponen/buttonStudy';
-import { StatisticCard } from "./component/statistic-card";
-import { RedirectCard } from "./component/redirect-card";
+import { ButtonStudy } from './component/buttonStudy';
+import { StatisticCard } from "./component/profile/statistic-card";
+import { RedirectCard } from "./component/profile/redirect-card";
 import { UpperProfile } from "./component/profile/upper";
 import { LowerProfile } from "./component/profile/lower";
+import { NavbarButtonStudy } from "./component/navbar-button-study";
 
 const styles = {
   belajar: stylesBelajar,
@@ -363,18 +364,11 @@ function Profile() {
   // );
 
   return (
-    <div className={styles.profile["container"]}>
-      <div className={styles.profile["container-position"]}>
-        <div className={styles.profile["container-left"]}>
-          <div className={styles.profile["container-left-buttons"]}>
-            <ButtonStudy imgsrc="/img/Belajar.png" text="Belajar" href="/belajar" />
-            <ButtonStudy imgsrc="/img/Toko.png" text="Toko" />
-          </div>
-        </div>
-        <div className={styles.profile["container-right"]}>
-          <UpperProfile user={user}/>
-          <LowerProfile XP={xpUser}/>
-        </div>
+    <div className={styles.profile["container-profile"]}>
+      <NavbarButtonStudy/>
+      <div className={styles.profile["container-right"]}>
+        <UpperProfile user={user} />
+        <LowerProfile XP={xpUser} />
       </div>
     </div>
   );

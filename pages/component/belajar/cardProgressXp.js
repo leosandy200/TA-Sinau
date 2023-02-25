@@ -1,5 +1,5 @@
 import React from "react";
-import styles from '../../styles/card-xp.module.css'
+import styles from '../../component/belajar/card-xp.module.css'
 
 export function CardXp ({maxVal, currentVal, titleCard}) {
     return (

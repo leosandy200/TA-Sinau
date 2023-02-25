@@ -1,6 +1,6 @@
 import { useRouter, useEffect, useState } from "next/router";
 import React from "react";
-import styles from "../../styles/navbar.module.css";
+import styles from "../component/navbar.module.css";
 import axios from "axios";
 
 const enabled = {
@@ -36,12 +36,11 @@ function Navbar() {
 
   if (!enabled[useRouter().pathname]) return null;
 
-  function rightElement() { 
+  function rightElement() {
     switch (showRightIcon[useRouter().pathname]) {
       case "PROFILE":
         return (<div className={styles.icons}>
           <img src="/img/fire.png" />
-          <p></p>
           <img src="/img/diamond.png" />
           <img src="/img/profile.png" onClick={() => router.push("/profile ")} />
         </div>);

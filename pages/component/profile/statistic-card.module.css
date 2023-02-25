@@ -1,6 +1,13 @@
 .container {
-    border: 1px solid gray;
+    border: 2px solid gray;
     border-radius: 1rem;
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.container-pencapaian {
+    border-bottom: 2px solid gray;
     display: flex;
     gap: 0.5rem;
     padding: 1rem;

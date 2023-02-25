@@ -1,0 +1,42 @@
+.container-profile {
+    display: flex;
+}
+
+.container-settings {
+    gap: 2rem;
+    flex: 1;
+    padding: 30px;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    display: flex;
+    overflow-y: scroll;
+}
+
+.container-left-buttons {
+    display: flex;
+    flex-flow: column;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.container-right {
+    flex: 1;
+}
+
+.akun-text-style {
+    --typography-spacing-vertical: 30px;
+}
+
+.simpan-button-style {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    color: white;
+    padding: 0.6rem 0.8rem;
+    background-color: #6BB7FE;
+    text-decoration: none;
+    margin: 0;
+}

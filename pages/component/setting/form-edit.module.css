@@ -1,0 +1,48 @@
+.form-element {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.input-pilih-berkas {
+    display: none;
+}
+
+.input-button-teks {
+    text-align: end;
+    font-weight: 600;
+}
+
+.input-button-style {
+    margin-bottom: 0;
+    width: 40%;
+    background-color: white;
+    border-radius: 12px;
+    border-color: #bcbcbc;
+    color: #6bb7fe;
+    cursor: pointer;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+} 
+
+.input-box-style {
+    white-space: nowrap;
+    background-color: #ededed;
+    border-radius: 10px;
+    padding: 15px;
+    border: none;
+    margin: 0 0 0 0;
+}
+
+.container-label {
+    gap: 1rem;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    display: grid;
+    align-items: center;
+}
+
+

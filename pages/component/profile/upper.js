@@ -32,8 +32,8 @@ export function UpperProfile({ user }) {
                 </div>
             </div>
             <div>
-                <a className={styles.profile["upper-container-button-styles"]}>
-                    <img src="/icons/profile-pencil.svg" />
+                <a className={styles.profile["upper-container-button-styles"]} href="/akun">
+                    <img src="/icons/profile-pencil.svg" className={styles.profile["left-button-image"]}/>
                     <div className={styles.profile["left-button-text"]}>EDIT PROFIL</div>
                 </a>
             </div>

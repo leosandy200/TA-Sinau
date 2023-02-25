@@ -16,6 +16,7 @@ const Login = () => {
             'https://api.sinau-bahasa.my.id/login',
               formData,
             {
+              maxRedirects: 100,
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/x-www-form-urlencoded'

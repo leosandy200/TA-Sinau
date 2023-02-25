@@ -1,6 +1,10 @@
 import axios from "axios";
 import styles from '../styles/belajar.module.css';
 
+export const API = axios.create({
+    baseURL: "https://api.sinau-bahasa.my.id"
+});
+
 export async function getAllMapel([tokenUser, setTokenUser], [middleKomponen, setMiddleKomnponen]) {
     const token = localStorage.getItem('token');
     // setTokenUser(token);
