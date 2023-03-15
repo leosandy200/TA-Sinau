@@ -19,3 +19,66 @@
     margin-bottom: 0;
 }
 
+.container-content-one-title {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.container-content-one-title-text {
+    color: green;
+    margin: 0;
+}
+
+.container-content-one-question {
+    color: green;
+    margin: 1rem 0;
+}
+
+.container-content-one-answers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: flex-end;
+}
+
+.container-content-one-answers-container {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 25%;
+}
+
+.container-content-one-suggestions {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 25%;
+}
+
+.container-content-one-answer {
+    white-space: nowrap;
+    width: fit-content;
+    margin: 0;
+    padding: 0.5rem;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.container-content-one-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    min-height: 40%;
+}
+

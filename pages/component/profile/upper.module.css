@@ -22,7 +22,9 @@
 }
 
 .upper-container-avatar-setting {
+    object-fit: fill;
     border-radius: 50%;
+    aspect-ratio: 1 /1;
     height: 180px;
     font-weight: 180px;
 }

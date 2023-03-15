@@ -1,63 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-import LinearProgress, { linearProgressClasses } from "@mui/material/LinearProgress";
-import { styled } from "@mui/material/styles";
 import stylesBelajar from "../styles/belajar.module.css";
 import stylesProfile from "../styles/profile-fix.module.css";
-// import styles from "../styles/style.module.css";
-import axios from "axios";
-import { ButtonStudy } from './component/buttonStudy';
-import { StatisticCard } from "./component/profile/statistic-card";
-import { RedirectCard } from "./component/profile/redirect-card";
 import { UpperProfile } from "./component/profile/upper";
 import { LowerProfile } from "./component/profile/lower";
 import { NavbarButtonStudy } from "./component/navbar-button-study";
+import { FollowContext, ProfileContext, ProfileDataContext } from "../utils/context";
+import { API } from "../utils/request";
 
 const styles = {
   belajar: stylesBelajar,
   profile: stylesProfile
 };
 
-const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
-  height: 10,
-  borderRadius: 5,
-  width: "250%",
-  marginLeft: "34px",
-  [`& .${linearProgressClasses.bar}`]: {
-    borderRadius: 5,
-    backgroundColor: theme.palette.mode === "light" ? "#FFD333" : "#BCBCBC",
-  },
-}));
+// const [dataUser, setDataUser] = useState(null)
 
 function Profile() {
-  const [selectedMenu, setSelectedMenu] = useState("mengikuti");
   const router = useRouter();
-
-  const [user, setUser] = useState([]);
-  const [xpUser, setXpUser] = useState([]);
-
-  useEffect(() => {
-
-    const infoUser = localStorage.getItem('data')
-
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'https://api.sinau-bahasa.my.id/public-user/' + infoUser);
-
-        const dataUser = response.data?.data;
-        const Xp = response.data?.data?.xp;
-
-        setUser(dataUser)
-        setXpUser(Xp)
-
-      }
-      catch (error) {
-        console.log(error)
-      }
-    };
-    fetchData();
-  }, [])
   // return (
   // <div className={styles.container}>
   //   <div className={styles["container-left"]}>
@@ -362,15 +321,46 @@ function Profile() {
   //   </div>
   // </div>
   // );
+  const [Follow, setFollow] = useState([[], []]);
+  const [dataUser, setDataUser] = useContext(ProfileContext);
+  const [publicProfile, setPublicProfile] = useState(null);
+
+  useEffect(() => {
+    if (!dataUser.id) return;
+
+
+    (async () => {
+      try {
+
+        const response = await API.get(`/public-user/${dataUser.id}`);
+
+        const res = response.data.data
+
+        setPublicProfile(res)
+
+        console.log();
+
+      } catch (error) {
+
+        console.log(error);
+
+      }
+    })()
+
+  }, [dataUser])
 
   return (
-    <div className={styles.profile["container-profile"]}>
-      <NavbarButtonStudy/>
-      <div className={styles.profile["container-right"]}>
-        <UpperProfile user={user} />
-        <LowerProfile XP={xpUser} />
+    <ProfileDataContext.Provider value={[publicProfile, setPublicProfile]}>
+      <div className={styles.profile["container-profile"]}>
+        <NavbarButtonStudy />
+        <div className={styles.profile["container-right"]}>
+          <FollowContext.Provider value={[Follow, setFollow]}>
+            <UpperProfile />
+            <LowerProfile />
+          </FollowContext.Provider>
+        </div>
       </div>
-    </div>
+    </ProfileDataContext.Provider>
   );
 }
 export default Profile;

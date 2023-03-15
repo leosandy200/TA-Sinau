@@ -1,0 +1,38 @@
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    margin-right: 5%;
+}
+
+.icon-style {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-style-streak {
+    width: 40px;
+    height: 40px;
+    margin-right: 16px ;
+}
+
+.icon-style-profile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.streak-positioning {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.streak-count {
+    color: whitesmoke;
+    font-weight: 600;
+    font-size: 30px;
+    --typography-spacing-vertical: 0 !important;
+    line-height: 1.25rem;
+}

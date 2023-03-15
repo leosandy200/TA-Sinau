@@ -16,6 +16,10 @@
     padding: 30px;
 }
 
+.container-right::-webkit-scrollbar{
+    display: none;
+}
+
 .left-button-text {
     text-transform: uppercase;
 }

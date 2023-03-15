@@ -1,14 +1,45 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { StatisticCard } from "../profile/statistic-card";
 import { RedirectCard } from "./redirect-card";
 import { AchievementCard } from "./achievement-card";
 import profile from './lower.module.css'
+import { FollowContext, ProfileContext } from "../../../utils/context";
+import { FollowList } from "./follow-list";
+import { API } from "../../../utils/request";
+import { AchievementContext } from "../../../utils/context";
 
 const styles = {
     profile
 }
 
-export function LowerProfile({ XP }) {
+export function LowerProfile({ streak, XP }) {
+
+    const [dataUser, setDataUser] = useContext(ProfileContext);
+    const [selected, setSelected] = useState(null)
+    const [komponenAchieve, setKomponenAchieve] = useState(null)
+
+    useEffect(() => {
+        if (!dataUser.id) return;
+
+        (async () => {
+            try {
+                const achievement = await API.get(`/achievement?id=${dataUser.id}&limit=3`)
+                const result = []
+                achievement.data.achievement.forEach(v => {
+                    result.push(<AchievementCard title={v.achievement_name} description={v.description} imgSource="/img/Membara.svg" />)
+                })
+                setKomponenAchieve(
+                    <AchievementContext.Provider value={[selected, setSelected]}>
+                        {result}
+                    </AchievementContext.Provider>
+                )
+            } catch (error) {
+                console.log(error);
+            }
+        })()
+
+    }, [dataUser])
+
     return (
         <div className={styles.profile["lower-container"]}>
             <div className={styles.profile["lower-container-left"]}>
@@ -17,16 +48,16 @@ export function LowerProfile({ XP }) {
                         <div id="text statistik" className={styles.profile[""]}>
                             <h2 className={styles.profile["statistik-text"]}>Statistik</h2>
                             <div className={styles.profile["statistik-wrapper"]}>
-                                <StatisticCard title="0" description="Runtutan hari ini" imgSource="/icons/profile-fire.svg" />
-                                <StatisticCard title={XP.totalXp} description="Total XP" imgSource="/icons/petir.svg" />
+                                <StatisticCard title={dataUser?.streak_count} description="Runtutan hari ini" imgSource="/icons/profile-fire.svg" />
+                                <StatisticCard title={dataUser?.xp?.totalXp} description="Total XP" imgSource="/icons/petir.svg" />
                             </div>
                         </div>
                     </div>
+
                     <div id="achievement" className={styles.profile["pencapaian-wrapper"]}>
                         <h2 className={styles.profile["statistik-text"]}>Pencapaian</h2>
                         <ul className={styles.profile["pencapaian-ul"]}>
-                            <AchievementCard title="Membara" description="Capai Streak 30 Hari " imgSource="/img/Membara.svg" />
-                            <AchievementCard title="Rajin" description="Selesaikan 50 Pelajaran " imgSource="/img/Membara.svg" />
+                            {komponenAchieve}
                             <a className={styles.profile["pencapaian-viewall"]}>Lihat Semua</a>
                         </ul>
                     </div>
@@ -34,7 +65,7 @@ export function LowerProfile({ XP }) {
             </div>
             <div className={styles.profile["lower-container-right"]}>
                 <h2 className={styles.profile["teman-text-positioning"]}>Teman</h2>
-                <RedirectCard img="/icons/profile-search.svg" description="Cari Pelajar Lainnya" title="Temukan Teman" />
+                <FollowList />
                 <RedirectCard img="/icons/profile-search.svg" description="Cari Pelajar Lainnya" title="Temukan Teman" />
             </div>
         </div>

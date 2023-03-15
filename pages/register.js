@@ -59,8 +59,9 @@ const Register = () => {
         <p className={styles.lowertext}>By signing up to Sinau, you agree to our <b>Terms</b> and <b>Privacy Policy.</b></p>
       </div>
     </main>
-    // <div> 
-    //   <button
+    //
+    //  <div> 
+    // //   <button
     //     className={styles.buttondaftar}
     //     onClick={() => router.push("/login")}
     //   >

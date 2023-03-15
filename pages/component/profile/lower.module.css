@@ -1,6 +1,6 @@
 .lower-container {
     display: flex;
-    gap: 60px;
+    gap: 40px;
 }
 
 .lower-container-left {
@@ -60,9 +60,12 @@
 }
 
 .pencapaian-viewall {
+    cursor: pointer;
     display: flex;
     font-size: 20px;
     font-weight: 700;
     justify-content: space-between;
-    padding: 16px
+    padding: 16px;
+    text-decoration: none;
+    color: black;
 }

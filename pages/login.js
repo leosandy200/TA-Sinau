@@ -1,11 +1,13 @@
-import { React, createRef} from "react";
+import { React, createRef, useContext} from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/login.module.css";
 import axios from "axios";
+import { ProfileContext } from "../utils/context";
 
 const Login = () => {
   const router = useRouter();
   const form = createRef();
+  const [dataUser, setDataUser] = useContext(ProfileContext);
 
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
@@ -25,16 +27,18 @@ const Login = () => {
             }
         );
 
-        if ('token' in responseLogin?.data?.access) {
+        if (responseLogin?.data?.status == 200) {
             const tokenUser = responseLogin?.data?.access?.token;
-            const idUser = responseLogin?.data?.data?.id; 
+            const dataUser = responseLogin?.data?.data; 
+
+            console.log(dataUser)
 
             axios.defaults.headers["Authorization"] = `Bearer ${tokenUser}`
-            localStorage.setItem('data', idUser);
+            localStorage.setItem('data', JSON.stringify(dataUser));
             localStorage.setItem('token', tokenUser);
 
+            setDataUser(dataUser);
             router.push("/belajar");
-
         } else {
             console.log("Login Failed")
         }
