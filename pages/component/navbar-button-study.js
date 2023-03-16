@@ -15,7 +15,7 @@ export function NavbarButtonStudy() {
             <ButtonStudy imgsrc="/icons/home-belajar.svg" text="Belajar" link="/belajar" />
             {/* <ButtonStudy imgsrc="/img/Toko.png" text="Toko" href="/toko" /> */}
             <ButtonStudy imgsrc={dataUser.avatar} text="Profile" link={`/profile/${dataUser.namaUser}`} identifier="profile" />
-            <ButtonStudy imgsrc="/icons/trace.svg" text="Pengaturan" link="/akun" />
+            <ButtonStudy imgsrc="/icons/trace.svg" text="Pengaturan" link={`/pengaturan/akun`} />
         </div>
     )
 }

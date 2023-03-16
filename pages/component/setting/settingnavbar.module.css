@@ -1,8 +1,9 @@
 .buttonprofile {
-    border-color: #878787;
+    border: 2px solid #e5e5e5;
     background-color: white;
     margin-top: 30px;
-    border-radius: 10px;
+    border-radius: 12px;
+    padding: 24px;
 }
 
 .div1 {

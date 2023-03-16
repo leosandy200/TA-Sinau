@@ -26,7 +26,7 @@ export function LowerProfile({ streak, XP }) {
                 const achievement = await API.get(`/achievement?id=${dataUser.id}&limit=3`)
                 const result = []
                 achievement.data.achievement.forEach(v => {
-                    result.push(<AchievementCard title={v.achievement_name} description={v.description} imgSource={v.image} />)
+                    result.push(<AchievementCard title={v.achievement_name} description={v.description} imgSource={v.image} XP={v.current_xp} maxValue={v.required} />)
                 })
                 setKomponenAchieve(
                     <AchievementContext.Provider value={[selected, setSelected]}>

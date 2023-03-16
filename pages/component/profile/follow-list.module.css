@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    border: 2px solid gray;
+    border: 2px solid #e5e5e5;
     border-radius: 1rem;
     flex-direction: column;
     margin-bottom: 60px;
@@ -37,7 +37,7 @@
 }
 
 .no-underline {
-    border-bottom: 3px solid gray;
+    border-bottom: 3px solid #e5e5e5;
 }
 
 .follow-title {
@@ -55,6 +55,6 @@
     justify-content: space-between;
     padding: 12px;
     text-decoration: none;
-    color: black;
+    color: #3c3c3c;
 }
 

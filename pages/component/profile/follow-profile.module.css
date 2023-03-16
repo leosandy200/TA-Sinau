@@ -2,14 +2,14 @@
     display: flex;
     padding: 16px;
     align-items: flex-start;
-    border-bottom: 2px solid gray !important;
+    border-bottom: 2px solid #e5e5e5 !important;
 }
 
 .container-link {
     display: flex;
     flex: 1 1 auto;
     text-decoration: none;
-    color: gray;
+    color: #afafaf;
 }
 
 .container-profile-imgbox {
@@ -28,6 +28,9 @@
     margin: 0 12px;
     white-space: nowrap;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     
 }
 
