@@ -1,6 +1,6 @@
 .lower-container {
     display: flex;
-    gap: 40px;
+    gap: 60px;
 }
 
 .lower-container-left {
@@ -19,11 +19,12 @@
     display: flex;
     flex-flow: column;
     align-items: stretch;
-    gap: 1rem;
+
 }
 
 .teman-text-positioning {
-    margin: 20px 0 0 0;
+    margin: 20px 0 20px 0;
+    color: #3c3c3c;
     font-size: 30px;
 }
 
@@ -33,21 +34,29 @@
 }
 
 .statistik-text {
+    color: #3c3c3c;
     margin: 20px 0 20px 0;
+    font-size: 30px;
+}
+
+.statistik-text-pencapaian {
+    color: #3c3c3c;
+    margin: 40px 0 20px 0;
     font-size: 30px;
 }
 
 .statistik-wrapper {
     display: grid;
     gap: 1rem;
-    grid-template-columns:1fr 1fr;
-} 
+    grid-template-columns: 1fr 1fr;
+}
 
 .pencapaian-wrapper {
     justify-content: space-between;
 }
 
 .pencapaian-text {
+    color: #3c3c3c;
     margin: 0 0 20px 0;
     font-size: 30px;
     line-height: 1;
@@ -67,5 +76,5 @@
     justify-content: space-between;
     padding: 16px;
     text-decoration: none;
-    color: black;
+    color: #3c3c3c;
 }

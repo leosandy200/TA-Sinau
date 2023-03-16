@@ -62,7 +62,7 @@ function Belajar() {
         {middleKomponen}
       </div>
       <div className={styles["container-right"]}>
-        <CardXp maxVal={24} currentVal={4} titleCard="Progress XP" />
+        {/* <CardXp maxVal={24} currentVal={4} titleCard="Progress XP" /> */}
       </div>
     </div>
   )

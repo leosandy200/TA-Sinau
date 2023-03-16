@@ -89,7 +89,7 @@ function ContentPembelajaranOne() {
             suggestionsTemp.push({keyword: element.keyword, word: element.word})
         });
         setSuggestions(suggestionsTemp);
-        setAnswers([]);
+        setAnswers([ ]);
     }, [soal])
     
 

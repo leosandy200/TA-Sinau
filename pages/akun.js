@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef, createRef, useContext } from "react
 import { useRouter } from "next/router";
 import global from "../styles/style.module.css";
 import akun from "../styles/akun.module.css"
-import { FormEdit } from "./component/setting/form-edit";
-import Lihatprofile from "./komponen/lihatprofilemu";
 import Settingfooter from "./komponen/settingfooter";
-import Empatbutton from "./komponen/empatbutton";
-import { NavbarButtonStudy } from "./component/navbar-button-study";
 import { API } from "../utils/request";
-import { FormContext, ProfileContext } from "../utils/context";
+import { ProfileContext } from "../utils/context";
+import { NavbarButtonStudy } from "./component/navbar-button-study";
+import { FormEdit } from "./component/setting/form-edit";
+import  Buttons  from "./component/setting/buttons";
+import SettingNavbar from "./component/setting/settingNavbar";
 
 // function MyFormHelperText() {
 //   const { focused } = useFormControl() || {};
@@ -65,7 +65,7 @@ function Setting() {
       <div className={styles.akun["container-settings"]}>
         <div className={styles.akun["container-right"]}>
           <h1 className={styles.akun["akun-text-style"]}>Akun</h1>
-          <div>
+          <div className={styles.akun["container-form"]}>
             <FormEdit ref={formRef} />
           </div>
           {/* <div className={styles.global.div24}>
@@ -103,10 +103,10 @@ function Setting() {
         </div>
         <div>
           <button ref={submitRef} className={styles.akun["simpan-button-style"]}>
-            <p>Simpan Perubahan</p>
+            <p className={styles.akun["simpan-button-text-style"]}>Simpan Perubahan</p>
           </button>
-          <Lihatprofile />
-          <Empatbutton />
+          <SettingNavbar />
+          <Buttons />
         </div>
       </div>
     </div>

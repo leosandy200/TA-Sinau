@@ -33,11 +33,11 @@ export function FollowList() {
     return (
         <div className={styles["container"]}>
             <ul className={styles["follow-title-ul"]}>
-                <li className={[styles["follow-title-list"], (selected == 0) ? styles['allow-underline'] : null].join(" ")} onClick={() => setSelected(0)}>
-                    <span className={styles["follow-title-right"]}>Following</span>
+                <li className={[styles["follow-title-list"], (selected == 0) ? styles['allow-underline'] : styles['no-underline']].join(" ")} onClick={() => setSelected(0)}>
+                    <span className={styles["follow-title"]}>Following</span>
                 </li>
-                <li className={[styles["follow-title-list"], (selected == 1) ? styles['allow-underline'] : null].join(" ")} onClick={() => setSelected(1)}>
-                    <span className={styles["follow-title-left"]}>Followers</span>
+                <li className={[styles["follow-title-list"], (selected == 1) ? styles['allow-underline'] : styles['no-underline']].join(" ")} onClick={() => setSelected(1)}>
+                    <span className={styles["follow-title"]}>Followers</span>
                 </li>
             </ul>
             <div>

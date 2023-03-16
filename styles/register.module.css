@@ -35,20 +35,20 @@
 }
 
 .input {
-    --border-radius: 0.75rem;
-    width: 90%;
+    background-color: #f7f7f7;
+    border-radius: 16px;
+    width: 100%;
+    border: 2px solid #e5e5e5;
+    margin-bottom: 12px !important;
 }
 
 .inputsubmit {
-    --border-radius: 0.75rem;
-    width: 90%;
+    margin-top: 12px !important;
+    margin-bottom: 20px !important;
+    --border-radius: 20px;
+    width: 100%;
     font-weight: bold !important;
-}
 
-.inputsubmit {
-    --border-radius: 0.75rem;
-    width: 90%;
-    font-weight: bold !important;
 }
 
 .lowertext {

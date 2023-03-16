@@ -1,27 +1,11 @@
 import React, { useState } from "react";
-import styles from "../../styles/style.module.css";
+import styles from "../setting/settingnavbar.module.css";
+
 import { useRouter } from "next/router";
 
-function Lihatprofile() {
+function SettingNavbar() {
   const router = useRouter();
   const [selectedMenu, setSelectedMenu] = useState("akun");
-  const handleLogout = async () => {
-    try {
-      const response = await axios.post(
-        "https://api.sinau-bahasa.my.id/logout",
-        undefined,
-        {
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      );
-      axios.defaults.headers["Authorization"] = undefined;
-      router.push("/");
-    } catch (error) {
-      console.log(error);
-    }
-  };
   return (
     <div>
       <button className={styles.buttonprofile}>
@@ -29,10 +13,7 @@ function Lihatprofile() {
           <img src="/img/Profile.png" className={styles.imgprofile} />
           <div className={styles.div28}>
             <p className={styles.namaprofile}>LeoSandy</p>
-            <p
-              onClick={() => router.push("/profile")}
-              className={styles.lihatprofile}
-            >
+            <p onClick={() => router.push("/profile")} className={styles.lihatprofile}>
               Lihat Profilmu
             </p>
           </div>
@@ -49,7 +30,7 @@ function Lihatprofile() {
             Akun
           </div>
         </div>
-        <div onClick={() => router.push("/aturkursus")}>
+        {/* <div onClick={() => router.push("/aturkursus")}>
           <div
             className={styles.akun}
             onClick={() => setSelectedMenu("aturkursus")}
@@ -61,7 +42,7 @@ function Lihatprofile() {
           >
             Atur Kursus
           </div>
-        </div>
+        </div> */}
         <div onClick={() => router.push("/katasandi")}>
           <div
             className={styles.akun}
@@ -75,7 +56,7 @@ function Lihatprofile() {
             Kata Sandi
           </div>
         </div>
-        <div onClick={() => router.push("/notifikasi")}>
+        {/* <div onClick={() => router.push("/notifikasi")}>
           <div
             className={styles.akun}
             onClick={() => setSelectedMenu("notifikasi")}
@@ -87,35 +68,10 @@ function Lihatprofile() {
           >
             Notifikasi
           </div>
-        </div>
-        <div onClick={() => router.push("/edittargetharian")}>
-          <div
-            className={styles.akun}
-            onClick={() => setSelectedMenu("edittarget")}
-            style={{
-              backgroundColor:
-                selectedMenu === "edittarget" ? "#D9D9D9" : "white",
-              color: selectedMenu === "edittarget" ? "white" : "black",
-            }}
-          >
-            Edit Target Harian
-          </div>
-        </div>
-        <div onClick={() => router.push("/privasi")}>
-          <div
-            className={styles.akun}
-            onClick={() => setSelectedMenu("privasi")}
-            style={{
-              backgroundColor: selectedMenu === "privasi" ? "#D9D9D9" : "white",
-              color: selectedMenu === "privasi" ? "white" : "black",
-              marginBottom: "20px",
-            }}
-          >
-            Privasi
-          </div>
-        </div>
+        </div> */}
+        {/* w */}
       </button>
     </div>
   );
 }
-export default Lihatprofile;
+export default SettingNavbar;

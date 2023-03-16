@@ -2,7 +2,9 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
-    gap: 1rem;
+    align-items: center;
+    width: 720px;
+    gap: 30px;
 }
 
 .input-pilih-berkas {
@@ -12,40 +14,59 @@
 .input-button-teks {
     text-align: end;
     font-weight: 600;
+    color: #4b4b4b;
 }
 
 .input-button-style {
     margin-bottom: 0;
-    width: 30%;
+    width: 120px;
     background-color: white;
     border-radius: 12px;
-    border-color: #bcbcbc;
-    color: #6bb7fe;
+    border: 2px solid #e5e5e5;
+    color: #1Cb0f6;
     cursor: pointer;
-    padding: 10px;
+    padding: 12px;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 16px;
     text-transform: uppercase;
-} 
+}
+
+.input-button-style:hover{
+    background-color: #f7f7f7;
+}
 
 .input-box-style {
     white-space: nowrap;
-    background-color: #ededed;
-    border-radius: 10px;
-    padding: 15px;
+    background-color: #f7f7f7;
+    border-radius: 16px;
     border: none;
     margin: 0 0 0 0;
-    width: 70%!important;
-    margin-bottom: 0!important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    border: 2px solid #e5e5e5;
 }
 
 .container-label {
     align-items: center;
     width: 100%;
-    gap: 1rem;
+    gap: 40px;
     grid-template-columns: 1fr 2fr;
     display: grid;
     align-items: center;
+    margin: 0 !important;
 }
 
+.img-test {
+    padding-left: 60px;
+    max-width: 100%;
+    max-height: 60px;
+}
 
+.file-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+
+}

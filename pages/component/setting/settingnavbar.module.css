@@ -1,0 +1,38 @@
+.buttonprofile {
+    border-color: #878787;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.div1 {
+    display: flex;
+}
+
+.imgprofile {
+    width: 50px;
+    height: 50px;
+}
+
+.div28 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.namaprofile {
+    color: black;
+    margin-bottom: 0px;
+}
+
+.lihatprofile {
+    color: #6bb7fe;
+}
+
+.akun {
+    border-radius: 16px;
+    border: none;
+    text-align: left;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 14px;
+}

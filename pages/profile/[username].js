@@ -1,15 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
-import stylesBelajar from "../styles/belajar.module.css";
-import stylesProfile from "../styles/profile-fix.module.css";
-import { UpperProfile } from "./component/profile/upper";
-import { LowerProfile } from "./component/profile/lower";
-import { NavbarButtonStudy } from "./component/navbar-button-study";
-import { FollowContext, ProfileContext, ProfileDataContext } from "../utils/context";
-import { API } from "../utils/request";
+import stylesProfile from "../../styles/profile-fix.module.css";
+import { UpperProfile } from "../component/profile/upper";
+import { LowerProfile } from "../component/profile/lower";
+import { NavbarButtonStudy } from "../component/navbar-button-study";
+import { FollowContext, ProfileContext, ProfileDataContext } from "../../utils/context";
+import { API } from "../../utils/request";
 
 const styles = {
-  belajar: stylesBelajar,
   profile: stylesProfile
 };
 

@@ -3,14 +3,18 @@
 }
 
 .container-settings {
-    gap: 2rem;
+    gap: 3rem;
     flex: 1;
-    padding: 30px;
+    padding: 30px 80px 30px 80px;
     -ms-overflow-style: none;
     /* IE and Edge */
     scrollbar-width: none;
     display: flex;
     overflow-y: scroll;
+}
+
+.container-settings::-webkit-scrollbar {
+    display: none;
 }
 
 .container-left-buttons {
@@ -28,15 +32,30 @@
     --typography-spacing-vertical: 30px;
 }
 
+.container-form {
+    display: flex;
+}
+
 .simpan-button-style {
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 12px;
+    border-radius: 16px;
     color: white;
-    padding: 0.6rem 0.8rem;
-    background-color: #6BB7FE;
+    padding: 0.8rem 1rem;
+    background-color: #1Cb0f6;
     text-decoration: none;
     margin: 0;  
+    text-transform: uppercase;
+    border: none;
+}
+
+.simpan-button-style:hover {
+    background-color: #32c6f7;
+}
+
+.simpan-button-text-style {
+    font-weight: 600;
+    font-size: 20px;
 }

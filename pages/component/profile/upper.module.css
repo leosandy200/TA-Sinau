@@ -41,7 +41,7 @@
 .upper-container-text-name {
     /* font-weight: 600; */
     --typography-spacing-vertical: 0 !important;
-    color: black;
+    color: #3c3c3c;
     font-weight: 700;
     font-size: 36px;
     line-height: 2rem;
@@ -52,7 +52,7 @@
     --typography-spacing-vertical: 0 !important;
     font-weight: 500;
     font-size: 24px;
-    color: #BCBCBC;
+    color: #afafaf;
     line-height: 1.25rem;
 }
 
@@ -60,7 +60,7 @@
     font-weight: 400;
     --typography-spacing-vertical: 0 !important;
     font-size: 20px;
-    color: #BCBCBC;
+    color: #777777;
     line-height: 1.25rem;
 }
 
@@ -68,7 +68,7 @@
     font-weight: 400;
     --typography-spacing-vertical: 0 !important;
     font-size: 20px ;
-    color: #BCBCBC;
+    color: #777777;
     line-height: 1.25rem;
 }
 
@@ -82,7 +82,8 @@
 .upper-container-image {
     width: 24px;
     height: 24px;
-    margin-right: 12px;
+    margin-right: 24px;
+    color: #777777;
 }
 
 .upper-container-button-styles {
@@ -91,11 +92,15 @@
     gap: 8px;
     justify-content: center;
     align-items: center;
-    border-radius: 1rem;
+    border-radius: 20px;
     color: white;
-    padding: 0.6rem 0.8rem;
-    background-color: #6BB7FE;
+    padding: 0.8rem 1rem;
+    background-color: #1Cb0f6;
     text-decoration: none;
+}
+
+.upper-container-button-styles:hover{
+    background-color: #32c6f7;
 }
 
 .left-button-text {

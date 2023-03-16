@@ -1,11 +1,12 @@
 import React, { useState, useContext } from "react";
-import styles from "../../styles/style.module.css";
+import styles from "../setting/buttons.module.css"
 import axios from "axios";
 import Router, { useRouter } from "next/router";
-import { API } from "../../utils/request";
-import { ProfileContext } from "../../utils/context";
+import { API } from "../../../utils/request";
+import { ProfileContext } from "../../../utils/context";
+import { Button } from "@mui/material";
 
-function Lihatprofile() {
+function Buttons() {
 
   const router = useRouter();
   const [dataUser, setDataUser] = useContext(ProfileContext);
@@ -71,4 +72,4 @@ function Lihatprofile() {
     </div>
   );
 }
-export default Lihatprofile;
+export default Buttons;

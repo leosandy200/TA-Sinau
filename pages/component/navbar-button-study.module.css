@@ -1,8 +1,12 @@
 .container {
     display: flex;
     flex-flow: column;
-    gap: 1.5rem;
-    padding: 0px 30px;
-    padding-top: 30px;
-    padding-right: 30px;
+    gap: 1rem;
+   padding: 30px 20px 0 30px;
+   border-right: 2px solid #757575;
+}
+
+.logo-style {
+    text-align: center;
+    --typography-spacing-vertical: 20px !important;
 }

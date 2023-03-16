@@ -6,6 +6,7 @@
     display: flex;
     flex-flow: column;
     align-items: flex-end;
+    flex: 1;
 }
 
 .container {
@@ -14,10 +15,11 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .form {
-    width: 28%;
+    width: 30%;
     --primary: #3689D7;
     margin-bottom: 0px;
 }
@@ -46,9 +48,13 @@
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     color: #3689D7;
-    border: 1px solid #7D7D7D;
+    border: 1px solid #4b4b4b;
     border-radius: 1rem;
     font-weight: bold;
+}
+
+.daftar:hover{
+    
 }
 
 .h1 {

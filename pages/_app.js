@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ProfileContext.Provider value={[dataUser, setDataUser]}>
-      <Navbar />
+      {/* <Navbar /> */}
       <Component {...pageProps} />
     </ProfileContext.Provider>);
 }

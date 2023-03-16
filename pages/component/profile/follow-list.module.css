@@ -3,12 +3,13 @@
     border: 2px solid gray;
     border-radius: 1rem;
     flex-direction: column;
+    margin-bottom: 60px;
 }
 
 .follow-title-ul {
     display: flex;
     width: 100%;
-    border-bottom: 2px solid gray;
+    /* border-bottom: 2px solid gray; */
     padding: 0px;
     justify-content: center;
 }
@@ -22,25 +23,28 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    color: #999999;
+}
+
+.follow-title-list:hover{
+    color: #1CAff6 ;
+    border-bottom: 3px solid #1cAFF6;
 }
 
 .allow-underline {
-    border-bottom: 3px solid black;
+    color: #1CAff6 ;
+    border-bottom: 3px solid #1cAFF6;
 }
 
-.follow-title-right {
+.no-underline {
+    border-bottom: 3px solid gray;
+}
+
+.follow-title {
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-}
-
-.follow-title-left {
-    font-size: 16px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
-
 }
 
 .follow-viewall {

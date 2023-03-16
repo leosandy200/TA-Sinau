@@ -6,6 +6,15 @@ import { FormContext, ProfileContext } from "../../../utils/context";
 export const FormEdit = React.forwardRef(function ({ }, ref) {
     const [dataUser, setDataUser] = useContext(ProfileContext);
     const [token, setToken] = useState(null);
+    const [selected, setSelected] = useState(null)
+
+    const imageChange = (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+            setSelected(e.target.files[0])
+        }
+    }
+
+
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -24,14 +33,23 @@ export const FormEdit = React.forwardRef(function ({ }, ref) {
         <form encType="multipart/form-data" className={styles["form-element"]} ref={ref}>
             <label className={styles["container-label"]}>
                 <p className={styles["input-button-teks"]}>Foto Profile</p>
-                <button className={styles["input-button-style"]} onClick={handleClick}>Pilih Berkas</button>
-                <input
-                    className={styles["input-pilih-berkas"]}
-                    name="avatar"
-                    type="file"
-                    accept="image/png, image/jpg, image/jpeg, image/svg"
-                    ref={hiddenFileInput}
-                />
+                <div className={styles["file-container"]}>
+                    <button className={styles["input-button-style"]} onClick={handleClick}>Pilih File</button>
+                    <input
+                        className={styles["input-pilih-berkas"]}
+                        name="avatar"
+                        type="file"
+                        accept=".png, .jpg, .jpeg"
+                        ref={hiddenFileInput}
+                        onChange={imageChange}
+                    />
+                    {selected && (
+                        <img className={styles["img-test"]}
+                            src={URL.createObjectURL(selected)}
+                        />
+                    )
+                    }
+                </div>
             </label>
             <label className={styles["container-label"]}>
                 <p className={styles["input-button-teks"]}>Nama</p>
@@ -39,16 +57,16 @@ export const FormEdit = React.forwardRef(function ({ }, ref) {
                     className={styles["input-box-style"]}
                     name="nama"
                     type="text"
-                    placeholder={dataUser?.nama}
+                    defaultValue={dataUser?.nama}
                 />
             </label>
             <label className={styles["container-label"]}>
-                <p className={styles["input-button-teks"]}>Nama Pengguna</p>
+                <p className={styles["input-button-teks"]}>Username</p>
                 <input
                     className={styles["input-box-style"]}
                     name="namaUser"
                     type="text"
-                    placeholder={dataUser?.namaUser}
+                    defaultValue={dataUser?.namaUser}
                 />
             </label>
             <label className={styles["container-label"]}>
@@ -57,7 +75,7 @@ export const FormEdit = React.forwardRef(function ({ }, ref) {
                     className={styles["input-box-style"]}
                     name="email"
                     type="email"
-                    placeholder={dataUser?.email}
+                    defaultValue={dataUser?.email}
                 />
             </label>
         </form>
