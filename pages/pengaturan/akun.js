@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, createRef, useContext } from "react";
 import { useRouter } from "next/router";
 import global from "../../styles/style.module.css";
-import akun from "../../  styles/akun.module.css"
+import akun from "../../styles/akun.module.css"
 import Settingfooter from "../komponen/settingfooter";
 import { API } from "../../utils/request";
 import { ProfileContext } from "../../utils/context";
@@ -47,28 +47,18 @@ function Setting() {
         const kirimData = await API.post(`/users/${dataUser.id}`, requestBody, headers)
         if (kirimData.status != 200) return;
 
-        const curiData = await API.get(`/users/${dataUser.id}`, headers)
+        const curiData = await API.get(`/users/${dataUser.namaUser}`, headers)
         const gantiDataUser = curiData?.data?.data
 
         localStorage.setItem("data", JSON.stringify(gantiDataUser))
         setDataUser(gantiDataUser)
-        router.push("/profile")
+        router.push(`/profile/${dataUser.namaUser}`)
       } catch (error) {
         console.log(error);
       }
     });
-  }, [formRef, submitRef, dataUser])
 
-  return (
-    <div className={styles.akun["container-profile"]}>
-      <NavbarButtonStudy />
-      <div className={styles.akun["container-settings"]}>
-        <div className={styles.akun["container-right"]}>
-          <h1 className={styles.akun["akun-text-style"]}>Akun</h1>
-          <div className={styles.akun["container-form"]}>
-            <FormEdit ref={formRef} />
-          </div>
-          {/* <div className={styles.global.div24}>
+    {/* <div className={styles.global.div24}>
               </div>
               <div className={styles.global.div24}>
                 <div className={styles.global.div1}>
@@ -100,8 +90,20 @@ function Setting() {
               </div>
               <hr className={styles.global.hr} />
               <Settingfooter /> */}
+
+  }, [formRef, submitRef, dataUser])
+
+  return (
+    <div className={styles.akun["container-profile"]}>
+      <NavbarButtonStudy />
+      <div className={styles.akun["container-settings"]}>
+        <div className={styles.akun["container-right"]}>
+          <h1 className={styles.akun["akun-text-style"]}>Akun</h1>
+          <div className={styles.akun["container-form"]}>
+            <FormEdit ref={formRef} />
+          </div>
         </div>
-        <div>
+        <div className={styles.akun["container-setting-navbar"]}>
           <button ref={submitRef} className={styles.akun["simpan-button-style"]}>
             <p className={styles.akun["simpan-button-text-style"]}>Simpan Perubahan</p>
           </button>

@@ -54,7 +54,7 @@ const Register = () => {
           <input className={styles.input} placeholder="Email" type="text" name="email" />
           <input className={styles.input}placeholder="Password" type="password" name="password" />
           <input className={styles.input} placeholder="Konfirmasi Password" type="password" name="password_confirmation"/>
-          <input className={styles.inputsubmit} type="submit" value="Daftar"/>
+          <input className={styles.inputsubmit} type="submit" value="DAFTAR"/>
         </form>
         <p className={styles.lowertext}>By signing up to Sinau, you agree to our <b>Terms</b> and <b>Privacy Policy.</b></p>
       </div>

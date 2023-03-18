@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useRouter } from "next/router";
 import React, { createContext, use, useContext, useEffect, useState } from "react";
 import styles from '../../styles/pembelajaran.module.css'

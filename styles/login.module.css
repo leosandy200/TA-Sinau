@@ -19,20 +19,31 @@
 }
 
 .form {
-    width: 30%;
-    --primary: #3689D7;
+    width: 28%;
+    --primary: #1cb0f6;
     margin-bottom: 0px;
 }
 
 .input {
-    --border-radius: 0.75rem;
-    width: 90%;
+    background-color: #f7f7f7;
+    border-radius: 16px;
+    width: 100%;
+    border: 2px solid #e5e5e5;
+    margin-bottom: 12px !important;
 }
 
 .inputsubmit {
-    --border-radius: 0.75rem;
-    width: 90%;
+    margin-top: 12px;
+    margin-bottom: 24px !important;
+    border-radius: 20px !important;
+    width: 100%;
     font-weight: bold !important;
+}
+
+.inputsubmit:hover {
+    
+    background-color: #32c6f7;
+    border: none;
 }
 
 .lowertext {
@@ -42,21 +53,22 @@
 }
 
 .daftar {
-    margin: 1rem;
+    margin: 30px;
     width: fit-content;
     text-align: center;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
-    color: #3689D7;
-    border: 1px solid #4b4b4b;
+    color: #1cb0f6;
+    border: 2px solid #e5e5e5;
     border-radius: 1rem;
     font-weight: bold;
 }
 
 .daftar:hover{
-    
+    background-color: #f7f7f7;
 }
 
 .h1 {
-    margin-bottom: 30px
+    margin-bottom: 30px;
+    color: #3c3c3c;
 }

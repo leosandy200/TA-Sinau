@@ -2,8 +2,8 @@
     display: flex;
     flex-flow: column;
     gap: 1rem;
-   padding: 30px 20px 0 30px;
-   border-right: 2px solid #757575;
+   padding: 30px 30px 0 30px;
+   border-right: 2px solid #e5e5e5;
 }
 
 .logo-style {

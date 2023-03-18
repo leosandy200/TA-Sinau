@@ -1,46 +1,49 @@
-import React, { useContext, useEffect, useState } from "react";
-import { useRef } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import profile from './upper.module.css'
-import axios from "axios";
-import { FollowContext, ProfileContext, ProfileDataContext } from "../../../utils/context";
+import { FollowContext, ProfileContext, ProfileDataContext, FollowersContext, FollowingContext } from "../../../utils/context";
 import { API } from "../../../utils/request";
+import { useRouter } from "next/router";
+
 
 
 const styles = {
     profile
 }
 
-export function UpperProfile({ avatarUser, name, username, joined, following, follower }) {
-
-    const img = useRef(null)
+export function UpperProfile() {
+    const router = useRouter();
+    const img = useRef(null);
     const [dataUser, setDataUser] = useContext(ProfileContext);
     const [publicProfile, setPublicProfile] = useContext(ProfileDataContext);
-    const [Follow, setFollow] = useContext(FollowContext)
+    const [followers, setFollowers] = useContext(FollowersContext);
+    const [following, setFollowing] = useContext(FollowingContext);
 
+    const { username } = router.query;
 
     useEffect(() => {
         if (img == null) return;
-        if (!dataUser.id) return;
+        if (!router.isReady) return;
 
         (async () => {
             try {
 
-                const Following = await API.get(`/following/${dataUser.id}`);
-                const Followers = await API.get(`/followers/${dataUser.id}`);
+                const Followers = await API.get(`/followers/${username}?limit=6`);
+                const Following = await API.get(`/following/${username}?limit=6`);
 
                 if (!Followers && !Following) return;
 
                 const FollowingAmount = Following.data.data;
                 const FollowersAmount = Followers.data.data;
 
-                setFollow([FollowingAmount, FollowersAmount]);
+                setFollowers(FollowersAmount);
+                setFollowing(FollowingAmount);
 
             } catch (error) {
                 console.log(error);
             }
         })()
 
-    }, [img, dataUser])
+    }, [img, router.isReady])
 
     return (
         <div className={styles.profile["upper-container"]}>
@@ -58,17 +61,17 @@ export function UpperProfile({ avatarUser, name, username, joined, following, fo
                     <div>
                         <div className={styles.profile["upper-container-image-div"]}>
                             <img src="/icons/join.svg" className={styles.profile["upper-container-image"]} />
-                            <p className={styles.profile["upper-container-text-join"]}>Bergabung pada {publicProfile?.joined_at}</p>
+                            <p className={styles.profile["upper-container-text-join"]}>Bergabung pada {new Date(publicProfile?.created_at).toLocaleDateString("id-ID", {dateStyle: "full"})}</p>
                         </div>
                         <div className={styles.profile["upper-container-image-div"]}>
                             <img src="/icons/follow.svg" className={styles.profile["upper-container-image"]} />
-                            <p className={styles.profile["upper-container-text-follower"]}>{publicProfile?.total_following} Mengikuti | {publicProfile?.total_followers} Pengikut</p>
+                            <p className={styles.profile["upper-container-text-follower"]}>{publicProfile?.followers_count} Mengikuti / {publicProfile?.following_count} Pengikut</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div>
-                <a className={styles.profile["upper-container-button-styles"]} href="/akun">
+                <a className={styles.profile["upper-container-button-styles"]} href="/pengaturan/akun">
                     <img src="/icons/profile-pencil.svg" className={styles.profile["left-button-image"]} />
                     <div className={styles.profile["left-button-text"]}>EDIT PROFIL</div>
                 </a>

@@ -67,7 +67,7 @@ const Login = () => {
         <form onSubmit={handleSubmitLogin} ref={form} className={styles.form}>
           <input className={styles.input} placeholder="Email or username" type="text" name="emailOrUser"/>
           <input className={styles.input} placeholder="Password" type="password" name="password"/>
-          <input className={styles.inputsubmit} type="submit" value="Masuk"/>
+          <input className={styles.inputsubmit} type="submit" value="MASUK"/>
         </form>
         <p className={styles.lowertext}>By logging in to Sinau, you agree to our <b>Terms</b> and <b>Privacy Policy.</b></p>
       </div>

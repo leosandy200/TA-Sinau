@@ -1,0 +1,15 @@
+.container-profile {
+    display: flex;
+    height: 100%;
+}
+
+.container-right {
+    display: flex;
+    flex: 1 1 auto;
+    padding: 30px 80px;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}

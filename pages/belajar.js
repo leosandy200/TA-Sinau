@@ -2,11 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '../styles/belajar.module.css';
 import { Unit } from './component/belajar/unit';
-import { CardXp } from './component/belajar/cardProgressXp';
 import { NavbarButtonStudy } from './component/navbar-button-study';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
+import { CardXp } from './component/belajar/cardProgressXp';
 import { BelajarContext } from '../utils/context';
 import { API } from '../utils/request';
 
@@ -62,7 +59,7 @@ function Belajar() {
         {middleKomponen}
       </div>
       <div className={styles["container-right"]}>
-        {/* <CardXp maxVal={24} currentVal={4} titleCard="Progress XP" /> */}
+        <CardXp maxVal={24} currentVal={0} titleCard="Progress XP" />
       </div>
     </div>
   )

@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useRef, useState, useEffect, useContext } from "react";
 import styles from "../setting/form-edit.module.css"
 import { FormContext, ProfileContext } from "../../../utils/context";
@@ -13,14 +12,6 @@ export const FormEdit = React.forwardRef(function ({ }, ref) {
             setSelected(e.target.files[0])
         }
     }
-
-
-
-    useEffect(() => {
-        const token = localStorage.getItem("token");
-        setToken(token);
-
-    }, [token])
 
     const hiddenFileInput = useRef(null);
 
@@ -57,7 +48,7 @@ export const FormEdit = React.forwardRef(function ({ }, ref) {
                     className={styles["input-box-style"]}
                     name="nama"
                     type="text"
-                    defaultValue={dataUser?.nama}
+                    placeholder={dataUser?.nama}
                 />
             </label>
             <label className={styles["container-label"]}>
@@ -66,7 +57,7 @@ export const FormEdit = React.forwardRef(function ({ }, ref) {
                     className={styles["input-box-style"]}
                     name="namaUser"
                     type="text"
-                    defaultValue={dataUser?.namaUser}
+                    placeholder={dataUser?.namaUser}
                 />
             </label>
             <label className={styles["container-label"]}>
@@ -75,7 +66,7 @@ export const FormEdit = React.forwardRef(function ({ }, ref) {
                     className={styles["input-box-style"]}
                     name="email"
                     type="email"
-                    defaultValue={dataUser?.email}
+                    placeholder={dataUser?.email}
                 />
             </label>
         </form>

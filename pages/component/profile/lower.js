@@ -1,32 +1,36 @@
 import React, { useState, useEffect, useContext } from "react";
+import profile from './lower.module.css'
+import { useRouter } from "next/router";
+import Link from "next/link";
 import { StatisticCard } from "../profile/statistic-card";
 import { RedirectCard } from "./redirect-card";
 import { AchievementCard } from "./achievement-card";
-import profile from './lower.module.css'
-import { FollowContext, ProfileContext, ProfileDataContext } from "../../../utils/context";
 import { FollowList } from "./follow-list";
+import { FollowContext, ProfileContext, ProfileDataContext } from "../../../utils/context";
 import { API } from "../../../utils/request";
 import { AchievementContext } from "../../../utils/context";
+
 
 const styles = {
     profile
 }
 
 export function LowerProfile({ streak, XP }) {
-
+    const router = useRouter();
     const [dataUser, setDataUser] = useContext(ProfileContext);
     const [publicProfile, setPublicProfile] = useContext(ProfileDataContext);
     const [selected, setSelected] = useState(null)
     const [komponenAchieve, setKomponenAchieve] = useState(null)
+    const { username } = router.query;
 
     useEffect(() => {
-        if (!dataUser.id) return;
+        if (!router.isReady) return;
         (async () => {
             try {
-                const achievement = await API.get(`/achievement?id=${dataUser.id}&limit=3`)
+                const achievement = await API.get(`/achievement?namaUser=${username}&limit=3`)
                 const result = []
-                achievement.data.achievement.forEach(v => {
-                    result.push(<AchievementCard title={v.achievement_name} description={v.description} imgSource={v.image} XP={v.current_xp} maxValue={v.required} />)
+                achievement.data.achievement.forEach((v, indecx) => {
+                    result.push(<AchievementCard key={indecx} title={v.achievement_name} description={v.description} imgSource={v.image} XP={v.current_xp} maxValue={v.required} />)
                 })
                 setKomponenAchieve(
                     <AchievementContext.Provider value={[selected, setSelected]}>
@@ -38,7 +42,7 @@ export function LowerProfile({ streak, XP }) {
             }
         })()
 
-    }, [dataUser])
+    }, [router.isReady])
 
     return (
         <div className={styles.profile["lower-container"]}>
@@ -48,7 +52,7 @@ export function LowerProfile({ streak, XP }) {
                         <div id="text statistik" className={styles.profile[""]}>
                             <h2 className={styles.profile["statistik-text"]}>Statistik</h2>
                             <div className={styles.profile["statistik-wrapper"]}>
-                                <StatisticCard title={publicProfile?.total_streak} description="Runtutan hari ini" imgSource="/icons/profile-fire.svg" />
+                                <StatisticCard title={publicProfile?.streak_count} description="Runtutan hari ini" imgSource="/icons/profile-fire.svg" />
                                 <StatisticCard title={publicProfile?.xp.totalXp} description="Total XP" imgSource="/icons/petir.svg" />
                             </div>
                         </div>
@@ -57,7 +61,11 @@ export function LowerProfile({ streak, XP }) {
                         <h2 className={styles.profile["statistik-text-pencapaian"]}>Pencapaian</h2>
                         <ul className={styles.profile["pencapaian-ul"]}>
                             {komponenAchieve}
-                            <a className={styles.profile["pencapaian-viewall"]}>Lihat Semua</a>
+                            <a className={styles.profile["pencapaian-viewall"]} href={`/profile/[${username}]/teman`}>
+                            Lihat Semua
+                                {/* <Link >
+                                </Link> */}
+                                </a>
                         </ul>
                     </div>
                 </div>

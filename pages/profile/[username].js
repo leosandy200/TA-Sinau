@@ -4,17 +4,14 @@ import stylesProfile from "../../styles/profile-fix.module.css";
 import { UpperProfile } from "../component/profile/upper";
 import { LowerProfile } from "../component/profile/lower";
 import { NavbarButtonStudy } from "../component/navbar-button-study";
-import { FollowContext, ProfileContext, ProfileDataContext } from "../../utils/context";
+import { FollowContext, FollowersContext, FollowingContext, ProfileContext, ProfileDataContext } from "../../utils/context";
 import { API } from "../../utils/request";
 
 const styles = {
   profile: stylesProfile
 };
 
-// const [dataUser, setDataUser] = useState(null)
-
 function Profile() {
-  const router = useRouter();
   // return (
   // <div className={styles.container}>
   //   <div className={styles["container-left"]}>
@@ -319,43 +316,45 @@ function Profile() {
   //   </div>
   // </div>
   // );
-  const [Follow, setFollow] = useState([[], []]);
+  const [Followers, setFollowers] = useState([]);
+  const [Following, setFollowing] = useState([]);
   const [dataUser, setDataUser] = useContext(ProfileContext);
   const [publicProfile, setPublicProfile] = useState(null);
+  const router = useRouter();
+  const { username } = router.query;
 
   useEffect(() => {
-    if (!dataUser.id) return;
-
+    if (!router.isReady) return;
 
     (async () => {
       try {
 
-        const response = await API.get(`/public-user/${dataUser.id}`);
+        const response = await API.get(`/users/${username}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`
+          }
+        });
 
         const res = response.data.data
-
         setPublicProfile(res)
-
-        console.log();
-
       } catch (error) {
-
         console.log(error);
-
       }
     })()
 
-  }, [dataUser])
+  }, [router.isReady])
 
   return (
     <ProfileDataContext.Provider value={[publicProfile, setPublicProfile]}>
       <div className={styles.profile["container-profile"]}>
         <NavbarButtonStudy />
         <div className={styles.profile["container-right"]}>
-          <FollowContext.Provider value={[Follow, setFollow]}>
-            <UpperProfile />
-            <LowerProfile />
-          </FollowContext.Provider>
+          <FollowersContext.Provider value={[Followers, setFollowers]}>
+            <FollowingContext.Provider value={[Following, setFollowing]}>
+              <UpperProfile />
+              <LowerProfile />
+            </FollowingContext.Provider>
+          </FollowersContext.Provider>
         </div>
       </div>
     </ProfileDataContext.Provider>
