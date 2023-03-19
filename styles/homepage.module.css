@@ -34,15 +34,18 @@
     margin-left: 150px;
     margin-top: 20px;
     padding: 12px;
-    background-color: #5594f3;
+    background-color: #1cb0f6;
     color: white;
     border-radius: 20px;
     border: none;
     font-size: 18px;
 }
+.buttonlogin:hover {
+    background-color: #32c6f7;
+}
 
 .buttonregister {
-    border: 1px solid white;
+    border: 2px solid #afafaf;
     text-decoration: none;
     cursor: pointer;
     display: block;
@@ -52,7 +55,12 @@
     margin-left: 150px;
     margin-top: 20px;
     padding: 12px;
-    color: white;
+    color: #afafaf;
     border-radius: 20px;
     font-size: 18px;
+}
+
+.buttonregister:hover {
+    color: #ffffff;
+    border: 2px solid #ffffff;
 }

@@ -1,4 +1,4 @@
-.upper-container {
+    .upper-container {
     display: flex;
     border-bottom: 2px solid #e5e5e5;
     flex-direction: row;
@@ -101,6 +101,24 @@
 
 .upper-container-button-styles:hover{
     background-color: #32c6f7;
+}
+
+.upper-container-button-styles-grey {
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    color: #61E002;
+    padding: 0.8rem 1rem;
+    background-color: #ffffff;
+    border: 2px solid #e5e5e5;
+    text-decoration: none;
+}
+
+.upper-container-button-styles-grey:hover {
+    background-color: #f7f7f7;
 }
 
 .left-button-text {

@@ -38,20 +38,33 @@
     display: flex;
 }
 
-.simpan-button-style {
+.simpan-button-style-ready {
     cursor: pointer;
     border-radius: 16px;
     color: white;
     padding: 15px 20px;
     background-color: #1Cb0f6;
     text-decoration: none;
-    margin: 0 ;  
+    margin: 0;
     text-transform: uppercase;
     border: none;
     align-self: flex-end;
 }
 
-.simpan-button-style:hover {
+.simpan-button-style-grey {
+    cursor: default;
+    border-radius: 16px;
+    color: #afafaf;
+    padding: 15px 20px;
+    background-color: #e5e5e5;
+    text-decoration: none;
+    margin: 0;
+    text-transform: uppercase;
+    border: none;
+    align-self: flex-end;
+}
+
+.simpan-button-style-ready:hover {
     background-color: #32c6f7;
 }
 

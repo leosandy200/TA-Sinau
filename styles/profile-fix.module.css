@@ -25,3 +25,18 @@
 .left-button-text {
     text-transform: uppercase;
 }
+
+.container-loading {
+    padding: 25%;
+}
+
+.container-loading::before {
+    padding: 10%;
+    border-width: 10px!important;
+    /* border-right: none !important; */
+    border-radius: 100%!important;
+    aspect-ratio: 1/1;
+    width: 10%!important;
+    height: 10%!important;
+    align-self: center;
+}

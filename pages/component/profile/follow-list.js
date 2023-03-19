@@ -65,11 +65,7 @@ export function FollowList() {
             <div>
                 {followed}
             </div>
-            {/* {((selected) ? (Followers.length == 0) : null )} */}
             {followersList}
-            {/* <a href={``} className={styles["follow-viewall"]}>
-                Lihat semua
-            </a> */}
         </div>
     )
 }

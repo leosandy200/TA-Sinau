@@ -316,47 +316,70 @@ function Profile() {
   //   </div>
   // </div>
   // );
-  const [Followers, setFollowers] = useState([]);
-  const [Following, setFollowing] = useState([]);
-  const [dataUser, setDataUser] = useContext(ProfileContext);
-  const [publicProfile, setPublicProfile] = useState(null);
   const router = useRouter();
+  const [followers, setFollowers] = useState([]);
+  const [following, setFollowing] = useState([]);
+  const [publicProfile, setPublicProfile] = useState(null);
+
+  const [dataUser, setDataUser] = useContext(ProfileContext);
+
   const { username } = router.query;
+
+  const [profileElement, setProfileElement] = useState(<div className={styles.profile["container-loading"]} aria-busy="true"></div>)
 
   useEffect(() => {
     if (!router.isReady) return;
+    if (!publicProfile && !followers && !following) return;
 
-    (async () => {
-      try {
 
-        const response = await API.get(`/users/${username}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`
-          }
-        });
+      (async () => {
 
-        const res = response.data.data
-        setPublicProfile(res)
-      } catch (error) {
-        console.log(error);
-      }
-    })()
+        try {
+
+          const response = await API.get(`/users/${username}`, {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+          });
+
+          const Followers = await API.get(`/followers/${username}?limit=6`);
+          const Following = await API.get(`/following/${username}?limit=6`);
+
+          if (!response && !Followers && !Following) return;
+
+          const res = response.data.data;
+          const FollowersAmount = Followers.data.data;
+          const FollowingAmount = Following.data.data;
+
+          console.log(res);
+          console.log(res.isFriend);
+
+          setPublicProfile(res);
+
+          setFollowers(FollowersAmount);
+          setFollowing(FollowingAmount);
+
+          setProfileElement(<><UpperProfile identifer={res.isFriend} /><LowerProfile /></>)
+        } catch (error) {
+          console.log(error);
+        }
+      })()
 
   }, [router.isReady])
 
   return (
     <ProfileDataContext.Provider value={[publicProfile, setPublicProfile]}>
-      <div className={styles.profile["container-profile"]}>
-        <NavbarButtonStudy />
-        <div className={styles.profile["container-right"]}>
-          <FollowersContext.Provider value={[Followers, setFollowers]}>
-            <FollowingContext.Provider value={[Following, setFollowing]}>
-              <UpperProfile />
-              <LowerProfile />
-            </FollowingContext.Provider>
-          </FollowersContext.Provider>
-        </div>
-      </div>
+      <FollowersContext.Provider value={[followers, setFollowers]}>
+        <FollowingContext.Provider value={[following, setFollowing]}>
+          <div className={styles.profile["container-profile"]}>
+            <NavbarButtonStudy />
+            <div className={styles.profile["container-right"]}>
+
+              {profileElement}
+            </div>
+          </div>
+        </FollowingContext.Provider>
+      </FollowersContext.Provider>
     </ProfileDataContext.Provider>
   );
 }

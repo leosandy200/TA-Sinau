@@ -19,7 +19,10 @@ function Password() {
   const submitRef = useRef(null);
   let isSent = false;
 
+  const [formElement, setFormElement] = useState(<FormPassword ref={formRef} />)
+
   useEffect(() => {
+    if (!router.isReady) return;
     if (!formRef || !submitRef || dataUser.id) return;
     if (dataUser.id <= 0) {
       router.push("/login")
@@ -30,6 +33,7 @@ function Password() {
     isSent = true;
 
     submitRef.current.addEventListener('click', async () => {
+      console.log("kon kon kon");
       try {
         const body = new FormData(formRef.current)
         const headers = {
@@ -37,13 +41,20 @@ function Password() {
             Authorization: `Bearer ${localStorage.getItem("token")}`
           }
         }
+        setFormElement(<div className={styles["container-loading"]} aria-busy="true"></div>)
+
         const kirimPassword = await API.post(`change-password`, body, headers)
+        if (kirimPassword.status != 200) return;
+        console.log(kirimPassword);
+
+        setFormElement(<FormPassword ref={formRef} />)
+
+      } catch (error) {
+        console.log(error);
       }
-    }
+    });
 
-    )
-
-  }, [])
+  }, [formRef, submitRef, dataUser])
 
 
 
@@ -54,11 +65,11 @@ function Password() {
         <div className={styles["container-right"]}>
           <h1 className={styles["akun-text-style"]}>Akun</h1>
           <div className={styles["container-form"]}>
-            <FormPassword ref={formRef} />
+            {formElement}
           </div>
         </div>
         <div className={styles["container-setting-navbar"]}>
-          <button className={styles["simpan-button-style"]}>
+          <button ref={submitRef} className={styles["simpan-button-style"]}>
             <p className={styles["simpan-button-text-style"]}>Simpan Perubahan</p>
           </button>
           <SettingNavbar />

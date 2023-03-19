@@ -53,7 +53,7 @@ export function LowerProfile({ streak, XP }) {
                             <h2 className={styles.profile["statistik-text"]}>Statistik</h2>
                             <div className={styles.profile["statistik-wrapper"]}>
                                 <StatisticCard title={publicProfile?.streak_count} description="Runtutan hari ini" imgSource="/icons/profile-fire.svg" />
-                                <StatisticCard title={publicProfile?.xp.totalXp} description="Total XP" imgSource="/icons/petir.svg" />
+                                <StatisticCard title={publicProfile?.xp?.totalXp} description="Total XP" imgSource="/icons/petir.svg" />
                             </div>
                         </div>
                     </div>

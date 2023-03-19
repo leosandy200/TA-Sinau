@@ -7,7 +7,7 @@ import { API } from "../../utils/request";
 import { ProfileContext } from "../../utils/context";
 import { NavbarButtonStudy } from "../component/navbar-button-study";
 import { FormEdit } from "../component/setting/form-edit";
-import  Buttons  from "../component/setting/buttons";
+import Buttons from "../component/setting/buttons";
 import SettingNavbar from "../component/setting/settingNavbar";
 
 // function MyFormHelperText() {
@@ -26,7 +26,13 @@ function Setting() {
   const submitRef = useRef(null);
   let isSent = false;
 
+  const [buttonElement, setButtonElement] = useState
+    (<button ref={submitRef} className={styles.akun["simpan-button-style-ready"]}>
+      <p className={styles.akun["simpan-button-text-style"]}>Simpan Perubahan</p>
+    </button>)
+
   useEffect(() => {
+    if (!router.isReady) return;
     if (!formRef || !submitRef || !dataUser || !dataUser.id) return;
     if (dataUser.id <= 0) {
       router.push("/login")
@@ -37,6 +43,7 @@ function Setting() {
     isSent = true;
 
     submitRef.current.addEventListener('click', async () => {
+
       try {
         const requestBody = new FormData(formRef.current)
         const headers = {
@@ -44,15 +51,23 @@ function Setting() {
             Authorization: `Bearer ${localStorage.getItem("token")}`
           }
         }
+      // button loading
+        setButtonElement(<button aria-busy="true" className={styles.akun["simpan-button-style-grey"]}>
+        </button>)
         const kirimData = await API.post(`/users/${dataUser.id}`, requestBody, headers)
         if (kirimData.status != 200) return;
+
+        // button set grey dan mati ref
+        setButtonElement(<button ref={submitRef} className={styles.akun["simpan-button-style-grey"]}>
+          <p className={styles.akun["simpan-button-text-style"]}>Perubahan Tersimpan</p>
+        </button>)
 
         const curiData = await API.get(`/users/${dataUser.namaUser}`, headers)
         const gantiDataUser = curiData?.data?.data
 
         localStorage.setItem("data", JSON.stringify(gantiDataUser))
         setDataUser(gantiDataUser)
-        router.push(`/profile/${dataUser.namaUser}`)
+        // router.push(`/profile/${dataUser.namaUser}`)
       } catch (error) {
         console.log(error);
       }
@@ -104,9 +119,10 @@ function Setting() {
           </div>
         </div>
         <div className={styles.akun["container-setting-navbar"]}>
-          <button ref={submitRef} className={styles.akun["simpan-button-style"]}>
+          {/* <button ref={submitRef} className={styles.akun["simpan-button-style-ready"]}>
             <p className={styles.akun["simpan-button-text-style"]}>Simpan Perubahan</p>
-          </button>
+          </button> */}
+          {buttonElement}
           <SettingNavbar />
           <Buttons />
         </div>

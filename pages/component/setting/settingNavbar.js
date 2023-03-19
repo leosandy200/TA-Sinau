@@ -15,7 +15,7 @@ function SettingNavbar() {
     <div className={styles["container"]}>
       <div className={styles["container-profile"]}>
         <div className={styles.div1}>
-          <img src={(dataUser?.avatar) ? dataUser?.avatar : "/icons/prifle-user.svg"} className={styles.imgprofile} />
+          <img src={(dataUser?.avatar) ? dataUser?.avatar : "/icons/profile-user.svg"} className={styles.imgprofile} />
           <div className={styles.div28}>
             <p className={styles.namaprofile}>{dataUser?.namaUser}</p>
             <p onClick={() => router.push(`/profile/${dataUser.namaUser}`)} className={styles.lihatprofile}>

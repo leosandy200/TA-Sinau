@@ -48,6 +48,7 @@ export const FormEdit = React.forwardRef(function ({ }, ref) {
                     className={styles["input-box-style"]}
                     name="nama"
                     type="text"
+                    autoComplete="off"
                     placeholder={dataUser?.nama}
                 />
             </label>
@@ -57,6 +58,7 @@ export const FormEdit = React.forwardRef(function ({ }, ref) {
                     className={styles["input-box-style"]}
                     name="namaUser"
                     type="text"
+                    autoComplete="off"
                     placeholder={dataUser?.namaUser}
                 />
             </label>
@@ -66,6 +68,7 @@ export const FormEdit = React.forwardRef(function ({ }, ref) {
                     className={styles["input-box-style"]}
                     name="email"
                     type="email"
+                    autoComplete="off"
                     placeholder={dataUser?.email}
                 />
             </label>
