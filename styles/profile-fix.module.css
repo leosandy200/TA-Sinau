@@ -13,9 +13,7 @@
 .container-right {
     flex: 1;
     overflow-y: scroll;
-    padding: 30px;
-    padding-left: 80px;
-    padding-right: 80px;
+   padding: 60px 80px
 }
 
 .container-right::-webkit-scrollbar{

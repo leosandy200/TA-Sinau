@@ -22,8 +22,8 @@ function Belajar() {
         params: { "mapel": "jawa" }, headers: { 'Authorization': `Bearer ${tokenUser}`, }
       })
       const result = []
-      res.data.forEach(v => {
-        console.log(v);
+      res.data.forEach((v, index) => {
+        // console.log(v);
         const babItems = []
         if (!v.unit_bab) {
           // result.push(<Unit unitTitle={`Unit ${v.unit}`} unitDesc={v.description} unitItems={[]} />)
@@ -39,7 +39,7 @@ function Belajar() {
           )
         )
         
-        result.push(<Unit unitTitle={`Unit ${v.unit}`} unitDesc={v.description} unitItems={babItems} />)
+        result.push(<Unit key={index} unitTitle={`Unit ${v.unit}`} unitDesc={v.description} unitItems={babItems} />)
       })
       setMiddleKomnponen(
         <BelajarContext.Provider value={[selected, setSelected]}>

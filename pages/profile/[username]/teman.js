@@ -11,9 +11,13 @@ function Teman() {
     const router = useRouter();
     const [followers, setFollowers] = useState([]);
     const [following, setFollowing] = useState([]);
+
+    const [listElement, setListElement] = useState(<div className={styles["container-loading"]} aria-busy="true"></div>)
+
     const { username } = router.query;
 
     useEffect(() => {
+        
         if (!router.isReady) return;
 
         (async () => {
@@ -30,6 +34,7 @@ function Teman() {
                 setFollowers(FollowersAmount);
                 setFollowing(FollowingAmount);
 
+                        setListElement(<ListTemen />)
                 // console.log(followers, following);
 
             } catch (error) {
@@ -47,7 +52,7 @@ function Teman() {
             <div className={styles["container-right"]}>
                 <FollowersContext.Provider value={[followers, setFollowers]}>
                     <FollowingContext.Provider value={[following, setFollowing]}>
-                        <ListTemen />
+                        {listElement}
                     </FollowingContext.Provider>
                 </FollowersContext.Provider>
             </div>

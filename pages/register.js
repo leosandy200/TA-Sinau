@@ -50,8 +50,8 @@ const Register = () => {
       <div className={styles.container}>
         <h1 className={styles.h1}>DAFTAR</h1>
         <form className={styles.form} onSubmit={handleSubmitRegister} ref={form}>
-          <input className={styles.input} placeholder="Username" type="text" name="namaUser" /> 
-          <input className={styles.input} placeholder="Email" type="text" name="email" />
+          <input className={styles.input} placeholder="Username" type="text" autoComplete="off" name="namaUser" /> 
+          <input className={styles.input} placeholder="Email" type="text" autoComplete="off" name="email" />
           <input className={styles.input}placeholder="Password" type="password" name="password" />
           <input className={styles.input} placeholder="Konfirmasi Password" type="password" name="password_confirmation"/>
           <input className={styles.inputsubmit} type="submit" value="DAFTAR"/>

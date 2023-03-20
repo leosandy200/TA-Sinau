@@ -51,13 +51,13 @@ function Setting() {
             Authorization: `Bearer ${localStorage.getItem("token")}`
           }
         }
-      // button loading
+        // button loading
         setButtonElement(<button aria-busy="true" className={styles.akun["simpan-button-style-grey"]}>
         </button>)
         const kirimData = await API.post(`/users/${dataUser.id}`, requestBody, headers)
         if (kirimData.status != 200) return;
 
-        // button set grey dan mati ref
+        // button set grey 
         setButtonElement(<button ref={submitRef} className={styles.akun["simpan-button-style-grey"]}>
           <p className={styles.akun["simpan-button-text-style"]}>Perubahan Tersimpan</p>
         </button>)

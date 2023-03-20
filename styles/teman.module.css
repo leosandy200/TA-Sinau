@@ -6,10 +6,25 @@
 .container-right {
     display: flex;
     flex: 1 1 auto;
-    padding: 30px 80px;
+    padding: 60px 80px;
     overflow-y: scroll;
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
+}
+
+.container-loading {
+    padding: 25%;
+}
+
+.container-loading::before {
+    padding: 100%;
+    border-width: 20px!important;
+    /* border-right: none !important; */
+    border-radius: 100%!important;
+    aspect-ratio: 1/1;
+    width: 10%!important;
+    height: 10%!important;
+    align-self: center;
 }

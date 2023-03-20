@@ -8,36 +8,86 @@ const styles = {
     profile
 }
 
-export function UpperProfile({ identifer }) {
+export function UpperProfile() {
     const router = useRouter();
     const img = useRef(null);
+    // const addFollow = useRef(null);
+    // const removeFollow = useRef(null);
+
     const [dataUser, setDataUser] = useContext(ProfileContext);
     const [publicProfile, setPublicProfile] = useContext(ProfileDataContext);
     const [followers, setFollowers] = useContext(FollowersContext);
     const [following, setFollowing] = useContext(FollowingContext);
 
-    const [buttonElement, setButtonElement] = useState(null)
+    const [buttonElement, setButtonElement] = useState(
+        <a className={styles.profile["upper-container-button-styles"]} href="/pengaturan/akun">
+            <img src="/icons/profile-pencil.svg" className={styles.profile["left-button-image"]} />
+            <div className={styles.profile["left-button-text"]}>EDIT PROFIL</div>
+        </a>)
 
     const { username } = router.query;
+
+    const addFollow = async () => {
+
+        const requestHeaderFollow = {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                Accept: "application/json"
+            }
+        }
+
+        try {
+            const responseAdd = await API.get(`/follow/${publicProfile.id}`, requestHeaderFollow)
+            if (responseAdd.data.status == 201)
+                setButtonElement(
+                    <a onClick={removeFollow} className={styles.profile["upper-container-button-styles-grey"]}>
+                        <img src="/icons/friend-added.svg" className={styles.profile["left-button-image"]} />
+                        <div className={styles.profile["left-button-text"]}>Mengikuti</div>
+                    </a>)
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const removeFollow = async () => {
+
+        const requestHeaderRemove = {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                Accept: "application/json"
+            }
+        }
+
+        try {
+            const responseRemove = await API.get(`/unfollow/${publicProfile.id}`, requestHeaderRemove)
+            if (responseRemove.data.status == 200)
+                setButtonElement(
+                    <a onClick={addFollow} className={styles.profile["upper-container-button-styles"]}>
+                        <img src="/icons/add-user.svg" className={styles.profile["left-button-image"]} />
+                        <div className={styles.profile["left-button-text"]}>TAMBAH TEMAN</div>
+                    </a>)
+
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     useEffect(() => {
         if (img == null) return;
         if (!router.isReady) return;
+        if (!publicProfile) return;
 
-        if (dataUser.namaUser == username) setButtonElement(
-            <a className={styles.profile["upper-container-button-styles"]} href="/pengaturan/akun">
-                <img src="/icons/profile-pencil.svg" className={styles.profile["left-button-image"]} />
-                <div className={styles.profile["left-button-text"]}>EDIT PROFIL</div>
-            </a>)
-        else if (dataUser.namaUser != username && identifer == false) setButtonElement(
-            <a className={styles.profile["upper-container-button-styles"]}>
+        if (dataUser.namaUser != username && publicProfile.isFollowing == false) setButtonElement(
+            <a onClick={addFollow} className={styles.profile["upper-container-button-styles"]}>
                 <img src="/icons/add-user.svg" className={styles.profile["left-button-image"]} />
                 <div className={styles.profile["left-button-text"]}>TAMBAH TEMAN</div>
             </a>)
-        else if (dataUser.namaUser != username && identifer == true) setButtonElement(
-            <a className={styles.profile["upper-container-button-styles-grey"]}>
+
+        else if (dataUser.namaUser != username && publicProfile.isFollowing == true) setButtonElement(
+            <a onClick={removeFollow} className={styles.profile["upper-container-button-styles-grey"]}>
                 <img src="/icons/friend-added.svg" className={styles.profile["left-button-image"]} />
-                <div className={styles.profile["left-button-text"]}>TAMBAH TEMAN</div>
+                <div className={styles.profile["left-button-text"]}>Mengikuti</div>
             </a>)
 
     }, [img, router.isReady])
@@ -68,14 +118,7 @@ export function UpperProfile({ identifer }) {
                 </div>
             </div>
             <div>
-
-                {/* tombol edit profile  */}
-
                 {buttonElement}
-                {/* tombol tambah teman */}
-
-
-                {/* tombol sudah teman */}
             </div>
         </div>
     );
