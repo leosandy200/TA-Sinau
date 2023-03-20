@@ -1,12 +1,16 @@
 .container-progress-bar {
     display: flex;
-    width: 70%;
+    width: 100%;
+    flex: 0 1 3%!important;
     align-items: center;
+    height: 10%;
+    padding: 0 20%;
 }
 
 .progress-bar-style {
     flex: 1;
     margin-bottom: 0;
+    transition: all ease 100ms;
 }
 
 .progress-bar-close-button {
@@ -14,4 +18,10 @@
     height: 32px;
     cursor: pointer;
     margin-right: 10px;
+}
+
+.progress-bar-style-yellow {
+    --progress-color: orange;
+    color: orange;
+    accent-color: orange;
 }

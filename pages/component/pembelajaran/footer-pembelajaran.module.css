@@ -17,7 +17,7 @@
 
 /* buttons */
 .start-button {
-    width: fit-content;
+    width: max(10%, 270px);
     outline: none;
     border: none;
     box-shadow: 2px black;

@@ -1,82 +1,116 @@
-import React, { useContext, useEffect } from "react";
-import { PembelajaranContext } from "../../../utils/context";
+import React, { useContext, useEffect, useRef, useState } from "react";
+import { PageContext, PembelajaranContext, SessionContext } from "../../../utils/context";
 import { API } from "../../../utils/request";
 
 import styles from './footer-pembelajaran.module.css'
 
-function nextSession() {
-    
-}
-
 export function FooterPembelajaran() {
-    const [page, setPage] = useContext(PembelajaranContext).page;
-    const [data, setData] = useContext(PembelajaranContext).data;
-
-    let hasil = <FooterPembelajaranStart />
-    if (page == null) hasil = <FooterPembelajaranStart />
-    else if (page >= 0) hasil = <FooterPembelajaranProgress />
-    return hasil
+    const { page, maxPage } = useContext(PembelajaranContext)
+    const [pageState, ] = page 
+    const [maxPageState, ] = maxPage 
+    if (pageState == null) return <FooterPembelajaranStart />
+    else if (pageState >= maxPageState) return <FooterPembelajaranEnd />
+    else if (pageState >= 0) return <FooterPembelajaranProgress />
 }
 
 function FooterPembelajaranStart() {
-    const [page, setPage] = useContext(PembelajaranContext).page;
-    const [data, setData] = useContext(PembelajaranContext).data;
+    const instance = useRef();
 
+    const { page, allowNext } = useContext(PembelajaranContext)
+    const [ ,setAllowNext ] = allowNext
+    const [pageState, setPageState] = page 
+    
     async function nextSession() {
-        try {
-            const response = await API.post(`/next-soal`,
-            {
-            },
-            {
-                headers: {
-                    "Authorization": `Bearer ${localStorage.getItem("token")}`
-                }
-            });
+        instance.current.setAttribute("aria-busy", true);
+        instance.current.innerHTML = null;
 
-            setPage(response.data.current_session);
-            const Soal = response.data.Soal;
-            const jawaban = response.data.Jawaban;
+        setPageState(0)
+        setAllowNext(true)
+    }
+    return (
+        <footer className={[styles["container"], styles["start"]].join(' ')}>
+            <button ref={instance} className={styles["start-button"]} onClick={nextSession}>{`MULAI TANTANGAN`}</button>
+        </footer>
+    )
+}
 
-            setData(
-                {
-                    "soal": Soal,
-                    "jawaban": jawaban
-                }
-            )
-            console.log("hai");
-        } catch (error) {
-            console.error(error);
-        }
+function FooterPembelajaranEnd() {
+    const instance = useRef();
+    const router = useRouter();
+
+    const { page, allowNext } = useContext(PembelajaranContext)
+    const [ ,setAllowNext ] = allowNext
+    const [pageState, setPageState] = page 
+    
+    async function nextSession() {
+        instance.current.setAttribute("aria-busy", true);
+        instance.current.innerHTML = null;
+
+        router.push("/belajar")
     }
 
     return (
         <footer className={[styles["container"], styles["start"]].join(' ')}>
-            <button className={styles["start-button"]} onClick={nextSession}>{`MULAI TANTANGAN`}</button>
+            <button ref={instance} className={styles["start-button"]} onClick={nextSession}>{`MULAI TANTANGAN`}</button>
         </footer>
     )
 }
 
 function FooterPembelajaranProgress() {
-    const [page, setPage] = useContext(PembelajaranContext).page;
-    const [data, setData] = useContext(PembelajaranContext).data;
+    const instance = useRef();
+    const instanceParent = useRef();
+    const [ soalBefore, setSoalBefore ] = useState(null)
+
+    const { 
+        jawabanTemp, 
+        soal, 
+        jawaban, 
+        page, 
+        actualPage, 
+        evaluasi, 
+        allowNext,
+        isDone 
+    } = useContext(PembelajaranContext)
+    const [ jawabanTempState,  ] = jawabanTemp
+    const [ soalState, setSoalState ] = soal
+    const [ ,setJawabanState ] = jawaban
+    const [ allowNextState ,setAllowNext ] = allowNext
+    const [ ,setActualPageState ] = actualPage
+    const [ pageState ,setPageState ] = page
+    const [ evaluasiState , setEvaluasiState ] = evaluasi
+    const [ , setIsDoneState ] = isDone
+
+    useEffect(() => {
+        setSoalBefore(null);
+    }, [allowNextState])
+
+    function AfterCorrect() {
+        setAllowNext(true)
+    }
+    
+    function AfterWrong() {
+        setAllowNext(true)
+    }
 
     function OnClick() {
-        if (!data.returned) return;
+        if (!instance.current.innerHTML) return;
+        instance.current.setAttribute("aria-busy", true);
+        instance.current.innerHTML = null;
 
         let returnedWord = "";
-        data.returned.forEach(element => {
+        jawabanTempState.forEach(element => {
             if (returnedWord.length == 0) {
                 returnedWord = `${element.keyword}`;
                 return;
             }
             returnedWord += ` ${element.keyword}`;
         });
-        console.log(returnedWord);
+
         (async () => {
-            const response = await API.post(`/next-soal`, 
+            const {data} = await API.post(`/next-soal`, 
             {
-                id_soal: data.Soal,
-                jawaban: returnedWord,
+                "id_soal": soalState.id,
+                "jawaban": returnedWord,
             },
             {
                 headers: {
@@ -84,24 +118,49 @@ function FooterPembelajaranProgress() {
                 }
             }
             )
-            console.log(response);
-            setPage(response.data.current_session);
+            
+            
+            const { evaluasi, current_session, soal, jawaban, score_akhir } = data
+            
+            if (score_akhir == undefined || score_akhir == null) {
+                setJawabanState(jawaban);
+                setActualPageState(current_session)
+                setSoalState(soal)
+                setEvaluasiState((evaluasi) ? true : false)
+    
+                instance.current.setAttribute("aria-busy", false);
+                setSoalBefore(data.soal_before == "benar")
+            } else {
+                setIsDoneState(true);
+            }
 
-            const Soal = response.data.Soal;
-            const jawaban = response.data.Jawaban;
-
-            setData(
-                {
-                    "soal": Soal,
-                    "jawaban": jawaban
-                }
-            )
         })();
     }
 
+    useEffect(() => {
+        if (soalBefore == null) {
+            instance.current.innerHTML = "Selanjutnya";
+            instanceParent.current.style.backgroundColor = "transparent"
+            instance.current.style.backgroundColor = "#61E002"
+            return
+        }
+
+        if (soalBefore) {
+            instance.current.innerHTML = "Benar";
+            instanceParent.current.style.backgroundColor = "#D7FFB8"
+            instance.current.style.backgroundColor = "#61E002"
+            setPageState(pageState+1)
+        } else {
+            instance.current.innerHTML = "Salah";
+            instanceParent.current.style.backgroundColor = "#FFDFE0"
+            instance.current.style.backgroundColor = "#FF4B4B"
+            setPageState(pageState+0)
+        }
+    }, [soalBefore])
+
     return (
-        <footer className={[styles["container"], styles["start"]].join(' ')}>
-            <button className={styles["start-button"]} onClick={() => OnClick()}>Selanjutnya</button>
+        <footer className={[styles["container"], styles["start"]].join(' ')} ref={instanceParent}>
+            <button ref={instance} className={styles["start-button"]} onClick={() => (soalBefore == null) ? OnClick() : ((soalBefore) ? AfterCorrect() : AfterWrong())}>Selanjutnya</button>
         </footer>
     )
 }

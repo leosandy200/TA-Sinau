@@ -36,6 +36,16 @@ nav > h1 {
   font-size: 1.5rem;
 }
 
+html[data-theme="dark"] p,
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6{
+  border-color: white;
+}
+
 #_next {
   height: 100%;
 }

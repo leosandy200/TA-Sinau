@@ -1,20 +1,3 @@
-.chapter {
-    cursor: pointer;
-    aspect-ratio: 1 /1 ;
-    width: 4rem;
-    border-radius: 100%;
-    border: none;
-    outline: none;
-    min-width: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.chapter-disable-click {
-    cursor: default;
-}
-
 .chapter-img {
     width: 50%;
     object-fit: scale-down;

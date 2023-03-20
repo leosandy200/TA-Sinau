@@ -1,15 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import styles from '../styles/belajar.module.css';
-import { Unit } from './component/belajar/unit';
-import { NavbarButtonStudy } from './component/navbar-button-study';
+import Unit from './component/belajar/unit';
 import { CardXp } from './component/belajar/cardProgressXp';
-import { BelajarContext } from '../utils/context';
+import { NavbarButtonStudy } from './component/navbar-button-study';
+import { BelajarContext, ProfileContext } from '../utils/context';
 import { API } from '../utils/request';
+import seedrandom from 'seedrandom';
+
+const colors = [
+  "#FF4B4B",
+  "#58CC02",
+  "#FF9600"
+]
 
 function Belajar() {
   const router = useRouter();
   const [selected, setSelected] = useState(null)
+  const [dataUser, setDataUser] = useContext(ProfileContext)
   const [middleKomponen, setMiddleKomnponen] = useState(<div className={styles["container-loading"]} aria-busy="true"></div>);
   let tokenUser = '';
 
@@ -22,8 +30,11 @@ function Belajar() {
         params: { "mapel": "jawa" }, headers: { 'Authorization': `Bearer ${tokenUser}`, }
       })
       const result = []
-      res.data.forEach((v, index) => {
-        // console.log(v);
+      let currentColors = new Array(...colors);
+      const seed = seedrandom(`${dataUser.id}`);
+      res.data.forEach((v, i) => {
+        if (currentColors.length == 0) currentColors = new Array(...colors);
+
         const babItems = []
         if (!v.unit_bab) {
           // result.push(<Unit unitTitle={`Unit ${v.unit}`} unitDesc={v.description} unitItems={[]} />)
@@ -39,7 +50,12 @@ function Belajar() {
           )
         )
         
-        result.push(<Unit key={index} unitTitle={`Unit ${v.unit}`} unitDesc={v.description} unitItems={babItems} />)
+
+        const random = Math.floor(seed() * currentColors.length)
+        console.log(currentColors[random]);
+        console.log(random);
+        result.push(<Unit unitIndex={i+1} key={i} unitColor={currentColors[random]} unitTitle={`Unit ${v.unit}`} unitDesc={v.description} unitItems={babItems} />)
+        currentColors = currentColors.filter((e,i) => i != random);
       })
       setMiddleKomnponen(
         <BelajarContext.Provider value={[selected, setSelected]}>
