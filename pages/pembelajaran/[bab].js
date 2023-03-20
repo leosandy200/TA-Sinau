@@ -32,7 +32,7 @@ export default function Pembelajaran() {
         evaluasi: useState(false),
         isDone: useState(false),
     }
-    
+
     useEffect(() => {
         if (!router.isReady) return;
 
@@ -75,12 +75,14 @@ export default function Pembelajaran() {
         if (!router.isReady) return;
         if (pembelajaran.page[0] == null) return;
         if (!pembelajaran.allowNext[0]) return;
-        if (pembelajaran.isDone[0]) {
-            <>
-                <ProgressPembelajaran/>
-                <ContentPembelajaranEnd score_akhir={pembelajaran.endScore[0]} xp={pembelajaran.exp[0]}/>
-                <FooterPembelajaran/>
-            </>
+        if (pembelajaran.isDone[0] == true) {
+            console.log(pembelajaran.isDone[0]);
+            setElement(
+                <>
+                    <ContentPembelajaranEnd score_akhir={pembelajaran.endScore[0]} xp={pembelajaran.exp[0]}/>
+                    <FooterPembelajaran/>
+                </>
+            )
             return
         }
         setElement(

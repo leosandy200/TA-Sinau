@@ -4,7 +4,7 @@ import Bab from "./bab";
 
 export default function unit({ unitColor, unitItems, unitTitle, unitDesc, unitIndex }) {
     const chapterGrids = unitItems.map((v, i) =>
-        <Bab v={v} index={i} key={i} unitIndex={unitIndex} unitColor={unitColor}/>
+        <Bab v={v} unitLength={unitItems.length} index={i} key={i} unitIndex={unitIndex} unitColor={unitColor}/>
     )
     return (
         <div className={styles.basecontent}>

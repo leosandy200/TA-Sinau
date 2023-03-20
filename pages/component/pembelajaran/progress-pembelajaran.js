@@ -13,7 +13,7 @@ export function ProgressPembelajaran() {
     const [, setIsDoneState ] = isDone;
 
     useEffect(() => {
-        setIsDoneState(true);
+        // setIsDoneState(true);
     }, [pageState])
 
     return (

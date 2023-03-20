@@ -3,7 +3,7 @@ import React from "react";
 import styles from "../../component/belajar/bab.module.css";
 import {Tooltip} from "react-tooltip";
 
-export default function Bab({v, index, unitIndex, unitColor}) {
+export default function Bab({v, index, unitIndex, unitColor, unitLength}) {
     return (
         ((v.state) ? 
             <>
@@ -32,7 +32,7 @@ export default function Bab({v, index, unitIndex, unitColor}) {
                     data-index={index}
                     className={styles.chapter}
                     style={{ backgroundColor: "#58CC02"}}>
-                    <img src={(v.nextIdState) ? "/icons/star.svg" : "/icons/belajar-unlocked.svg"} className={styles["chapter-img"]} />
+                    <img src={(v.nextIdState || index == unitLength-1) ? "/icons/star.svg" : "/icons/belajar-unlocked.svg"} className={styles["chapter-img"]} />
                 </button>
             </>
         :

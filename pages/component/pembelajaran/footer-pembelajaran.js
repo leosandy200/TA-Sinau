@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { PageContext, PembelajaranContext, SessionContext } from "../../../utils/context";
 import { API } from "../../../utils/request";
@@ -5,11 +6,12 @@ import { API } from "../../../utils/request";
 import styles from './footer-pembelajaran.module.css'
 
 export function FooterPembelajaran() {
-    const { page, maxPage } = useContext(PembelajaranContext)
+    const { page, maxPage, isDone } = useContext(PembelajaranContext)
     const [pageState, ] = page 
     const [maxPageState, ] = maxPage 
+    const [isDoneState, ] = isDone 
     if (pageState == null) return <FooterPembelajaranStart />
-    else if (pageState >= maxPageState) return <FooterPembelajaranEnd />
+    else if (isDoneState) return <FooterPembelajaranEnd />
     else if (pageState >= 0) return <FooterPembelajaranProgress />
 }
 
@@ -51,7 +53,7 @@ function FooterPembelajaranEnd() {
 
     return (
         <footer className={[styles["container"], styles["start"]].join(' ')}>
-            <button ref={instance} className={styles["start-button"]} onClick={nextSession}>{`MULAI TANTANGAN`}</button>
+            <button ref={instance} className={styles["start-button"]} onClick={nextSession}>{`Selesaikan Pelajaran`}</button>
         </footer>
     )
 }
@@ -69,9 +71,13 @@ function FooterPembelajaranProgress() {
         actualPage, 
         evaluasi, 
         allowNext,
-        isDone 
+        isDone, 
+        maxPage,
+        endScore,
+        exp
     } = useContext(PembelajaranContext)
     const [ jawabanTempState,  ] = jawabanTemp
+    const [ maxPageState,  ] = maxPage
     const [ soalState, setSoalState ] = soal
     const [ ,setJawabanState ] = jawaban
     const [ allowNextState ,setAllowNext ] = allowNext
@@ -79,19 +85,19 @@ function FooterPembelajaranProgress() {
     const [ pageState ,setPageState ] = page
     const [ evaluasiState , setEvaluasiState ] = evaluasi
     const [ , setIsDoneState ] = isDone
+    const [ , setEndScoreState ] = endScore
+    const [ , setExpState ] = exp
 
-    useEffect(() => {
-        setSoalBefore(null);
-    }, [allowNextState])
-
-    function AfterCorrect() {
+    function AfterClick() {
+        if (pageState >= maxPageState) {
+            setIsDoneState(true)
+            setAllowNext(true)
+            return
+        }
         setAllowNext(true)
+        setSoalBefore(null)
     }
     
-    function AfterWrong() {
-        setAllowNext(true)
-    }
-
     function OnClick() {
         if (!instance.current.innerHTML) return;
         instance.current.setAttribute("aria-busy", true);
@@ -120,7 +126,7 @@ function FooterPembelajaranProgress() {
             )
             
             
-            const { evaluasi, current_session, soal, jawaban, score_akhir } = data
+            const { evaluasi, current_session, soal, jawaban, score_akhir, xp } = data
             
             if (score_akhir == undefined || score_akhir == null) {
                 setJawabanState(jawaban);
@@ -131,7 +137,12 @@ function FooterPembelajaranProgress() {
                 instance.current.setAttribute("aria-busy", false);
                 setSoalBefore(data.soal_before == "benar")
             } else {
-                setIsDoneState(true);
+                
+                setEndScoreState(score_akhir)
+                setExpState(xp.xpHarian)
+                setActualPageState(maxPageState)
+                setSoalBefore(data.soal_before == "benar")
+                instance.current.setAttribute("aria-busy", false);
             }
 
         })();
@@ -160,7 +171,7 @@ function FooterPembelajaranProgress() {
 
     return (
         <footer className={[styles["container"], styles["start"]].join(' ')} ref={instanceParent}>
-            <button ref={instance} className={styles["start-button"]} onClick={() => (soalBefore == null) ? OnClick() : ((soalBefore) ? AfterCorrect() : AfterWrong())}>Selanjutnya</button>
+            <button ref={instance} className={styles["start-button"]} onClick={() => (soalBefore == null) ? OnClick() : AfterClick()}>Selanjutnya</button>
         </footer>
     )
 }
